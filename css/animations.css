@@ -1,0 +1,323 @@
+/* =============================================================
+   YURIVERSE — animacoes.css
+   Todas as animações CSS do projeto.
+   Separado do styles.css para melhor manutenção.
+   GPU-accelerated via transform/opacity.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   INTRO — FADE OUT (aplicado via JS ao clicar)
+--------------------------------------------------------------- */
+@keyframes introFadeOut {
+  0%   { opacity: 1; transform: scale(1); }
+  60%  { opacity: 1; transform: scale(1.015); }
+  100% { opacity: 0; transform: scale(1.03); pointer-events: none; }
+}
+
+.intro-screen.fade-out {
+  animation: introFadeOut 0.8s var(--ease-in) forwards;
+}
+
+/* ---------------------------------------------------------------
+   INTRO — UNDERLINE EXPAND
+--------------------------------------------------------------- */
+@keyframes underlineExpand {
+  from { width: 0; opacity: 0; }
+  to   { width: 60%; opacity: 1; }
+}
+
+.intro-logo-underline {
+  animation: underlineExpand 1.2s var(--ease-out) 0.4s both;
+  box-shadow: 0 0 16px var(--red);
+}
+
+/* ---------------------------------------------------------------
+   INTRO — GLOW PULSE (texto)
+--------------------------------------------------------------- */
+@keyframes logoPulse {
+  0%, 100% {
+    text-shadow: 0 0 40px rgba(255,0,0,0.4);
+  }
+  50% {
+    text-shadow: 0 0 80px rgba(255,0,0,0.7), 0 0 120px rgba(255,80,0,0.3);
+  }
+}
+
+.intro-logo-text {
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------------
+   INTRO — NOISE FLICKER
+--------------------------------------------------------------- */
+@keyframes noiseShift {
+  0%   { background-position: 0 0; }
+  20%  { background-position: 40px 40px; }
+  40%  { background-position: -20px 60px; }
+  60%  { background-position: 80px -40px; }
+  80%  { background-position: -60px 20px; }
+  100% { background-position: 0 0; }
+}
+
+.intro-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  animation: noiseShift 0.4s steps(1) infinite;
+}
+
+/* ---------------------------------------------------------------
+   INTRO — SCANLINES DRIFT
+--------------------------------------------------------------- */
+@keyframes scanlineDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100px; }
+}
+
+.intro-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: scanlineDrift 8s linear infinite;
+}
+
+/* ---------------------------------------------------------------
+   INTRO BUTTON — hover (shimmer)
+--------------------------------------------------------------- */
+.intro-enter-btn:hover {
+  box-shadow: 0 0 60px var(--red-glow), 0 0 120px rgba(255,0,0,0.25);
+  transform: scale(1.03);
+}
+
+.intro-enter-btn:hover::before {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------------
+   FOGOS — estilos complementares (sem anel)
+--------------------------------------------------------------- */
+.fw-rocket {
+  filter: blur(0.5px);
+}
+
+.fw-burst {
+  mix-blend-mode: screen;
+}
+
+.fw-spark.glow {
+  filter: blur(1.5px);
+}
+
+.fw-star {
+  filter: drop-shadow(0 0 2px currentColor);
+}
+
+/* Ajuste de performance */
+.fw-rocket,
+.fw-burst,
+.fw-spark,
+.fw-star,
+.fw-smoke,
+.fw-golden {
+  will-change: transform, opacity;
+}
+
+/* ---------------------------------------------------------------
+   CSS GRIDS — animação de pulsação
+--------------------------------------------------------------- */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.12; }
+  50%       { opacity: 0.22; }
+}
+
+.css-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,0,0,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,0,0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+.css-grid-hero {
+  animation: gridPulse 6s ease-in-out 1s infinite;
+}
+
+/* ---------------------------------------------------------------
+   AUDIO ICON — barras de equalização
+--------------------------------------------------------------- */
+@keyframes bar1 { 0%,100%{height:4px}  50%{height:16px} }
+@keyframes bar2 { 0%,100%{height:12px} 50%{height:4px}  }
+@keyframes bar3 { 0%,100%{height:8px}  50%{height:18px} }
+@keyframes bar4 { 0%,100%{height:14px} 50%{height:6px}  }
+@keyframes bar5 { 0%,100%{height:6px}  50%{height:14px} }
+
+.audio-icon.playing span:nth-child(1) { animation: bar1 0.80s ease-in-out infinite; }
+.audio-icon.playing span:nth-child(2) { animation: bar2 0.90s ease-in-out 0.10s infinite; }
+.audio-icon.playing span:nth-child(3) { animation: bar3 0.70s ease-in-out 0.20s infinite; }
+.audio-icon.playing span:nth-child(4) { animation: bar4 1.00s ease-in-out 0.05s infinite; }
+.audio-icon.playing span:nth-child(5) { animation: bar5 0.85s ease-in-out 0.15s infinite; }
+
+.audio-icon:not(.playing) span {
+  height: 3px;
+  animation: none;
+}
+
+/* ---------------------------------------------------------------
+   BUTTONS — hover states
+--------------------------------------------------------------- */
+.btn-primary:hover {
+  box-shadow: 0 0 40px var(--red-glow);
+}
+
+.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+.btn-secondary:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-pale);
+}
+
+.chapters-continue-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: 0 0 30px rgba(255,0,0,0.15);
+}
+
+.chapters-continue-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.chapters-continue-btn:hover svg {
+  transform: translateX(6px);
+}
+
+.chapter-card:hover {
+  border-color: rgba(255,0,0,0.3);
+  background: #161616;
+}
+
+.chapter-card:hover::before {
+  height: 100%;
+}
+
+.mural-card:hover {
+  border-color: rgba(255,0,0,0.3);
+  background: #161616;
+}
+
+.mural-card:hover::before {
+  height: 100%;
+}
+
+.chapter-read-btn:hover {
+  box-shadow: 0 0 20px var(--red-glow);
+  opacity: 0.9;
+}
+
+.about-image-frame:hover .about-photo {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.03);
+}
+
+.about-image-frame:hover .about-image-glow {
+  opacity: 1;
+}
+
+.novel-cover-frame:hover .novel-cover-img {
+  transform: scale(1.04);
+}
+
+.carousel-slide:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
+
+.carousel-btn:hover {
+  background: rgba(255,0,0,0.15);
+  border-color: rgba(255,0,0,0.4);
+}
+
+.footer-social:hover {
+  color: var(--white);
+}
+
+.footer-social:hover svg {
+  fill: var(--red);
+  stroke: var(--red);
+}
+
+.header-nav .nav-link:hover {
+  color: var(--white);
+}
+
+.header-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.chapter-modal-close:hover {
+  color: var(--red);
+}
+
+.mural-modal-close:hover {
+  color: var(--red);
+  border-color: rgba(255,0,0,0.3);
+  background: rgba(255,0,0,0.05);
+}
+
+.back-to-top:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.audio-btn:hover {
+  background: rgba(255,0,0,0.2);
+  box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.btn-spotify:hover {
+  opacity: 0.85;
+  box-shadow: 0 0 30px rgba(29,185,84,0.3);
+}
+
+/* ---------------------------------------------------------------
+   FINALE TITLE — aparece ao rolar
+--------------------------------------------------------------- */
+.finale-section.in-view .finale-title {
+  opacity: 0.08;
+}
+
+/* ---------------------------------------------------------------
+   MOBILE TOGGLE — animação hambúrguer → X
+--------------------------------------------------------------- */
+.mobile-toggle.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-toggle.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
