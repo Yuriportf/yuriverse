@@ -270,15 +270,14 @@ function triggerHeroReveal() {
 
 // Array com as imagens da galeria (adicione ou remova quantas quiser)
 const GALLERY_IMAGES = [
-  { src: 'imagens/galera.jpeg', alt: 'Galera YURIVERSE' },
-  { src: 'imagens/saopaulo.jpeg', alt: 'São Paulo' },
-  { src: 'imagens/vista.jpeg', alt: 'Vista incrível' },
-  { src: 'imagens/coisas.jpeg', alt: 'Coisas que eu amo' },
-  { src: 'imagens/leque.jpeg', alt: 'Momento leque' },
-  { src: 'imagens/o homi.jpeg', alt: 'homi' },
-  { src: 'imagens/lesao.jpeg', alt: 'lesao' }
+  { src: 'assets/imagens/galera.jpeg', alt: 'Galera YURIVERSE' },
+  { src: 'assets/imagens/saopaulo.jpeg', alt: 'São Paulo' },
+  { src: 'assets/imagens/vista.jpeg', alt: 'Vista incrível' },
+  { src: 'assets/imagens/coisas.jpeg', alt: 'Coisas que eu amo' },
+  { src: 'assets/imagens/leque.jpeg', alt: 'Momento leque' },
+  { src: 'assets/imagens/o homi.jpeg', alt: 'homi' },
+  { src: 'assets/imagens/lesao.jpeg', alt: 'lesao' }
 ];
-
 let carouselSlides = [];
 let carouselCurrent = 0;
 let carouselAutoTimer = null;
