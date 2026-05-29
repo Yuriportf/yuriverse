@@ -83,7 +83,43 @@
        Invisível até a intro terminar.
   ===================================================== -->
   <div class="site-wrapper" id="siteWrapper">
+<!-- Controles flutuantes de áudio (substitua o bloco existente) -->
+<!-- Player flutuante de áudio -->
+<div class="audio-control" id="audioControl">
+  <button class="audio-btn" id="prevTrackBtn" aria-label="Anterior">◀</button>
+  <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar/Pausar">
+    <div class="audio-icon" id="audioIcon">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </button>
+  <button class="audio-btn" id="nextTrackBtn" aria-label="Próximo">▶</button>
+  <div class="audio-divider"></div>
+  <span class="audio-label" id="trackNameLabel">YURIVERSE FM</span>
+  <button class="audio-btn" id="playlistToggleBtn" aria-label="Playlist">☰</button>
+  <div class="audio-divider"></div>
+  <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar">✕</button>
+</div>
 
+<!-- Bolinha minimizada -->
+<button class="audio-pill" id="audioPill" aria-label="Expandir player">
+  <div class="audio-icon playing" id="audioPillIcon">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</button>
+
+<!-- Playlist flutuante -->
+<div class="playlist-panel" id="playlistPanel">
+  <div class="playlist-header">🎵 PLAYLIST</div>
+  <div class="playlist-items" id="playlistItems"></div>
+</div>
+
+
+
+<!-- Painel flutuante da playlist -->
+<div class="playlist-panel" id="playlistPanel">
+  <div class="playlist-header">🎵 PLAYLIST</div>
+  <div class="playlist-items" id="playlistItems"></div>
+</div>
     <!-- Barra de progresso de scroll -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -201,7 +237,7 @@
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                   <span class="stat-number">24h</span>
-                  <span class="stat-label">Programação</span>
+                  <span class="stat-label">Desenvolvimento</span>
                 </div>
               </div>
             </div>

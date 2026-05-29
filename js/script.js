@@ -3,6 +3,8 @@
  * =====================================================================
  * LÓGICA FUNCIONAL DO SITE (DOM, eventos, carrossel, modais, interações)
  * Animações foram movidas para animacoes.js
+ * 
+ * REFATORADO: Seção de áudio com múltiplas faixas, playlist e controles
  * =====================================================================
  */
 
@@ -72,13 +74,8 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const introScreen = $('introScreen');
   const siteWrapper = $('siteWrapper');
   const enterBtn = $('enterBtn');
-  const audioPlayer = $('audioPlayer');
   const audioControl = $('audioControl');
-  const audioIcon = $('audioIcon');
-  const audioLabel = $('audioLabel');
-  const audioBtn = $('audioBtn');
 
-  let audioPlaying = false;
   let introDismissed = false;
 
   // Verifica se veio da página profissional ou se a flag está ativa
@@ -90,10 +87,10 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     introScreen.style.display = 'none';
     siteWrapper.classList.add('visible');
     audioControl.classList.add('visible');
-    sessionStorage.removeItem('skipIntro'); // limpa a flag
+    sessionStorage.removeItem('skipIntro');
     window.scrollTo({ top: 0, behavior: 'instant' });
     triggerHeroReveal();
-    return; // não aguarda clique
+    return;
   }
 
   function revealSite(playAudio = false) {
@@ -107,44 +104,16 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       siteWrapper.classList.add('visible');
       audioControl.classList.add('visible');
 
-      if (playAudio) playMusic();
+      if (playAudio && window.playerAPI) {
+        window.playerAPI.startWithFade();
+      }
 
       window.scrollTo({ top: 0, behavior: 'instant' });
       triggerHeroReveal();
     }, 1000);
   }
 
-  function playMusic() {
-    if (!audioPlayer) return;
-    audioPlayer.volume = 0;
-    audioPlayer.play().then(() => {
-      audioPlaying = true;
-      audioIcon.classList.add('playing');
-      audioLabel.textContent = 'YURIVERSE FM ▸';
-
-      let vol = 0;
-      const fade = setInterval(() => {
-        vol = Math.min(vol + 0.04, 0.5);
-        audioPlayer.volume = vol;
-        if (vol >= 0.5) clearInterval(fade);
-      }, 80);
-    }).catch(() => {});
-  }
-
-  function toggleMusic() {
-    if (!audioPlayer) return;
-    if (audioPlaying) {
-      audioPlayer.pause();
-      audioPlaying = false;
-      audioIcon.classList.remove('playing');
-      audioLabel.textContent = 'YURIVERSE FM ‖';
-    } else {
-      playMusic();
-    }
-  }
-
   enterBtn.addEventListener('click', () => revealSite(true));
-  if (audioBtn) audioBtn.addEventListener('click', toggleMusic);
 })();
 
 function triggerHeroReveal() {
@@ -183,7 +152,7 @@ function triggerHeroReveal() {
   if (mobileToggle && headerNav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = headerNav.classList.contains('open');
-      
+
       if (!isOpen) {
         headerNav.classList.add('open');
         mobileToggle.classList.add('open');
@@ -303,17 +272,17 @@ function updateSlidesPerView() {
 
 function updateCarouselDimensions() {
   if (!carouselWrapper || !carouselTrack || !carouselSlides.length) return;
-  
+
   const wrapperRect = carouselWrapper.getBoundingClientRect();
   let availableWidth = wrapperRect.width;
   const wrapperStyle = getComputedStyle(carouselWrapper);
   const paddingLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
   const paddingRight = parseFloat(wrapperStyle.paddingRight) || 0;
   availableWidth = availableWidth - paddingLeft - paddingRight;
-  
+
   const slideWidth = (availableWidth - (carouselGap * (carouselSlidesPerView - 1))) / carouselSlidesPerView;
   carouselSlides.forEach(slide => slide.style.flex = `0 0 ${slideWidth}px`);
-  
+
   maxIndex = Math.max(0, carouselSlides.length - carouselSlidesPerView);
   if (carouselCurrent > maxIndex) carouselCurrent = maxIndex;
   return slideWidth;
@@ -340,11 +309,11 @@ function applyCarouselTransform() {
   if (!carouselTrack || !carouselSlides.length) return;
   if (carouselCurrent > maxIndex) carouselCurrent = maxIndex;
   if (carouselCurrent < 0) carouselCurrent = 0;
-  
+
   const slideWidth = carouselSlides[0]?.offsetWidth || 0;
   const translateX = -(carouselCurrent * (slideWidth + carouselGap));
   carouselTrack.style.transform = `translateX(${translateX}px)`;
-  
+
   if (carouselDotsContainer) {
     const dots = $$('.carousel-dot', carouselDotsContainer);
     dots.forEach((dot, i) => dot.classList.toggle('active', i === carouselCurrent));
@@ -375,7 +344,7 @@ function restartCarouselAuto() {
   if (carouselSlides.length <= carouselSlidesPerView) return;
   carouselAutoTimer = setInterval(() => {
     if (carouselCurrent < maxIndex) nextCarouselSlide();
-    else goToCarouselSlide(0); // volta ao início no final
+    else goToCarouselSlide(0);
   }, 5000);
 }
 
@@ -383,23 +352,23 @@ function loadCarouselImages() {
   carouselTrack = document.getElementById('carouselTrack');
   carouselDotsContainer = document.getElementById('carouselDots');
   if (!carouselTrack || !carouselDotsContainer) return;
-  
+
   carouselTrack.innerHTML = '';
   carouselDotsContainer.innerHTML = '';
-  
+
   GALLERY_IMAGES.forEach((img, index) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy" /><div class="slide-overlay"></div>`;
     carouselTrack.appendChild(slide);
-    
+
     const dot = document.createElement('span');
     dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
     dot.setAttribute('data-index', index);
     dot.addEventListener('click', () => goToCarouselSlide(index));
     carouselDotsContainer.appendChild(dot);
   });
-  
+
   carouselSlides = $$('.carousel-slide', carouselTrack);
   requestAnimationFrame(() => {
     updateSlidesPerView();
@@ -425,12 +394,12 @@ function setupCarouselEvents() {
   carouselNextMobile = $('carouselNextMobile');
   carouselWrapper = document.querySelector('.carousel-wrapper');
   carouselTrack = $('carouselTrack');
-  
+
   if (carouselPrevBtn) carouselPrevBtn.addEventListener('click', prevCarouselSlide);
   if (carouselNextBtn) carouselNextBtn.addEventListener('click', nextCarouselSlide);
   if (carouselPrevMobile) carouselPrevMobile.addEventListener('click', prevCarouselSlide);
   if (carouselNextMobile) carouselNextMobile.addEventListener('click', nextCarouselSlide);
-  
+
   let touchStartX = 0;
   let isDragging = false;
   if (carouselTrack) {
@@ -450,7 +419,7 @@ function setupCarouselEvents() {
     carouselTrack.addEventListener('mouseenter', () => clearInterval(carouselAutoTimer));
     carouselTrack.addEventListener('mouseleave', restartCarouselAuto);
   }
-  
+
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -458,14 +427,14 @@ function setupCarouselEvents() {
   });
 }
 
-window.addNewCarouselImage = function(imageSrc, imageAlt) {
+window.addNewCarouselImage = function (imageSrc, imageAlt) {
   GALLERY_IMAGES.push({ src: imageSrc, alt: imageAlt });
   loadCarouselImages();
   setupCarouselEvents();
   console.log(`✅ Nova imagem adicionada: ${imageAlt}`);
 };
 
-window.removeCarouselImage = function(index) {
+window.removeCarouselImage = function (index) {
   if (index >= 0 && index < GALLERY_IMAGES.length) {
     GALLERY_IMAGES.splice(index, 1);
     loadCarouselImages();
@@ -650,7 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 /* =====================================================================
-   16. VISIBILIDADE
+   16. VISIBILIDADE (pausa quando a aba não está visível)
    ===================================================================== */
 document.addEventListener('visibilitychange', () => {
   const audio = $('audioPlayer');
@@ -658,8 +627,190 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) audio.pause();
 });
 
+(function initAudioPlayer() {
+  const TRACKS = [
+    { title: "WAKE ME UP - THE WEEKND", src: "assets/audio/WAKE ME UP.mp3" },
+    { title: "WANNA BE STARTIN' SOMETHIN' - MICHAEL JACKSON", src: "assets/audio/Michael Jackson - Wanna Be Startin' Somethin' .mp3" },
+    { title: "VANISH INTO YOU - LADY GAGA", src: "assets/audio/Vanish Into You.mp3" }, 
+    { title: "DON'T STOP THE MUSIC - RIHANNA", src: "assets/audio/Don't Stop The Music .mp3" }, 
+    { title: "GET LUCKY - DAFT PUNK ft. PHARRELL WILLIAMS", src: "assets/audio/Get Lucky .mp3" }, 
+    { title: "I WANT TO KNOW WHAT LOVE IS - FOREIGNER", src: "assets/audio/I Want To Know What Love Is.mp3" }, 
+    { title: "(I JUST) DIED IN YOUR ARMS - CUTTING CREW", src: "assets/audio/(I Just) Died In Your Arms.mp3" }, 
+  ];
+
+  const audioPlayer = $('audioPlayer');
+  const playPauseBtn = $('playPauseBtn');
+  const prevTrackBtn = $('prevTrackBtn');
+  const nextTrackBtn = $('nextTrackBtn');
+  const trackNameLabel = $('trackNameLabel');
+  const playlistToggleBtn = $('playlistToggleBtn');
+  const playlistPanel = $('playlistPanel');
+  const playlistItems = $('playlistItems');
+  const audioIcon = $('audioIcon');
+  const audioControl = $('audioControl');
+  const audioMinimizeBtn = $('audioMinimizeBtn');
+  const audioPill = $('audioPill');
+  const audioPillIcon = $('audioPillIcon');
+
+  let currentTrackIndex = 0;
+  let isPlaying = false;
+  let fadeInterval = null;
+  let isMinimized = false;
+
+  function setPlayingState(playing) {
+    isPlaying = playing;
+    if (playing) {
+      audioIcon.classList.add('playing');
+      audioPillIcon.classList.add('playing');
+    } else {
+      audioIcon.classList.remove('playing');
+      audioPillIcon.classList.remove('playing');
+    }
+  }
+
+  function updateTrackDisplay() {
+    if (trackNameLabel) trackNameLabel.textContent = TRACKS[currentTrackIndex].title;
+    renderPlaylist();
+  }
+
+  function loadTrack(index, autoPlay = false) {
+    if (index < 0) index = TRACKS.length - 1;
+    if (index >= TRACKS.length) index = 0;
+    currentTrackIndex = index;
+    audioPlayer.src = TRACKS[currentTrackIndex].src;
+    audioPlayer.load();
+    updateTrackDisplay();
+    if (autoPlay) {
+      audioPlayer.play()
+        .then(() => setPlayingState(true))
+        .catch(() => setPlayingState(false));
+    } else {
+      setPlayingState(false);
+    }
+  }
+
+  function playWithFade(target = 0.5) {
+    audioPlayer.volume = 0;
+    audioPlayer.play().then(() => {
+      setPlayingState(true);
+      let vol = 0;
+      const step = target / (80 / 20);
+      fadeInterval = setInterval(() => {
+        vol = Math.min(vol + step, target);
+        audioPlayer.volume = vol;
+        if (vol >= target) { clearInterval(fadeInterval); fadeInterval = null; }
+      }, 20);
+    }).catch(err => console.warn('Autoplay bloqueado:', err));
+  }
+
+  function pauseWithFade() {
+    if (!audioPlayer || audioPlayer.paused) return;
+    const startVol = audioPlayer.volume;
+    let vol = startVol;
+    fadeInterval = setInterval(() => {
+      vol = Math.max(vol - 0.05, 0);
+      audioPlayer.volume = vol;
+      if (vol <= 0) {
+        clearInterval(fadeInterval); fadeInterval = null;
+        audioPlayer.pause();
+        setPlayingState(false);
+        audioPlayer.volume = startVol;
+      }
+    }, 30);
+  }
+
+  function togglePlayPause() {
+    if (audioPlayer.paused) playWithFade(0.5);
+    else pauseWithFade();
+  }
+
+  function renderPlaylist() {
+    if (!playlistItems) return;
+    playlistItems.innerHTML = '';
+    TRACKS.forEach((track, idx) => {
+      const item = document.createElement('div');
+      item.className = 'playlist-item' + (idx === currentTrackIndex ? ' active' : '');
+      item.innerHTML = `
+  <span class="playlist-item-num">${String(idx + 1).padStart(2, '0')}</span>
+  <span class="playlist-item-title">${track.title}</span>
+  <span class="playlist-item-badge">${idx === currentTrackIndex ? '▶' : ''}</span>
+`;
+      item.addEventListener('click', () => {
+        const wasPlaying = !audioPlayer.paused;
+        loadTrack(idx, wasPlaying);
+        playlistPanel.classList.remove('open');
+      });
+      playlistItems.appendChild(item);
+    });
+  }
+
+  // Minimizar / expandir
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function minimize() {
+    isMinimized = true;
+    playlistPanel.classList.remove('open');
+
+    if (isMobile()) {
+      audioControl.classList.remove('centered');
+      playlistPanel.classList.remove('centered');
+    }
+
+    audioControl.classList.add('minimized');
+
+    setTimeout(() => {
+      audioControl.style.pointerEvents = 'none';
+      audioPill.classList.add('visible');
+    }, 200);
+  }
+
+  function expand() {
+    isMinimized = false;
+    audioPill.classList.remove('visible');
+
+    setTimeout(() => {
+      audioControl.classList.remove('minimized');
+      audioControl.style.pointerEvents = '';
+
+      if (isMobile()) {
+        audioControl.classList.add('centered');
+      }
+    }, 100);
+  }
+
+  if (audioMinimizeBtn) audioMinimizeBtn.addEventListener('click', minimize);
+  if (audioPill) audioPill.addEventListener('click', expand);
+
+  // Eventos
+  if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
+  if (prevTrackBtn) prevTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex - 1, !audioPlayer.paused));
+  if (nextTrackBtn) nextTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex + 1, !audioPlayer.paused));
+  if (playlistToggleBtn) playlistToggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    playlistPanel.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!playlistPanel || !playlistToggleBtn) return;
+    if (!playlistPanel.contains(e.target) && e.target !== playlistToggleBtn) {
+      playlistPanel.classList.remove('open');
+    }
+  });
+
+  audioPlayer.addEventListener('ended', () => loadTrack(currentTrackIndex + 1, true));
+
+  loadTrack(0, false);
+
+  window.playerAPI = {
+    startWithFade: () => { if (audioPlayer.paused) playWithFade(0.5); },
+    stop: () => pauseWithFade()
+  };
+})();
+
 /* =====================================================================
-   17. INIT
+   18. INIT FINAL
    ===================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   loadCarouselImages();
