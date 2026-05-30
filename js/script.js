@@ -1,10 +1,12 @@
 /**
- * YURIVERSE — script.js
+ * YURIVERSE — script.js  (ATUALIZADO)
  * =====================================================================
  * LÓGICA FUNCIONAL DO SITE (DOM, eventos, carrossel, modais, interações)
- * Animações foram movidas para animacoes.js
  * 
- * REFATORADO: Seção de áudio com múltiplas faixas, playlist e controles
+ * Novidades nesta versão:
+ *  - Música retoma ao voltar de outra página (beforeunload + pageshow)
+ *  - Música pausa/retoma ao trocar de aba (visibilitychange)
+ *  - Controle de volume com slider + ícone mudo/alto
  * =====================================================================
  */
 
@@ -68,21 +70,21 @@ const $ = (id) => document.getElementById(id);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* =====================================================================
-   3. INTRO SCREEN (com detecção de retorno da página profissional)
+   3. INTRO SCREEN
    ===================================================================== */
 (function initIntro() {
   const introScreen = $('introScreen');
   const siteWrapper = $('siteWrapper');
-  const enterBtn = $('enterBtn');
+  const enterBtn    = $('enterBtn');
   const audioControl = $('audioControl');
 
   let introDismissed = false;
 
-  // Verifica se veio da página profissional ou se a flag está ativa
   const referrer = document.referrer;
-  const isFromProfessional = referrer.includes('professional') || sessionStorage.getItem('skipIntro') === 'true';
+  const isFromProfessional =
+    referrer.includes('professional') ||
+    sessionStorage.getItem('skipIntro') === 'true';
 
-  // Se veio da página profissional, remove a intro imediatamente
   if (isFromProfessional) {
     introScreen.style.display = 'none';
     siteWrapper.classList.add('visible');
@@ -140,9 +142,9 @@ function triggerHeroReveal() {
    5. HEADER SCROLL & MENU MOBILE
    ===================================================================== */
 (function initHeader() {
-  const header = $('header') || document.querySelector('.header');
+  const header       = $('header') || document.querySelector('.header');
   const mobileToggle = $('mobileToggle');
-  const headerNav = $('headerNav');
+  const headerNav    = $('headerNav');
 
   window.addEventListener('scroll', () => {
     if (!header) return;
@@ -152,19 +154,18 @@ function triggerHeroReveal() {
   if (mobileToggle && headerNav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = headerNav.classList.contains('open');
-
       if (!isOpen) {
         headerNav.classList.add('open');
         mobileToggle.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
+        document.body.style.overflow   = 'hidden';
+        document.body.style.position   = 'fixed';
+        document.body.style.width      = '100%';
       } else {
         headerNav.classList.remove('open');
         mobileToggle.classList.remove('open');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
+        document.body.style.overflow   = '';
+        document.body.style.position   = '';
+        document.body.style.width      = '';
       }
     });
 
@@ -174,18 +175,18 @@ function triggerHeroReveal() {
         mobileToggle.classList.remove('open');
         document.body.style.overflow = '';
         document.body.style.position = '';
-        document.body.style.width = '';
+        document.body.style.width    = '';
       });
     });
   }
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && headerNav && headerNav.classList.contains('open')) {
+    if (window.innerWidth > 768 && headerNav?.classList.contains('open')) {
       headerNav.classList.remove('open');
       if (mobileToggle) mobileToggle.classList.remove('open');
       document.body.style.overflow = '';
       document.body.style.position = '';
-      document.body.style.width = '';
+      document.body.style.width    = '';
     }
   });
 })();
@@ -196,7 +197,6 @@ function triggerHeroReveal() {
 (function initScrollProgress() {
   const bar = $('scrollProgress');
   if (!bar) return;
-
   window.addEventListener('scroll', () => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = total > 0 ? `${(window.scrollY / total) * 100}%` : '0%';
@@ -209,11 +209,9 @@ function triggerHeroReveal() {
 (function initBackToTop() {
   const btn = $('backToTop');
   if (!btn) return;
-
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
-
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
@@ -234,19 +232,18 @@ function triggerHeroReveal() {
 })();
 
 /* =====================================================================
-   9. CARROSSEL - COM FIM EXATO E SUPORTE A NOVAS IMAGENS
+   9. CARROSSEL
    ===================================================================== */
-
-// Array com as imagens da galeria (adicione ou remova quantas quiser)
 const GALLERY_IMAGES = [
-  { src: 'assets/imagens/galera.jpeg', alt: 'Galera YURIVERSE' },
+  { src: 'assets/imagens/galera.jpeg',   alt: 'Galera YURIVERSE' },
   { src: 'assets/imagens/saopaulo.jpeg', alt: 'São Paulo' },
-  { src: 'assets/imagens/vista.jpeg', alt: 'Vista incrível' },
-  { src: 'assets/imagens/coisas.jpeg', alt: 'Coisas que eu amo' },
-  { src: 'assets/imagens/leque.jpeg', alt: 'Momento leque' },
-  { src: 'assets/imagens/o homi.jpeg', alt: 'homi' },
-  { src: 'assets/imagens/lesao.jpeg', alt: 'lesao' }
+  { src: 'assets/imagens/vista.jpeg',    alt: 'Vista incrível' },
+  { src: 'assets/imagens/coisas.jpeg',   alt: 'Coisas que eu amo' },
+  { src: 'assets/imagens/leque.jpeg',    alt: 'Momento leque' },
+  { src: 'assets/imagens/o homi.jpeg',   alt: 'homi' },
+  { src: 'assets/imagens/lesao.jpeg',    alt: 'lesao' }
 ];
+
 let carouselSlides = [];
 let carouselCurrent = 0;
 let carouselAutoTimer = null;
@@ -254,90 +251,70 @@ let carouselGap = 20;
 let carouselSlidesPerView = 1;
 let maxIndex = 0;
 
-let carouselTrack = null;
-let carouselPrevBtn = null;
-let carouselNextBtn = null;
-let carouselPrevMobile = null;
-let carouselNextMobile = null;
+let carouselTrack       = null;
+let carouselPrevBtn     = null;
+let carouselNextBtn     = null;
+let carouselPrevMobile  = null;
+let carouselNextMobile  = null;
 let carouselDotsContainer = null;
-let carouselWrapper = null;
+let carouselWrapper     = null;
 
 function updateSlidesPerView() {
   const width = window.innerWidth;
-  if (width >= 1024) carouselSlidesPerView = 3;
-  else if (width >= 768) carouselSlidesPerView = 2;
-  else carouselSlidesPerView = 1;
+  if (width >= 1024)      carouselSlidesPerView = 3;
+  else if (width >= 768)  carouselSlidesPerView = 2;
+  else                    carouselSlidesPerView = 1;
   return carouselSlidesPerView;
 }
 
 function updateCarouselDimensions() {
   if (!carouselWrapper || !carouselTrack || !carouselSlides.length) return;
-
   const wrapperRect = carouselWrapper.getBoundingClientRect();
-  let availableWidth = wrapperRect.width;
   const wrapperStyle = getComputedStyle(carouselWrapper);
-  const paddingLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
+  const paddingLeft  = parseFloat(wrapperStyle.paddingLeft)  || 0;
   const paddingRight = parseFloat(wrapperStyle.paddingRight) || 0;
-  availableWidth = availableWidth - paddingLeft - paddingRight;
-
+  const availableWidth = wrapperRect.width - paddingLeft - paddingRight;
   const slideWidth = (availableWidth - (carouselGap * (carouselSlidesPerView - 1))) / carouselSlidesPerView;
   carouselSlides.forEach(slide => slide.style.flex = `0 0 ${slideWidth}px`);
-
   maxIndex = Math.max(0, carouselSlides.length - carouselSlidesPerView);
   if (carouselCurrent > maxIndex) carouselCurrent = maxIndex;
   return slideWidth;
 }
 
 function updateButtonsState() {
-  const prevBtns = [carouselPrevBtn, carouselPrevMobile];
-  const nextBtns = [carouselNextBtn, carouselNextMobile];
-  prevBtns.forEach(btn => {
-    if (btn) {
-      btn.style.opacity = carouselCurrent <= 0 ? '0.3' : '1';
-      btn.style.pointerEvents = carouselCurrent <= 0 ? 'none' : 'auto';
-    }
+  [carouselPrevBtn, carouselPrevMobile].forEach(btn => {
+    if (!btn) return;
+    btn.style.opacity       = carouselCurrent <= 0 ? '0.3' : '1';
+    btn.style.pointerEvents = carouselCurrent <= 0 ? 'none' : 'auto';
   });
-  nextBtns.forEach(btn => {
-    if (btn) {
-      btn.style.opacity = carouselCurrent >= maxIndex ? '0.3' : '1';
-      btn.style.pointerEvents = carouselCurrent >= maxIndex ? 'none' : 'auto';
-    }
+  [carouselNextBtn, carouselNextMobile].forEach(btn => {
+    if (!btn) return;
+    btn.style.opacity       = carouselCurrent >= maxIndex ? '0.3' : '1';
+    btn.style.pointerEvents = carouselCurrent >= maxIndex ? 'none' : 'auto';
   });
 }
 
 function applyCarouselTransform() {
   if (!carouselTrack || !carouselSlides.length) return;
-  if (carouselCurrent > maxIndex) carouselCurrent = maxIndex;
-  if (carouselCurrent < 0) carouselCurrent = 0;
-
+  carouselCurrent = Math.max(0, Math.min(carouselCurrent, maxIndex));
   const slideWidth = carouselSlides[0]?.offsetWidth || 0;
-  const translateX = -(carouselCurrent * (slideWidth + carouselGap));
-  carouselTrack.style.transform = `translateX(${translateX}px)`;
-
+  carouselTrack.style.transform = `translateX(${-(carouselCurrent * (slideWidth + carouselGap))}px)`;
   if (carouselDotsContainer) {
-    const dots = $$('.carousel-dot', carouselDotsContainer);
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === carouselCurrent));
+    $$('.carousel-dot', carouselDotsContainer).forEach((dot, i) =>
+      dot.classList.toggle('active', i === carouselCurrent));
   }
   updateButtonsState();
 }
 
 function goToCarouselSlide(index) {
   if (!carouselSlides.length) return;
-  let newIndex = index;
-  if (newIndex < 0) newIndex = 0;
-  if (newIndex > maxIndex) newIndex = maxIndex;
-  carouselCurrent = newIndex;
+  carouselCurrent = Math.max(0, Math.min(index, maxIndex));
   applyCarouselTransform();
   restartCarouselAuto();
 }
 
-function nextCarouselSlide() {
-  if (carouselCurrent < maxIndex) goToCarouselSlide(carouselCurrent + 1);
-}
-
-function prevCarouselSlide() {
-  if (carouselCurrent > 0) goToCarouselSlide(carouselCurrent - 1);
-}
+function nextCarouselSlide() { if (carouselCurrent < maxIndex) goToCarouselSlide(carouselCurrent + 1); }
+function prevCarouselSlide() { if (carouselCurrent > 0)        goToCarouselSlide(carouselCurrent - 1); }
 
 function restartCarouselAuto() {
   if (carouselAutoTimer) clearInterval(carouselAutoTimer);
@@ -349,11 +326,11 @@ function restartCarouselAuto() {
 }
 
 function loadCarouselImages() {
-  carouselTrack = document.getElementById('carouselTrack');
-  carouselDotsContainer = document.getElementById('carouselDots');
+  carouselTrack         = $('carouselTrack');
+  carouselDotsContainer = $('carouselDots');
   if (!carouselTrack || !carouselDotsContainer) return;
 
-  carouselTrack.innerHTML = '';
+  carouselTrack.innerHTML         = '';
   carouselDotsContainer.innerHTML = '';
 
   GALLERY_IMAGES.forEach((img, index) => {
@@ -363,7 +340,7 @@ function loadCarouselImages() {
     carouselTrack.appendChild(slide);
 
     const dot = document.createElement('span');
-    dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+    dot.className = `carousel-dot${index === 0 ? ' active' : ''}`;
     dot.setAttribute('data-index', index);
     dot.addEventListener('click', () => goToCarouselSlide(index));
     carouselDotsContainer.appendChild(dot);
@@ -388,33 +365,30 @@ function recalcCarousel() {
 }
 
 function setupCarouselEvents() {
-  carouselPrevBtn = $('carouselPrev');
-  carouselNextBtn = $('carouselNext');
+  carouselPrevBtn    = $('carouselPrev');
+  carouselNextBtn    = $('carouselNext');
   carouselPrevMobile = $('carouselPrevMobile');
   carouselNextMobile = $('carouselNextMobile');
-  carouselWrapper = document.querySelector('.carousel-wrapper');
-  carouselTrack = $('carouselTrack');
+  carouselWrapper    = document.querySelector('.carousel-wrapper');
+  carouselTrack      = $('carouselTrack');
 
-  if (carouselPrevBtn) carouselPrevBtn.addEventListener('click', prevCarouselSlide);
-  if (carouselNextBtn) carouselNextBtn.addEventListener('click', nextCarouselSlide);
+  if (carouselPrevBtn)    carouselPrevBtn.addEventListener('click', prevCarouselSlide);
+  if (carouselNextBtn)    carouselNextBtn.addEventListener('click', nextCarouselSlide);
   if (carouselPrevMobile) carouselPrevMobile.addEventListener('click', prevCarouselSlide);
   if (carouselNextMobile) carouselNextMobile.addEventListener('click', nextCarouselSlide);
 
   let touchStartX = 0;
-  let isDragging = false;
+  let isDragging  = false;
   if (carouselTrack) {
     carouselTrack.addEventListener('touchstart', (e) => {
       touchStartX = e.touches[0].clientX;
-      isDragging = true;
+      isDragging  = true;
     }, { passive: true });
     carouselTrack.addEventListener('touchend', (e) => {
       if (!isDragging) return;
       isDragging = false;
       const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) nextCarouselSlide();
-        else prevCarouselSlide();
-      }
+      if (Math.abs(diff) > 40) diff > 0 ? nextCarouselSlide() : prevCarouselSlide();
     });
     carouselTrack.addEventListener('mouseenter', () => clearInterval(carouselAutoTimer));
     carouselTrack.addEventListener('mouseleave', restartCarouselAuto);
@@ -423,35 +397,21 @@ function setupCarouselEvents() {
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => recalcCarousel(), 150);
+    resizeTimeout = setTimeout(recalcCarousel, 150);
   });
 }
 
-window.addNewCarouselImage = function (imageSrc, imageAlt) {
-  GALLERY_IMAGES.push({ src: imageSrc, alt: imageAlt });
-  loadCarouselImages();
-  setupCarouselEvents();
-  console.log(`✅ Nova imagem adicionada: ${imageAlt}`);
-};
-
-window.removeCarouselImage = function (index) {
-  if (index >= 0 && index < GALLERY_IMAGES.length) {
-    GALLERY_IMAGES.splice(index, 1);
-    loadCarouselImages();
-    setupCarouselEvents();
-    console.log(`✅ Imagem removida do índice: ${index}`);
-  }
-};
-
-window.getCarouselImages = () => [...GALLERY_IMAGES];
-window.goToCarouselImage = (index) => goToCarouselSlide(index);
-window.reinitCarousel = () => recalcCarousel();
+window.addNewCarouselImage  = (src, alt) => { GALLERY_IMAGES.push({ src, alt }); loadCarouselImages(); setupCarouselEvents(); };
+window.removeCarouselImage  = (i) => { if (i >= 0 && i < GALLERY_IMAGES.length) { GALLERY_IMAGES.splice(i, 1); loadCarouselImages(); setupCarouselEvents(); } };
+window.getCarouselImages    = () => [...GALLERY_IMAGES];
+window.goToCarouselImage    = (i) => goToCarouselSlide(i);
+window.reinitCarousel       = () => recalcCarousel();
 
 /* =====================================================================
    10. NOVEL — EXPANDIR INTRODUÇÃO
    ===================================================================== */
 window.toggleIntro = function () {
-  const text = $('novelIntroText');
+  const text    = $('novelIntroText');
   const btnText = $('toggleIntroText');
   if (!text) return;
   const isVisible = text.style.display !== 'none';
@@ -463,22 +423,22 @@ window.toggleIntro = function () {
    11. MODAL DE CAPÍTULO
    ===================================================================== */
 window.openChapterModal = function (chapterIndex) {
-  const ch = CHAPTERS[chapterIndex];
+  const ch      = CHAPTERS[chapterIndex];
   const overlay = $('chapterModalOverlay');
   if (!ch || !overlay) return;
 
-  $('modalChapterNum').textContent = `CAP. ${ch.num}`;
+  $('modalChapterNum').textContent   = `CAP. ${ch.num}`;
   $('modalChapterTitle').textContent = ch.title;
   const badge = $('modalChapterBadge');
-  badge.textContent = ch.status;
+  badge.textContent      = ch.status;
   badge.style.background = ch.status === 'Disponível' ? 'var(--red)' : 'rgba(255,255,255,0.1)';
-  badge.style.color = ch.status === 'Disponível' ? 'var(--black)' : 'rgba(255,255,255,0.5)';
+  badge.style.color      = ch.status === 'Disponível' ? 'var(--black)' : 'rgba(255,255,255,0.5)';
   $('modalChapterBody').innerHTML = `<p>${ch.synopsis}</p>`;
 
   const readBtn = $('modalReadBtn');
   if (ch.status === 'Disponível' && ch.googleDocsUrl) {
     readBtn.style.display = 'inline-flex';
-    readBtn.href = ch.googleDocsUrl;
+    readBtn.href          = ch.googleDocsUrl;
   } else {
     readBtn.style.display = 'none';
   }
@@ -529,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   CHAPTERS.forEach((ch, idx) => {
     const isAvail = ch.status === 'Disponível';
-    const isNew = idx === NEW_CHAPTER_INDEX;
+    const isNew   = idx === NEW_CHAPTER_INDEX;
     const card = document.createElement('div');
     card.className = 'mural-card';
     card.innerHTML = `
@@ -550,19 +510,19 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 /* =====================================================================
-   14. RENDER CAPÍTULOS (página principal)
+   14. RENDER CAPÍTULOS
    ===================================================================== */
 (function renderChapters() {
   const grid = $('chaptersGrid');
   if (!grid) return;
 
   const visibleChapters = CHAPTERS.slice(0, CHAPTERS_VISIBLE);
-  const remaining = CHAPTERS.length - CHAPTERS_VISIBLE;
+  const remaining       = CHAPTERS.length - CHAPTERS_VISIBLE;
 
   visibleChapters.forEach((ch, idx) => {
     const isAvail = ch.status === 'Disponível';
-    const isNew = idx === NEW_CHAPTER_INDEX;
-    const card = document.createElement('div');
+    const isNew   = idx === NEW_CHAPTER_INDEX;
+    const card    = document.createElement('div');
     card.className = 'chapter-card';
     card.setAttribute('role', 'article');
     card.innerHTML = `
@@ -584,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const continueWrapper = document.createElement('div');
-  continueWrapper.style.cssText = 'display:flex; justify-content:center; margin-top:8px;';
+  continueWrapper.style.cssText = 'display:flex;justify-content:center;margin-top:8px;';
   const btn = document.createElement('button');
   btn.className = 'chapters-continue-btn';
   btn.innerHTML = `
@@ -609,75 +569,142 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
     if (!link) return;
-    const id = link.getAttribute('href').slice(1);
+    const id     = link.getAttribute('href').slice(1);
     const target = document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - 72;
-    window.scrollTo({ top, behavior: 'smooth' });
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
   });
 })();
 
 /* =====================================================================
-   16. VISIBILIDADE (pausa quando a aba não está visível)
+   16. PLAYER DE ÁUDIO — multi-faixa + volume + persistência de sessão
    ===================================================================== */
-document.addEventListener('visibilitychange', () => {
-  const audio = $('audioPlayer');
-  if (!audio) return;
-  if (document.hidden) audio.pause();
-});
-
 (function initAudioPlayer() {
+
   const TRACKS = [
-    { title: "WAKE ME UP - THE WEEKND", src: "assets/audio/WAKE ME UP.mp3" },
-    { title: "WANNA BE STARTIN' SOMETHIN' - MICHAEL JACKSON", src: "assets/audio/Michael Jackson - Wanna Be Startin' Somethin' .mp3" },
-    { title: "VANISH INTO YOU - LADY GAGA", src: "assets/audio/Vanish Into You.mp3" }, 
-    { title: "DON'T STOP THE MUSIC - RIHANNA", src: "assets/audio/Don't Stop The Music .mp3" }, 
-    { title: "GET LUCKY - DAFT PUNK ft. PHARRELL WILLIAMS", src: "assets/audio/Get Lucky .mp3" }, 
-    { title: "I WANT TO KNOW WHAT LOVE IS - FOREIGNER", src: "assets/audio/I Want To Know What Love Is.mp3" }, 
-    { title: "(I JUST) DIED IN YOUR ARMS - CUTTING CREW", src: "assets/audio/(I Just) Died In Your Arms.mp3" }, 
+    { title: "WAKE ME UP - THE WEEKND",                                    src: "assets/audio/WAKE ME UP.mp3" },
+    { title: "WANNA BE STARTIN' SOMETHIN' - MICHAEL JACKSON",              src: "assets/audio/Michael Jackson - Wanna Be Startin' Somethin' .mp3" },
+    { title: "VANISH INTO YOU - LADY GAGA",                                src: "assets/audio/Vanish Into You.mp3" },
+    { title: "DON'T STOP THE MUSIC - RIHANNA",                             src: "assets/audio/Don't Stop The Music .mp3" },
+    { title: "GET LUCKY - DAFT PUNK ft. PHARRELL WILLIAMS",                src: "assets/audio/Get Lucky .mp3" },
+    { title: "I WANT TO KNOW WHAT LOVE IS - FOREIGNER",                    src: "assets/audio/I Want To Know What Love Is.mp3" },
+    { title: "(I JUST) DIED IN YOUR ARMS - CUTTING CREW",                  src: "assets/audio/(I Just) Died In Your Arms.mp3" },
   ];
 
-  const audioPlayer = $('audioPlayer');
-  const playPauseBtn = $('playPauseBtn');
-  const prevTrackBtn = $('prevTrackBtn');
-  const nextTrackBtn = $('nextTrackBtn');
-  const trackNameLabel = $('trackNameLabel');
+  /* ── Elementos ── */
+  const audioPlayer      = $('audioPlayer');
+  const playPauseBtn     = $('playPauseBtn');
+  const prevTrackBtn     = $('prevTrackBtn');
+  const nextTrackBtn     = $('nextTrackBtn');
+  const trackNameLabel   = $('trackNameLabel');
   const playlistToggleBtn = $('playlistToggleBtn');
-  const playlistPanel = $('playlistPanel');
-  const playlistItems = $('playlistItems');
-  const audioIcon = $('audioIcon');
-  const audioControl = $('audioControl');
+  const playlistPanel    = $('playlistPanel');
+  const playlistItems    = $('playlistItems');
+  const audioIcon        = $('audioIcon');
+  const audioControl     = $('audioControl');
   const audioMinimizeBtn = $('audioMinimizeBtn');
-  const audioPill = $('audioPill');
-  const audioPillIcon = $('audioPillIcon');
+  const audioPill        = $('audioPill');
+  const audioPillIcon    = $('audioPillIcon');
+  const volumeSlider     = $('volumeSlider');
+  const volumeIcon       = $('volumeIcon');
 
   let currentTrackIndex = 0;
-  let isPlaying = false;
-  let fadeInterval = null;
-  let isMinimized = false;
+  let isPlaying         = false;
+  let fadeInterval      = null;
+  let isMinimized       = false;
+  let lastVolume        = 0.5;
 
+  /* Chaves de sessão */
+  const KEY_PLAYING = 'yuri_audio_playing';
+  const KEY_TRACK   = 'yuri_audio_track';
+  const KEY_TIME    = 'yuri_audio_time';
+  const KEY_VOLUME  = 'yuri_audio_volume';
+
+  /* ── Estado de play/pause ── */
   function setPlayingState(playing) {
     isPlaying = playing;
     if (playing) {
-      audioIcon.classList.add('playing');
-      audioPillIcon.classList.add('playing');
+      audioIcon?.classList.add('playing');
+      audioPillIcon?.classList.add('playing');
     } else {
-      audioIcon.classList.remove('playing');
-      audioPillIcon.classList.remove('playing');
+      audioIcon?.classList.remove('playing');
+      audioPillIcon?.classList.remove('playing');
     }
   }
 
+  /* ── Volume: sincroniza slider e ícone ── */
+  function syncVolumeUI(vol) {
+    const pct = Math.round(vol * 100);
+    if (volumeSlider) {
+      volumeSlider.value = pct;
+      volumeSlider.style.setProperty('--vol-pct', pct + '%');
+    }
+    if (volumeIcon) {
+      if (vol === 0)       volumeIcon.textContent = '🔇';
+      else if (vol < 0.4)  volumeIcon.textContent = '🔈';
+      else if (vol < 0.75) volumeIcon.textContent = '🔉';
+      else                 volumeIcon.textContent = '🔊';
+    }
+  }
+
+  /* ── Controle de volume ── */
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', () => {
+      const vol = Number(volumeSlider.value) / 100;
+      audioPlayer.volume = vol;
+      if (vol > 0) lastVolume = vol;
+      syncVolumeUI(vol);
+    });
+  }
+
+  if (volumeIcon) {
+    volumeIcon.addEventListener('click', () => {
+      if (audioPlayer.volume > 0) {
+        lastVolume = audioPlayer.volume;
+        audioPlayer.volume = 0;
+        syncVolumeUI(0);
+      } else {
+        audioPlayer.volume = lastVolume || 0.5;
+        syncVolumeUI(audioPlayer.volume);
+      }
+    });
+  }
+
+  /* ── Playlist UI ── */
   function updateTrackDisplay() {
     if (trackNameLabel) trackNameLabel.textContent = TRACKS[currentTrackIndex].title;
+    window._currentTrackIndex = currentTrackIndex; /* para o beforeunload */
     renderPlaylist();
   }
 
+  function renderPlaylist() {
+    if (!playlistItems) return;
+    playlistItems.innerHTML = '';
+    TRACKS.forEach((track, idx) => {
+      const item = document.createElement('div');
+      item.className = 'playlist-item' + (idx === currentTrackIndex ? ' active' : '');
+      item.innerHTML = `
+        <span class="playlist-item-num">${String(idx + 1).padStart(2, '0')}</span>
+        <span class="playlist-item-title">${track.title}</span>
+        <span class="playlist-item-badge">${idx === currentTrackIndex ? '▶' : ''}</span>
+      `;
+      item.addEventListener('click', () => {
+        const wasPlaying = !audioPlayer.paused;
+        loadTrack(idx, wasPlaying);
+        playlistPanel?.classList.remove('open');
+      });
+      playlistItems.appendChild(item);
+    });
+  }
+
+  /* ── Carregar faixa ── */
   function loadTrack(index, autoPlay = false) {
     if (index < 0) index = TRACKS.length - 1;
     if (index >= TRACKS.length) index = 0;
-    currentTrackIndex = index;
-    audioPlayer.src = TRACKS[currentTrackIndex].src;
+    currentTrackIndex         = index;
+    window._currentTrackIndex = index;
+    audioPlayer.src           = TRACKS[index].src;
     audioPlayer.load();
     updateTrackDisplay();
     if (autoPlay) {
@@ -689,16 +716,18 @@ document.addEventListener('visibilitychange', () => {
     }
   }
 
-  function playWithFade(target = 0.5) {
+  /* ── Fade in / out ── */
+  function playWithFade(targetVol = 0.5) {
     audioPlayer.volume = 0;
     audioPlayer.play().then(() => {
       setPlayingState(true);
       let vol = 0;
-      const step = target / (80 / 20);
+      const step = targetVol / (80 / 20);
       fadeInterval = setInterval(() => {
-        vol = Math.min(vol + step, target);
+        vol = Math.min(vol + step, targetVol);
         audioPlayer.volume = vol;
-        if (vol >= target) { clearInterval(fadeInterval); fadeInterval = null; }
+        syncVolumeUI(vol);
+        if (vol >= targetVol) { clearInterval(fadeInterval); fadeInterval = null; }
       }, 20);
     }).catch(err => console.warn('Autoplay bloqueado:', err));
   }
@@ -710,87 +739,58 @@ document.addEventListener('visibilitychange', () => {
     fadeInterval = setInterval(() => {
       vol = Math.max(vol - 0.05, 0);
       audioPlayer.volume = vol;
+      syncVolumeUI(vol);
       if (vol <= 0) {
         clearInterval(fadeInterval); fadeInterval = null;
         audioPlayer.pause();
         setPlayingState(false);
         audioPlayer.volume = startVol;
+        syncVolumeUI(startVol);
       }
     }, 30);
   }
 
   function togglePlayPause() {
-    if (audioPlayer.paused) playWithFade(0.5);
+    if (audioPlayer.paused) playWithFade(lastVolume || 0.5);
     else pauseWithFade();
   }
 
-  function renderPlaylist() {
-    if (!playlistItems) return;
-    playlistItems.innerHTML = '';
-    TRACKS.forEach((track, idx) => {
-      const item = document.createElement('div');
-      item.className = 'playlist-item' + (idx === currentTrackIndex ? ' active' : '');
-      item.innerHTML = `
-  <span class="playlist-item-num">${String(idx + 1).padStart(2, '0')}</span>
-  <span class="playlist-item-title">${track.title}</span>
-  <span class="playlist-item-badge">${idx === currentTrackIndex ? '▶' : ''}</span>
-`;
-      item.addEventListener('click', () => {
-        const wasPlaying = !audioPlayer.paused;
-        loadTrack(idx, wasPlaying);
-        playlistPanel.classList.remove('open');
-      });
-      playlistItems.appendChild(item);
-    });
-  }
-
-  // Minimizar / expandir
-  function isMobile() {
-    return window.innerWidth <= 768;
-  }
+  /* ── Minimizar / expandir ── */
+  function isMobile() { return window.innerWidth <= 768; }
 
   function minimize() {
     isMinimized = true;
-    playlistPanel.classList.remove('open');
-
-    if (isMobile()) {
-      audioControl.classList.remove('centered');
-      playlistPanel.classList.remove('centered');
-    }
-
+    playlistPanel?.classList.remove('open');
     audioControl.classList.add('minimized');
-
     setTimeout(() => {
       audioControl.style.pointerEvents = 'none';
-      audioPill.classList.add('visible');
+      audioPill?.classList.add('visible');
     }, 200);
   }
 
   function expand() {
     isMinimized = false;
-    audioPill.classList.remove('visible');
-
+    audioPill?.classList.remove('visible');
     setTimeout(() => {
       audioControl.classList.remove('minimized');
       audioControl.style.pointerEvents = '';
-
-      if (isMobile()) {
-        audioControl.classList.add('centered');
-      }
     }, 100);
   }
 
   if (audioMinimizeBtn) audioMinimizeBtn.addEventListener('click', minimize);
-  if (audioPill) audioPill.addEventListener('click', expand);
+  if (audioPill)        audioPill.addEventListener('click', expand);
 
-  // Eventos
-  if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
-  if (prevTrackBtn) prevTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex - 1, !audioPlayer.paused));
-  if (nextTrackBtn) nextTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex + 1, !audioPlayer.paused));
-  if (playlistToggleBtn) playlistToggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    playlistPanel.classList.toggle('open');
-  });
+  /* ── Eventos de controle ── */
+  if (playPauseBtn)     playPauseBtn.addEventListener('click', togglePlayPause);
+  if (prevTrackBtn)     prevTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex - 1, !audioPlayer.paused));
+  if (nextTrackBtn)     nextTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex + 1, !audioPlayer.paused));
+
+  if (playlistToggleBtn) {
+    playlistToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playlistPanel?.classList.toggle('open');
+    });
+  }
 
   document.addEventListener('click', (e) => {
     if (!playlistPanel || !playlistToggleBtn) return;
@@ -801,16 +801,97 @@ document.addEventListener('visibilitychange', () => {
 
   audioPlayer.addEventListener('ended', () => loadTrack(currentTrackIndex + 1, true));
 
+  /* ── PERSISTÊNCIA: salva estado ao sair da página ── */
+  window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem(KEY_PLAYING, (!audioPlayer.paused).toString());
+    sessionStorage.setItem(KEY_TRACK,   String(currentTrackIndex));
+    sessionStorage.setItem(KEY_TIME,    String(audioPlayer.currentTime));
+    sessionStorage.setItem(KEY_VOLUME,  String(audioPlayer.volume > 0 ? audioPlayer.volume : lastVolume));
+  });
+
+  /* ── PERSISTÊNCIA: restaura ao voltar (pageshow cobre bfcache) ── */
+  window.addEventListener('pageshow', () => {
+    const wasPlaying  = sessionStorage.getItem(KEY_PLAYING) === 'true';
+    const trackIdx    = parseInt(sessionStorage.getItem(KEY_TRACK)   ?? '0', 10);
+    const savedTime   = parseFloat(sessionStorage.getItem(KEY_TIME)  ?? '0');
+    const savedVolume = parseFloat(sessionStorage.getItem(KEY_VOLUME) ?? '0.5');
+
+    /* Limpa imediatamente para não reutilizar em reload manual */
+    sessionStorage.removeItem(KEY_PLAYING);
+    sessionStorage.removeItem(KEY_TRACK);
+    sessionStorage.removeItem(KEY_TIME);
+    sessionStorage.removeItem(KEY_VOLUME);
+
+    if (!wasPlaying) return;
+
+    /* Garante que a intro não bloqueie — só retoma se o site já está visível */
+    const tryResume = () => {
+      currentTrackIndex         = trackIdx;
+      window._currentTrackIndex = trackIdx;
+      audioPlayer.volume        = savedVolume;
+      lastVolume                = savedVolume;
+      syncVolumeUI(savedVolume);
+      audioPlayer.src           = TRACKS[trackIdx].src;
+      audioPlayer.load();
+      updateTrackDisplay();
+
+      audioPlayer.addEventListener('canplay', function resume() {
+        audioPlayer.removeEventListener('canplay', resume);
+        audioPlayer.currentTime = savedTime;
+        audioPlayer.play()
+          .then(() => {
+            setPlayingState(true);
+            if (audioControl) audioControl.classList.add('visible');
+          })
+          .catch(() => {});
+      }, { once: true });
+    };
+
+    /* Se o site já está visível (voltou de profissional.html), retoma de imediato */
+    if (document.getElementById('siteWrapper')?.classList.contains('visible')) {
+      tryResume();
+    } else {
+      /* Aguarda o botão Enter ser clicado */
+      const origReveal = window.playerAPI?.startWithFade;
+      window._pendingResume = tryResume;
+    }
+  });
+
+  /* ── VISIBILIDADE: pausa ao trocar de aba; retoma ao voltar ── */
+  let wasPlayingBeforeHide = false;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      wasPlayingBeforeHide = !audioPlayer.paused;
+      if (wasPlayingBeforeHide) audioPlayer.pause();
+    } else {
+      if (wasPlayingBeforeHide) audioPlayer.play().catch(() => {});
+    }
+  });
+
+  /* ── Init ── */
+  audioPlayer.volume = lastVolume;
+  syncVolumeUI(lastVolume);
   loadTrack(0, false);
 
+  /* ── API pública ── */
   window.playerAPI = {
-    startWithFade: () => { if (audioPlayer.paused) playWithFade(0.5); },
+    startWithFade: () => {
+      /* Se há retomada pendente de outra página, executa ela */
+      if (window._pendingResume) {
+        const fn = window._pendingResume;
+        window._pendingResume = null;
+        fn();
+      } else if (audioPlayer.paused) {
+        playWithFade(lastVolume || 0.5);
+      }
+    },
     stop: () => pauseWithFade()
   };
+
 })();
 
 /* =====================================================================
-   18. INIT FINAL
+   17. INIT FINAL
    ===================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   loadCarouselImages();

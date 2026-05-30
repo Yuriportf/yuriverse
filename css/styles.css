@@ -2123,3 +2123,180 @@ button, a, .carousel-dot, .footer-social, .mural-card, .chapter-card {
     scroll-behavior: auto !important;
   }
 }
+
+/* =============================================================
+   YURIVERSE — audio-player-patch.css
+   Adicione este bloco AO FINAL do seu styles.css
+   (ou importe após styles.css)
+
+   Corrige:
+   1. Conflito do player com menu mobile
+   2. Controle de volume
+   3. Pausa/retomada ao alternar abas (no script.js)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   VOLUME SLIDER — novo elemento dentro do .audio-control
+--------------------------------------------------------------- */
+.audio-volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.audio-volume-icon {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.audio-volume-icon:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.audio-volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--red) 0%,
+    var(--red) var(--vol-pct, 50%),
+    rgba(255, 255, 255, 0.15) var(--vol-pct, 50%),
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.05s linear;
+  flex-shrink: 0;
+}
+
+.audio-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--red);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.audio-volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.audio-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--red);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------------------
+   MOBILE — CORREÇÃO DE CONFLITO COM MENU HAMBÚRGUER
+   O player fica NA PARTE INFERIOR CENTRAL, bem abaixo do botão
+   de menu (que fica no canto superior direito a ~56px do topo).
+   Não há mais sobreposição.
+--------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Player: fundo-central, nunca toca no hambúrguer */
+  .audio-control {
+    bottom: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(20px);
+    max-width: calc(100vw - 32px);
+    gap: 4px;
+    padding: 4px 8px 4px 8px;
+  }
+
+  .audio-control.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .audio-control.minimized {
+    transform: translateX(-50%) translateY(16px) scale(0.75);
+    opacity: 0;
+    pointer-events: none !important;
+  }
+
+  /* Volume: mais compacto no mobile */
+  .audio-volume-slider {
+    width: 48px;
+  }
+
+  /* Pill (bolinha) fica no canto esquerdo-inferior — longe do hambúrguer */
+  .audio-pill {
+    bottom: 16px;
+    left: 16px;
+    right: auto;
+    transform: scale(0.6) translateY(10px);
+  }
+
+  .audio-pill.visible {
+    transform: scale(1) translateY(0);
+  }
+
+  /* Playlist acompanha o player centralizado */
+  .playlist-panel {
+    bottom: 80px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(14px) scale(0.97);
+    width: min(290px, calc(100vw - 32px));
+  }
+
+  .playlist-panel.open {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  /* Oculta o label de faixa para economizar espaço */
+  .audio-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-volume-slider {
+    width: 40px;
+  }
+
+  .audio-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .audio-btn-play {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .audio-minimize-btn {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    font-size: 0.7rem;
+  }
+}

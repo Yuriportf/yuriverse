@@ -85,19 +85,77 @@
   <div class="site-wrapper" id="siteWrapper">
 <!-- Controles flutuantes de áudio (substitua o bloco existente) -->
 <!-- Player flutuante de áudio -->
+<!--
+  =====================================================================
+  YURIVERSE — audio-control-snippet.html
+  =====================================================================
+  SUBSTITUA o bloco <div class="audio-control" id="audioControl"> ...
+  que está DENTRO de .site-wrapper por este abaixo.
+
+  Mudanças em relação ao original:
+  - Adicionado .audio-volume-wrap com slider e ícone de volume
+  - Ordem dos elementos reorganizada para mobile
+  - IDs mantidos (script.js não precisa de alteração nos seletores)
+  =====================================================================
+-->
+
+<!-- Player flutuante de áudio -->
 <div class="audio-control" id="audioControl">
-  <button class="audio-btn" id="prevTrackBtn" aria-label="Anterior">◀</button>
-  <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar/Pausar">
+
+  <!-- Prev -->
+  <button class="audio-btn" id="prevTrackBtn" aria-label="Faixa anterior">◀</button>
+
+  <!-- Play / Pause -->
+  <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar ou pausar">
     <div class="audio-icon" id="audioIcon">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
   </button>
-  <button class="audio-btn" id="nextTrackBtn" aria-label="Próximo">▶</button>
+
+  <!-- Next -->
+  <button class="audio-btn" id="nextTrackBtn" aria-label="Próxima faixa">▶</button>
+
   <div class="audio-divider"></div>
+
+  <!-- Nome da faixa (oculto no mobile via CSS) -->
   <span class="audio-label" id="trackNameLabel">YURIVERSE FM</span>
-  <button class="audio-btn" id="playlistToggleBtn" aria-label="Playlist">☰</button>
+
+  <!-- Playlist toggle -->
+  <button class="audio-btn" id="playlistToggleBtn" aria-label="Abrir playlist">☰</button>
+
   <div class="audio-divider"></div>
-  <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar">✕</button>
+
+  <!-- Volume -->
+  <div class="audio-volume-wrap">
+    <span class="audio-volume-icon" id="volumeIcon" title="Mudo / Som">🔉</span>
+    <input
+      type="range"
+      class="audio-volume-slider"
+      id="volumeSlider"
+      min="0" max="100" value="50" step="1"
+      aria-label="Volume"
+    />
+  </div>
+
+  <div class="audio-divider"></div>
+
+  <!-- Minimizar -->
+  <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar player">✕</button>
+
+</div><!-- /audio-control -->
+
+
+<!-- Bolinha minimizada -->
+<button class="audio-pill" id="audioPill" aria-label="Expandir player de áudio">
+  <div class="audio-icon playing" id="audioPillIcon">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</button>
+
+<!-- Playlist flutuante (mantenha apenas UMA instância — remova a duplicata que existe no HTML atual) -->
+<div class="playlist-panel" id="playlistPanel">
+  <div class="playlist-header">🎵 PLAYLIST</div>
+  <div class="playlist-items" id="playlistItems"></div>
 </div>
 
 <!-- Bolinha minimizada -->
