@@ -60,6 +60,8 @@ const CHAPTERS = [
   }
 ];
 
+
+
 const CHAPTERS_VISIBLE = 6;
 const NEW_CHAPTER_INDEX = CHAPTERS.length - 1;
 
