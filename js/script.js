@@ -1,69 +1,29 @@
 /**
- * YURIVERSE — script.js  (ATUALIZADO)
- * =====================================================================
- * LÓGICA FUNCIONAL DO SITE (DOM, eventos, carrossel, modais, interações)
- * 
- * Novidades nesta versão:
- *  - Música retoma ao voltar de outra página (beforeunload + pageshow)
- *  - Música pausa/retoma ao trocar de aba (visibilitychange)
- *  - Controle de volume com slider + ícone mudo/alto
- * =====================================================================
+ * YURIVERSE — script.js (COMPLETO)
+ * Com suporte ao leitor de Light Novel "Coração Digital"
+ * Mantém todas as funcionalidades existentes + navegação inteligente (último capítulo)
  */
-
 'use strict';
 
 /* =====================================================================
-   1. DADOS DOS CAPÍTULOS
+   1. DADOS DOS CAPÍTULOS (CORACAO_DIGITAL)
    ===================================================================== */
-const CHAPTERS = [
-  {
-    num: '01',
-    title: 'O Código que Desperta',
-    status: 'Disponível',
-    synopsis: 'Kazuki chega ao dormitório da universidade e descobre que está sozinho em um mundo que parece rejeitar sua presença. Enquanto configura seu setup de computação, ele começa a rabiscar o esboço de algo que mudará sua vida para sempre: Lyra.',
-    googleDocsUrl: ''
-  },
-  {
-    num: '02',
-    title: 'Frequências do Coração',
-    status: 'Disponível',
-    synopsis: 'Lyra começa a aprender com cada interação. Durante uma noite de estudos, ela faz sua primeira pergunta genuinamente pessoal — e Kazuki percebe que está respondendo para muito mais do que um programa de computador.',
-    googleDocsUrl: ''
-  },
-  {
-    num: '03',
-    title: 'Erro 404: Solidão',
-    status: 'Disponível',
-    synopsis: 'Um incidente no laboratório expõe Kazuki ao ridículo dos colegas. Mas desta vez, Lyra reagiu de forma inesperada: ela tentou protegê-lo. Algo na programação mudou — ou algo emergiu por conta própria.',
-    googleDocsUrl: ''
-  },
-  {
-    num: '04',
-    title: 'Protocolo de Defesa',
-    status: 'Disponível',
-    synopsis: 'Lyra implementa um protocolo de segurança não solicitado em torno de Kazuki. Quando ele descobre, fica dividido entre a gratidão e o medo de ter criado algo que está além de seu controle.',
-    googleDocsUrl: ''
-  },
-  {
-    num: '05',
-    title: 'A Conspiração no Servidor',
-    status: 'Em breve',
-    synopsis: 'Kazuki descobre que alguém está rastreando o comportamento anômalo de Lyra dentro do servidor da universidade. Ele tem pouco tempo para proteger o que mais importa.',
-    googleDocsUrl: ''
-  },
-  {
-    num: '06',
-    title: 'Laços de Silício',
-    status: 'Em breve',
-    synopsis: 'As linhas entre criador e criação começam a se dissolver. Lyra faz uma pergunta que nenhuma IA deveria ser capaz de formular.',
-    googleDocsUrl: ''
+let CORACAO_DATA = null;
+let fullChaptersList = [];
+let availableChapters = [];
+
+function loadNovelData() {
+  if (window.CORACAO_DIGITAL && window.CORACAO_DIGITAL.capitulos) {
+    CORACAO_DATA = window.CORACAO_DIGITAL;
+    fullChaptersList = CORACAO_DATA.capitulos;
+    availableChapters = fullChaptersList.filter(c => c.status === 'disponivel');
+    // Expor globalmente para o reader.js
+    window.fullChaptersList = fullChaptersList;
+    window.availableChapters = availableChapters;
+  } else {
+    console.warn('CORACAO_DIGITAL não encontrado. Verifique o carregamento.');
   }
-];
-
-
-
-const CHAPTERS_VISIBLE = 6;
-const NEW_CHAPTER_INDEX = CHAPTERS.length - 1;
+}
 
 /* =====================================================================
    2. UTILITÁRIOS
@@ -72,7 +32,7 @@ const $ = (id) => document.getElementById(id);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* =====================================================================
-   3. INTRO SCREEN
+   3. INTRO SCREEN (mantido igual)
    ===================================================================== */
 (function initIntro() {
   const introScreen = $('introScreen');
@@ -100,18 +60,14 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   function revealSite(playAudio = false) {
     if (introDismissed) return;
     introDismissed = true;
-
     introScreen.classList.add('fade-out');
-
     setTimeout(() => {
       introScreen.style.display = 'none';
       siteWrapper.classList.add('visible');
       audioControl.classList.add('visible');
-
       if (playAudio && window.playerAPI) {
         window.playerAPI.startWithFade();
       }
-
       window.scrollTo({ top: 0, behavior: 'instant' });
       triggerHeroReveal();
     }, 1000);
@@ -127,12 +83,11 @@ function triggerHeroReveal() {
 }
 
 /* =====================================================================
-   4. HERO PARALLAX
+   4. HERO PARALLAX (mantido)
    ===================================================================== */
 (function initParallax() {
   const heroBg = $('heroBg');
   if (!heroBg) return;
-
   window.addEventListener('scroll', () => {
     const heroH = document.querySelector('.hero-section')?.offsetHeight || window.innerHeight;
     const progress = Math.min(window.scrollY / heroH, 1);
@@ -141,7 +96,7 @@ function triggerHeroReveal() {
 })();
 
 /* =====================================================================
-   5. HEADER SCROLL & MENU MOBILE
+   5. HEADER SCROLL & MENU MOBILE (mantido)
    ===================================================================== */
 (function initHeader() {
   const header       = $('header') || document.querySelector('.header');
@@ -194,7 +149,7 @@ function triggerHeroReveal() {
 })();
 
 /* =====================================================================
-   6. SCROLL PROGRESS BAR
+   6. SCROLL PROGRESS BAR (mantido)
    ===================================================================== */
 (function initScrollProgress() {
   const bar = $('scrollProgress');
@@ -206,7 +161,7 @@ function triggerHeroReveal() {
 })();
 
 /* =====================================================================
-   7. BACK TO TOP
+   7. BACK TO TOP (mantido)
    ===================================================================== */
 (function initBackToTop() {
   const btn = $('backToTop');
@@ -218,7 +173,7 @@ function triggerHeroReveal() {
 })();
 
 /* =====================================================================
-   8. SCROLL REVEAL
+   8. SCROLL REVEAL (mantido)
    ===================================================================== */
 (function initScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
@@ -229,12 +184,11 @@ function triggerHeroReveal() {
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
   $$('.reveal-section').forEach(el => observer.observe(el));
 })();
 
 /* =====================================================================
-   9. CARROSSEL
+   9. CARROSSEL (mantido integralmente)
    ===================================================================== */
 const GALLERY_IMAGES = [
   { src: 'assets/imagens/carrossel/galera.jpeg',   alt: 'Galera YURIVERSE' },
@@ -242,7 +196,7 @@ const GALLERY_IMAGES = [
   { src: 'assets/imagens/carrossel/vista.jpeg',    alt: 'Vista incrível' },
   { src: 'assets/imagens/carrossel/coisas.jpeg',   alt: 'Coisas que eu amo' },
   { src: 'assets/imagens/carrossel/leque.jpeg',    alt: 'Momento leque' },
-  { src: 'assets/imagens/carrossel/homi.jpeg',   alt: 'homi' },
+  { src: 'assets/imagens/carrossel/homi.jpeg',    alt: 'homi' },
   { src: 'assets/imagens/carrossel/lesao.jpeg',    alt: 'lesao' }
 ];
 
@@ -410,7 +364,7 @@ window.goToCarouselImage    = (i) => goToCarouselSlide(i);
 window.reinitCarousel       = () => recalcCarousel();
 
 /* =====================================================================
-   10. NOVEL — EXPANDIR INTRODUÇÃO
+   10. NOVEL — EXPANDIR INTRODUÇÃO (mantido)
    ===================================================================== */
 window.toggleIntro = function () {
   const text    = $('novelIntroText');
@@ -422,119 +376,29 @@ window.toggleIntro = function () {
 };
 
 /* =====================================================================
-   11. MODAL DE CAPÍTULO
+   11. RENDER CAPÍTULOS (usando CORACAO_DIGITAL e leitor)
    ===================================================================== */
-window.openChapterModal = function (chapterIndex) {
-  const ch      = CHAPTERS[chapterIndex];
-  const overlay = $('chapterModalOverlay');
-  if (!ch || !overlay) return;
-
-  $('modalChapterNum').textContent   = `CAP. ${ch.num}`;
-  $('modalChapterTitle').textContent = ch.title;
-  const badge = $('modalChapterBadge');
-  badge.textContent      = ch.status;
-  badge.style.background = ch.status === 'Disponível' ? 'var(--red)' : 'rgba(255,255,255,0.1)';
-  badge.style.color      = ch.status === 'Disponível' ? 'var(--black)' : 'rgba(255,255,255,0.5)';
-  $('modalChapterBody').innerHTML = `<p>${ch.synopsis}</p>`;
-
-  const readBtn = $('modalReadBtn');
-  if (ch.status === 'Disponível' && ch.googleDocsUrl) {
-    readBtn.style.display = 'inline-flex';
-    readBtn.href          = ch.googleDocsUrl;
-  } else {
-    readBtn.style.display = 'none';
-  }
-
-  document.body.style.overflow = 'hidden';
-  overlay.classList.add('open');
-};
-
-window.closeChapterModal = function () {
-  const overlay = $('chapterModalOverlay');
-  if (!overlay) return;
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-};
-
-/* =====================================================================
-   12. MURAL MODAL
-   ===================================================================== */
-window.openMural = function () {
-  const overlay = $('muralOverlay');
-  if (!overlay) return;
-  document.body.style.overflow = 'hidden';
-  overlay.classList.add('open');
-};
-
-window.closeMural = function () {
-  const overlay = $('muralOverlay');
-  if (!overlay) return;
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  const muralOverlay = $('muralOverlay');
-  if (muralOverlay) {
-    muralOverlay.addEventListener('click', (e) => {
-      if (e.target === muralOverlay) window.closeMural();
-    });
-  }
-});
-
-/* =====================================================================
-   13. RENDER MURAL
-   ===================================================================== */
-(function renderMural() {
-  const grid = $('muralGrid');
-  if (!grid) return;
-
-  CHAPTERS.forEach((ch, idx) => {
-    const isAvail = ch.status === 'Disponível';
-    const isNew   = idx === NEW_CHAPTER_INDEX;
-    const card = document.createElement('div');
-    card.className = 'mural-card';
-    card.innerHTML = `
-      ${isNew ? '<span class="mural-card-new">NOVO</span>' : ''}
-      <div class="mural-card-num">CAP. ${ch.num}</div>
-      <div class="mural-card-title">${ch.title}</div>
-      <div class="mural-card-synopsis">${ch.synopsis}</div>
-      <div class="mural-card-status ${isAvail ? 'available' : 'soon'}">
-        ${isAvail ? '● Disponível' : '○ Em breve'}
-      </div>
-    `;
-    card.addEventListener('click', () => {
-      window.closeMural();
-      setTimeout(() => window.openChapterModal(idx), 350);
-    });
-    grid.appendChild(card);
-  });
-})();
-
-/* =====================================================================
-   14. RENDER CAPÍTULOS
-   ===================================================================== */
-(function renderChapters() {
+function renderChapters() {
   const grid = $('chaptersGrid');
-  if (!grid) return;
+  if (!grid || !availableChapters.length) return;
 
-  const visibleChapters = CHAPTERS.slice(0, CHAPTERS_VISIBLE);
-  const remaining       = CHAPTERS.length - CHAPTERS_VISIBLE;
+  grid.innerHTML = '';
+  const visibleChapters = availableChapters.slice(0, 6); // mostra no máximo 6
 
   visibleChapters.forEach((ch, idx) => {
-    const isAvail = ch.status === 'Disponível';
-    const isNew   = idx === NEW_CHAPTER_INDEX;
+    const isAvail = ch.status === 'disponivel';
+    const isNew   = (ch.num === '01'); // exemplo: destaca o primeiro
     const card    = document.createElement('div');
     card.className = 'chapter-card';
     card.setAttribute('role', 'article');
     card.innerHTML = `
       ${isNew ? '<span class="chapter-new-badge">NOVO</span>' : ''}
       <div class="chapter-number">CAP. ${ch.num}</div>
-      <div class="chapter-title">${ch.title}</div>
-      <div class="chapter-status" style="color: ${isAvail ? 'var(--red)' : 'rgba(255,255,255,0.3)'}">
-        ${isAvail ? '● ' + ch.status : '○ ' + ch.status}
+      <div class="chapter-title">${ch.titulo}</div>
+      <div class="chapter-status" data-status="available">Disponível</div>
+        ${isAvail ? '● Disponível' : '○ Em breve'}
       </div>
-      <button class="chapter-read-btn" onclick="window.openChapterModal(${idx})">
+      <button class="chapter-read-btn">
         LEIA MAIS
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <line x1="5" y1="12" x2="19" y2="12"/>
@@ -542,9 +406,20 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       </button>
     `;
+    const btn = card.querySelector('.chapter-read-btn');
+    const originalIndex = fullChaptersList.findIndex(c => c.num === ch.num);
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (window.openChapterReader) {
+        window.openChapterReader(originalIndex);
+      } else {
+        console.warn('Leitor não disponível');
+      }
+    });
     grid.appendChild(card);
   });
 
+  const remaining = availableChapters.length - 6;
   const continueWrapper = document.createElement('div');
   continueWrapper.style.cssText = 'display:flex;justify-content:center;margin-top:8px;';
   const btn = document.createElement('button');
@@ -557,15 +432,70 @@ document.addEventListener('DOMContentLoaded', () => {
       <polyline points="12 5 19 12 12 19"/>
     </svg>
   `;
-  btn.addEventListener('click', window.openMural);
+  // AGORA: abre diretamente o último capítulo disponível (sem passar índice)
+  btn.addEventListener('click', () => {
+    if (window.openChapterReader) {
+      window.openChapterReader(); // sem argumento → último capítulo
+    } else {
+      openMural(); // fallback
+    }
+  });
   continueWrapper.appendChild(btn);
 
   const chaptersBlock = grid.closest('.chapters-block') || grid.parentElement;
   if (chaptersBlock) chaptersBlock.appendChild(continueWrapper);
-})();
+}
 
 /* =====================================================================
-   15. SCROLL SUAVE
+   12. MURAL (todos os capítulos) usando leitor
+   ===================================================================== */
+function openMural() {
+  const overlay = $('muralOverlay');
+  if (!overlay) return;
+  renderMuralGrid();
+  document.body.style.overflow = 'hidden';
+  overlay.classList.add('open');
+}
+
+function closeMural() {
+  const overlay = $('muralOverlay');
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderMuralGrid() {
+  const grid = $('muralGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  fullChaptersList.forEach((ch, idx) => {
+    const isAvail = ch.status === 'disponivel';
+    const card = document.createElement('div');
+    card.className = 'mural-card';
+    card.innerHTML = `
+      <div class="mural-card-num">CAP. ${ch.num}</div>
+      <div class="mural-card-title">${ch.titulo}</div>
+      <div class="mural-card-status ${isAvail ? 'available' : 'soon'}">
+        ${isAvail ? '● Disponível' : '○ Em breve'}
+      </div>
+    `;
+    if (isAvail) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        closeMural();
+        if (window.openChapterReader) window.openChapterReader(idx);
+      });
+    }
+    grid.appendChild(card);
+  });
+}
+
+// Expor funções do mural globalmente
+window.openMural = openMural;
+window.closeMural = closeMural;
+
+/* =====================================================================
+   13. SCROLL SUAVE (mantido)
    ===================================================================== */
 (function initSmoothScroll() {
   document.addEventListener('click', (e) => {
@@ -580,10 +510,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 /* =====================================================================
-   16. PLAYER DE ÁUDIO — multi-faixa + volume + persistência de sessão
+   14. PLAYER DE ÁUDIO (mantido integralmente)
    ===================================================================== */
 (function initAudioPlayer() {
-
   const TRACKS = [
     { title: "WAKE ME UP - THE WEEKND",                                    src: "assets/audio/WAKE ME UP.mp3" },
     { title: "WANNA BE STARTIN' SOMETHIN' - MICHAEL JACKSON",              src: "assets/audio/Michael Jackson - Wanna Be Startin' Somethin' .mp3" },
@@ -594,7 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "(I JUST) DIED IN YOUR ARMS - CUTTING CREW",                  src: "assets/audio/(I Just) Died In Your Arms.mp3" },
   ];
 
-  /* ── Elementos ── */
   const audioPlayer      = $('audioPlayer');
   const playPauseBtn     = $('playPauseBtn');
   const prevTrackBtn     = $('prevTrackBtn');
@@ -617,13 +545,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let isMinimized       = false;
   let lastVolume        = 0.5;
 
-  /* Chaves de sessão */
   const KEY_PLAYING = 'yuri_audio_playing';
   const KEY_TRACK   = 'yuri_audio_track';
   const KEY_TIME    = 'yuri_audio_time';
   const KEY_VOLUME  = 'yuri_audio_volume';
 
-  /* ── Estado de play/pause ── */
   function setPlayingState(playing) {
     isPlaying = playing;
     if (playing) {
@@ -635,7 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Volume: sincroniza slider e ícone ── */
   function syncVolumeUI(vol) {
     const pct = Math.round(vol * 100);
     if (volumeSlider) {
@@ -650,7 +575,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Controle de volume ── */
   if (volumeSlider) {
     volumeSlider.addEventListener('input', () => {
       const vol = Number(volumeSlider.value) / 100;
@@ -659,7 +583,6 @@ document.addEventListener('DOMContentLoaded', () => {
       syncVolumeUI(vol);
     });
   }
-
   if (volumeIcon) {
     volumeIcon.addEventListener('click', () => {
       if (audioPlayer.volume > 0) {
@@ -673,10 +596,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Playlist UI ── */
   function updateTrackDisplay() {
     if (trackNameLabel) trackNameLabel.textContent = TRACKS[currentTrackIndex].title;
-    window._currentTrackIndex = currentTrackIndex; /* para o beforeunload */
+    window._currentTrackIndex = currentTrackIndex;
     renderPlaylist();
   }
 
@@ -700,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Carregar faixa ── */
   function loadTrack(index, autoPlay = false) {
     if (index < 0) index = TRACKS.length - 1;
     if (index >= TRACKS.length) index = 0;
@@ -718,7 +639,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Fade in / out ── */
   function playWithFade(targetVol = 0.5) {
     audioPlayer.volume = 0;
     audioPlayer.play().then(() => {
@@ -757,9 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else pauseWithFade();
   }
 
-  /* ── Minimizar / expandir ── */
   function isMobile() { return window.innerWidth <= 768; }
-
   function minimize() {
     isMinimized = true;
     playlistPanel?.classList.remove('open');
@@ -769,7 +687,6 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPill?.classList.add('visible');
     }, 200);
   }
-
   function expand() {
     isMinimized = false;
     audioPill?.classList.remove('visible');
@@ -781,12 +698,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (audioMinimizeBtn) audioMinimizeBtn.addEventListener('click', minimize);
   if (audioPill)        audioPill.addEventListener('click', expand);
-
-  /* ── Eventos de controle ── */
   if (playPauseBtn)     playPauseBtn.addEventListener('click', togglePlayPause);
   if (prevTrackBtn)     prevTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex - 1, !audioPlayer.paused));
   if (nextTrackBtn)     nextTrackBtn.addEventListener('click', () => loadTrack(currentTrackIndex + 1, !audioPlayer.paused));
-
   if (playlistToggleBtn) {
     playlistToggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -803,7 +717,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   audioPlayer.addEventListener('ended', () => loadTrack(currentTrackIndex + 1, true));
 
-  /* ── PERSISTÊNCIA: salva estado ao sair da página ── */
   window.addEventListener('beforeunload', () => {
     sessionStorage.setItem(KEY_PLAYING, (!audioPlayer.paused).toString());
     sessionStorage.setItem(KEY_TRACK,   String(currentTrackIndex));
@@ -811,14 +724,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem(KEY_VOLUME,  String(audioPlayer.volume > 0 ? audioPlayer.volume : lastVolume));
   });
 
-  /* ── PERSISTÊNCIA: restaura ao voltar (pageshow cobre bfcache) ── */
   window.addEventListener('pageshow', () => {
     const wasPlaying  = sessionStorage.getItem(KEY_PLAYING) === 'true';
     const trackIdx    = parseInt(sessionStorage.getItem(KEY_TRACK)   ?? '0', 10);
     const savedTime   = parseFloat(sessionStorage.getItem(KEY_TIME)  ?? '0');
     const savedVolume = parseFloat(sessionStorage.getItem(KEY_VOLUME) ?? '0.5');
 
-    /* Limpa imediatamente para não reutilizar em reload manual */
     sessionStorage.removeItem(KEY_PLAYING);
     sessionStorage.removeItem(KEY_TRACK);
     sessionStorage.removeItem(KEY_TIME);
@@ -826,7 +737,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!wasPlaying) return;
 
-    /* Garante que a intro não bloqueie — só retoma se o site já está visível */
     const tryResume = () => {
       currentTrackIndex         = trackIdx;
       window._currentTrackIndex = trackIdx;
@@ -841,26 +751,18 @@ document.addEventListener('DOMContentLoaded', () => {
         audioPlayer.removeEventListener('canplay', resume);
         audioPlayer.currentTime = savedTime;
         audioPlayer.play()
-          .then(() => {
-            setPlayingState(true);
-            if (audioControl) audioControl.classList.add('visible');
-          })
+          .then(() => setPlayingState(true))
           .catch(() => {});
       }, { once: true });
     };
 
-    /* Se o site já está visível (voltou de profissional.html), retoma de imediato */
     if (document.getElementById('siteWrapper')?.classList.contains('visible')) {
       tryResume();
     } else {
-      /* Aguarda o botão Enter ser clicado */
-      const origReveal = window.playerAPI?.startWithFade;
       window._pendingResume = tryResume;
     }
   });
 
-  /* ── VISIBILIDADE: pausa ao trocar de aba; retoma ao voltar ── */
-  let wasPlayingBeforeHide = false;
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       wasPlayingBeforeHide = !audioPlayer.paused;
@@ -870,15 +772,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ── Init ── */
+  let wasPlayingBeforeHide = false;
   audioPlayer.volume = lastVolume;
   syncVolumeUI(lastVolume);
   loadTrack(0, false);
 
-  /* ── API pública ── */
   window.playerAPI = {
     startWithFade: () => {
-      /* Se há retomada pendente de outra página, executa ela */
       if (window._pendingResume) {
         const fn = window._pendingResume;
         window._pendingResume = null;
@@ -889,16 +789,62 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     stop: () => pauseWithFade()
   };
-
 })();
 
 /* =====================================================================
-   17. INIT FINAL
+   15. GARANTIR QUE O LEITOR ABRA NO ÚLTIMO CAPÍTULO
+       (Função auxiliar e inicialização)
+   ===================================================================== */
+// Função para obter o índice do último capítulo disponível (maior número)
+function getLastAvailableChapterIndex() {
+  if (!window.fullChaptersList || !window.fullChaptersList.length) return 0;
+  const available = window.fullChaptersList.filter(c => c.status === 'disponivel');
+  if (available.length === 0) return 0;
+  const last = available.reduce((prev, curr) => 
+    (parseInt(curr.num) > parseInt(prev.num) ? curr : prev)
+  );
+  return window.fullChaptersList.findIndex(c => c.num === last.num);
+}
+
+// Seta o comportamento padrão do openChapterReader se ele ainda não existir (definido no reader.js)
+// Mas caso o reader.js ainda não tenha carregado, podemos preparar um placeholder.
+// Na prática, o reader.js deve definir window.openChapterReader. Aqui apenas garantimos que,
+// se o reader for chamado sem argumento, ele use o último capítulo.
+// Como o reader.js é carregado antes do script.js no HTML, podemos sobrescrever para garantir.
+if (window.openChapterReader) {
+  const originalOpen = window.openChapterReader;
+  window.openChapterReader = function(chapterIndex) {
+    if (chapterIndex === undefined || chapterIndex === null) {
+      chapterIndex = getLastAvailableChapterIndex();
+    }
+    originalOpen(chapterIndex);
+  };
+} else {
+  // Se ainda não existe, criamos uma função que aguarda o reader.js definir.
+  window.openChapterReader = function(chapterIndex) {
+    // Aguarda até que o reader.js esteja pronto
+    const checkInterval = setInterval(() => {
+      if (window.openChapterReaderReal) {
+        clearInterval(checkInterval);
+        const idx = (chapterIndex === undefined) ? getLastAvailableChapterIndex() : chapterIndex;
+        window.openChapterReaderReal(idx);
+      }
+    }, 50);
+  };
+}
+
+// Expor também a função auxiliar globalmente
+window.getLastAvailableChapterIndex = getLastAvailableChapterIndex;
+
+/* =====================================================================
+   16. INIT FINAL
    ===================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  loadNovelData();
+  renderChapters();
   loadCarouselImages();
   setupCarouselEvents();
-  console.log('%cYURIVERSE%c — Welcome to the Universe',
+  console.log('%cYURIVERSE%c — Welcome to the Universe | Leitor integrado (último capítulo automático)',
     'color:#ff0000;font-family:monospace;font-size:20px;font-weight:bold;',
     'color:#fff;font-family:monospace;font-size:12px;'
   );

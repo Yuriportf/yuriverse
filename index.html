@@ -16,7 +16,7 @@
   <!-- Favicon local -->
   <!-- Favicon local -->
   <link rel="icon" type="image/png" href="assets/imagens/icons/star.png">
-<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
   <!-- Fonts -->
   <!-- Open Graph -->
   <meta property="og:title" content="YURIVERSE">
@@ -34,6 +34,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/reader.css">
 </head>
 
 <body>
@@ -217,7 +218,8 @@
         <div class="hero-content">
           <div class="hero-eyebrow fade-reveal">UNIVERSO PESSOAL</div>
           <h1 class="hero-title fade-reveal">YURIVERSE</h1>
-          <p class="hero-subtitle fade-reveal">Um espaço pra me conhecer de verdade, através do que eu crio com código e criatividade.</p>
+          <p class="hero-subtitle fade-reveal">Um espaço pra me conhecer de verdade, através do que eu crio com código e
+            criatividade.</p>
           <div class="hero-cta fade-reveal">
             <a href="#sobre" class="btn-primary">
               <span>EXPLORAR</span>
@@ -585,10 +587,30 @@
     </div>
   </div>
 
-
+  <!-- OVERLAY DO LEITOR DE PÁGINAS -->
+  <div id="pageReaderOverlay" class="page-reader-overlay">
+    <div class="reader-container">
+      <div class="reader-header">
+        <div>
+          <span id="readerChapNum" class="reader-chap-num">CAP. 00</span>
+          <h2 id="readerChapTitle" class="reader-title">Título</h2>
+        </div>
+        <button id="readerCloseBtn" class="reader-close" aria-label="Fechar leitor">✕</button>
+      </div>
+      <div class="reader-nav">
+        <button id="readerPrevBtn" class="nav-btn">◀ <span>Capítulo anterior</span></button>
+        <button id="readerNextBtn" class="nav-btn"><span>Próximo capítulo</span> ▶</button>
+      </div>
+      <div id="readerBody" class="reader-body">
+        <!-- conteúdo será injetado -->
+      </div>
+    </div>
+  </div>
   <!-- Scripts -->
   <script src="js/animacoes.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/coracao-digital.js" defer></script>
+  <script src="js/reader.js" defer></script>
 </body>
 
 </html>
