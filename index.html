@@ -13,11 +13,10 @@
   <meta name="author" content="Yuri">
   <meta name="theme-color" content="#0a0a0f">
 
-  <!-- Favicon local -->
-  <!-- Favicon local -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/imagens/icons/star.png">
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-  <!-- Fonts -->
+
   <!-- Open Graph -->
   <meta property="og:title" content="YURIVERSE">
   <meta property="og:description" content="Uma experiência cinematográfica, neon e imersiva.">
@@ -41,140 +40,65 @@
 
   <!-- =====================================================
        INTRO SCREEN
-       Tela de entrada simplificada.
-       Só sai por clique no botão.
-       Sem estrelas, só fogos de artifício.
   ===================================================== -->
   <div class="intro-screen" id="introScreen">
-
-    <!-- Grade CSS de fundo -->
     <div class="css-grid"></div>
-
-    <!-- Fogos de artifício — elementos injetados via animacoes.js -->
     <div class="fireworks-container" id="introFireworks"></div>
-
-    <!-- Textura de ruído sutil -->
     <div class="intro-noise"></div>
-
-    <!-- Linhas de scanlines (efeito CRT suave) -->
     <div class="intro-scanlines"></div>
-
-    <!-- Glow central simplificado -->
     <div class="intro-glow" id="introGlow"></div>
-
-    <!-- Logo central -->
     <div class="intro-logo" id="introLogo">
       <span class="intro-logo-text">YURIVERSE</span>
       <div class="intro-logo-underline"></div>
     </div>
-
-    <!-- Subtítulo -->
-
-
-    <!-- Botão principal de entrada -->
     <button class="intro-enter-btn" id="enterBtn">
       <span class="enter-btn-text">ENTRE</span>
     </button>
-    <p class="intro-subtitle"> NO MEU UNIVERSO PESSOAL </p>
+    <p class="intro-subtitle">NO MEU UNIVERSO PESSOAL</p>
   </div><!-- /intro-screen -->
 
 
   <!-- =====================================================
        SITE WRAPPER
-       Invisível até a intro terminar.
   ===================================================== -->
   <div class="site-wrapper" id="siteWrapper">
-    <!-- Controles flutuantes de áudio (substitua o bloco existente) -->
-    <!-- Player flutuante de áudio -->
-    <!--
-  =====================================================================
-  YURIVERSE — audio-control-snippet.html
-  =====================================================================
-  SUBSTITUA o bloco <div class="audio-control" id="audioControl"> ...
-  que está DENTRO de .site-wrapper por este abaixo.
 
-  Mudanças em relação ao original:
-  - Adicionado .audio-volume-wrap com slider e ícone de volume
-  - Ordem dos elementos reorganizada para mobile
-  - IDs mantidos (script.js não precisa de alteração nos seletores)
-  =====================================================================
--->
-
-    <!-- Player flutuante de áudio -->
+    <!-- PLAYER DE ÁUDIO FLUTUANTE (ÚNICO) -->
     <div class="audio-control" id="audioControl">
-
-      <!-- Prev -->
       <button class="audio-btn" id="prevTrackBtn" aria-label="Faixa anterior">◀</button>
-
-      <!-- Play / Pause -->
       <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar ou pausar">
         <div class="audio-icon" id="audioIcon">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
       </button>
-
-      <!-- Next -->
       <button class="audio-btn" id="nextTrackBtn" aria-label="Próxima faixa">▶</button>
-
       <div class="audio-divider"></div>
-
-      <!-- Nome da faixa (oculto no mobile via CSS) -->
       <span class="audio-label" id="trackNameLabel">YURIVERSE FM</span>
-
-      <!-- Playlist toggle -->
       <button class="audio-btn" id="playlistToggleBtn" aria-label="Abrir playlist">☰</button>
-
       <div class="audio-divider"></div>
-
-      <!-- Volume -->
       <div class="audio-volume-wrap">
         <span class="audio-volume-icon" id="volumeIcon" title="Mudo / Som">🔉</span>
         <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="100" value="50" step="1"
           aria-label="Volume" />
       </div>
-
       <div class="audio-divider"></div>
-
-      <!-- Minimizar -->
       <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar player">✕</button>
-
     </div><!-- /audio-control -->
 
-
-    <!-- Bolinha minimizada -->
+    <!-- BOLINHA MINIMIZADA (ÚNICA) -->
     <button class="audio-pill" id="audioPill" aria-label="Expandir player de áudio">
       <div class="audio-icon playing" id="audioPillIcon">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
     </button>
 
-    <!-- Playlist flutuante (mantenha apenas UMA instância — remova a duplicata que existe no HTML atual) -->
+    <!-- PLAYLIST FLUTUANTE (ÚNICA) -->
     <div class="playlist-panel" id="playlistPanel">
       <div class="playlist-header">🎵 PLAYLIST</div>
       <div class="playlist-items" id="playlistItems"></div>
     </div>
 
-    <!-- Bolinha minimizada -->
-    <button class="audio-pill" id="audioPill" aria-label="Expandir player">
-      <div class="audio-icon playing" id="audioPillIcon">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </button>
-
-    <!-- Playlist flutuante -->
-    <div class="playlist-panel" id="playlistPanel">
-      <div class="playlist-header">🎵 PLAYLIST</div>
-      <div class="playlist-items" id="playlistItems"></div>
-    </div>
-
-
-
-    <!-- Painel flutuante da playlist -->
-    <div class="playlist-panel" id="playlistPanel">
-      <div class="playlist-header">🎵 PLAYLIST</div>
-      <div class="playlist-items" id="playlistItems"></div>
-    </div>
-    <!-- Barra de progresso de scroll -->
+    <!-- BARRA DE PROGRESSO DE SCROLL -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ==================================================
@@ -182,39 +106,28 @@
     ================================================== -->
     <header class="header" id="header">
       <div class="header-inner">
-
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
-
         <nav class="header-nav" id="headerNav">
           <a href="#inicio" class="nav-link">Início</a>
           <a href="#sobre" class="nav-link">Sobre</a>
           <a href="#novel" class="nav-link">Novel</a>
           <a href="#playlist" class="nav-link">Playlist</a>
           <a href="#galeria" class="nav-link">Galeria</a>
-          <a href="profissional.html" class="nav-link">Profissíonal</a>
+          <a href="profissional.html" class="nav-link">Profissional</a>
         </nav>
-
       </div>
     </header>
 
-
     <main>
 
-      <!-- ================================================
-           HERO SECTION
-      ================================================ -->
+      <!-- HERO SECTION -->
       <section class="hero-section" id="inicio">
         <div class="hero-bg" id="heroBg" style="background-image: url('assets/background.jpg');"></div>
         <div class="hero-overlay"></div>
-
-        <!-- Grade CSS com perspectiva -->
         <div class="css-grid-hero"></div>
-
-        <!-- Fogos do hero (mais intensos) -->
         <div class="fireworks-container" id="heroFireworks"></div>
-
         <div class="hero-content">
           <div class="hero-eyebrow fade-reveal">UNIVERSO PESSOAL</div>
           <h1 class="hero-title fade-reveal">YURIVERSE</h1>
@@ -232,15 +145,11 @@
         </div>
       </section>
 
-
-      <!-- ================================================
-           SOBRE
-      ================================================ -->
+      <!-- SOBRE -->
       <section class="about-section reveal-section" id="sobre">
         <div class="about-number">01</div>
         <div class="container">
           <div class="about-grid">
-
             <div class="about-image-wrapper">
               <div class="about-image-frame">
                 <img src="assets/imagens/perfil/Eu.jpeg" alt="Yuri" class="about-photo" />
@@ -258,11 +167,9 @@
                 </svg>
               </div>
             </div>
-
             <div class="about-text">
               <div class="section-label">SOBRE MIM</div>
-              <h2 class="section-heading">Criativo, <em>curioso</em> </h2>
-
+              <h2 class="section-heading">Criativo, <em>curioso</em></h2>
               <p class="about-body">
                 No dia a dia? Bolo de rolo, novelas chinesas de romance e drama, e horas enfiado programando. Música?
                 The Weeknd. <strong>Take Me Back to LA</strong> em loop. Abel Tesfayer direto na veia. Não escuto funk.
@@ -297,21 +204,16 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-
-      <!-- ================================================
-           NOVEL — Coração Digital
-      ================================================ -->
+      <!-- NOVEL — CORAÇÃO DIGITAL -->
       <section class="novel-section reveal-section" id="novel">
         <div class="novel-number">02</div>
         <div class="container">
           <div class="section-label">LIGHT NOVEL</div>
           <h2 class="section-heading">Coração <em>Digital</em></h2>
-
           <div class="novel-grid">
             <div class="novel-cover-wrapper">
               <div class="novel-cover-frame">
@@ -322,7 +224,6 @@
                 <div class="novel-cover-glow"></div>
               </div>
             </div>
-
             <div class="novel-text">
               <div class="novel-badge">FICÇÃO CIENTÍFICA · ROMANCE</div>
               <p class="novel-desc">
@@ -338,14 +239,12 @@
                 Uma história sobre tecnologia, emoção e os limites entre o homem e a máquina —
                 onde até o código pode aprender a sentir.
               </p>
-
               <button class="btn-secondary" id="toggleIntroBtn" onclick="window.toggleIntro()">
                 <span id="toggleIntroText">LER INTRODUÇÃO</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </button>
-
               <div class="novel-intro-text" id="novelIntroText" style="display:none;">
                 <div class="novel-intro-inner">
                   <p>Enquanto enfrenta o desprezo e a violência dos colegas, Lyra se torna sua
@@ -356,20 +255,14 @@
               </div>
             </div>
           </div>
-
-          <!-- Bloco de capítulos -->
           <div class="chapters-block">
             <h3 class="chapters-title">Capítulos Disponíveis</h3>
             <div class="chapters-grid" id="chaptersGrid"></div>
           </div>
-
         </div>
       </section>
 
-
-      <!-- ================================================
-           PLAYLIST
-      ================================================ -->
+      <!-- PLAYLIST -->
       <section class="playlist-section reveal-section" id="playlist">
         <div class="playlist-number">03</div>
         <div class="container">
@@ -378,7 +271,6 @@
           <p class="playlist-desc">
             A seleção perfeita de músicas que me acompanham enquanto codifico, escrevo e vivo.
           </p>
-
           <div class="spotify-wrapper">
             <div class="spotify-glow-border">
               <iframe src="https://open.spotify.com/embed/playlist/7eA81kRzMeZ31os3GFXhyk" width="100%" height="460"
@@ -388,7 +280,6 @@
               </iframe>
             </div>
           </div>
-
           <div class="playlist-cta">
             <a href="https://open.spotify.com/playlist/7eA81kRzMeZ31os3GFXhyk" target="_blank" rel="noopener noreferrer"
               class="btn-spotify">
@@ -402,23 +293,15 @@
         </div>
       </section>
 
-
-      <!-- ================================================
-     GALERIA / CARROSSEL
-================================================ -->
+      <!-- GALERIA / CARROSSEL -->
       <section class="gallery-section reveal-section" id="galeria">
         <div class="gallery-number">04</div>
         <div class="container">
           <div class="section-label">GALERIA</div>
           <h2 class="section-heading">Momentos <em>Capturados</em></h2>
         </div>
-
         <div class="carousel-wrapper">
-          <div class="carousel-track" id="carouselTrack">
-            <!-- Slides serão inseridos via JS -->
-          </div>
-
-          <!-- Setas desktop -->
+          <div class="carousel-track" id="carouselTrack"></div>
           <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="15 18 9 12 15 6" />
@@ -429,17 +312,13 @@
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
-
-          <!-- Controles mobile -->
           <div class="carousel-bottom-controls">
             <button class="carousel-btn-mobile carousel-prev-mobile" id="carouselPrevMobile" aria-label="Anterior">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
-
             <div class="carousel-dots" id="carouselDots"></div>
-
             <button class="carousel-btn-mobile carousel-next-mobile" id="carouselNextMobile" aria-label="Próximo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9 18 15 12 9 6" />
@@ -449,10 +328,7 @@
         </div>
       </section>
 
-
-      <!-- ================================================
-           FINALE
-      ================================================ -->
+      <!-- FINALE -->
       <section class="finale-section reveal-section" id="finale">
         <div class="finale-lines">
           <div class="finale-line"></div>
@@ -469,10 +345,7 @@
 
     </main>
 
-
-    <!-- ================================================
-         FOOTER
-    ================================================ -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top-line"></div>
       <div class="container">
@@ -506,34 +379,21 @@
       </div>
     </footer>
 
-    <!-- Botão flutuante de voltar ao topo -->
+    <!-- Botão back to top -->
     <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="18 15 12 9 6 15" />
       </svg>
     </button>
 
-    <!-- Player de áudio em loop -->
+    <!-- PLAYER DE ÁUDIO EM LOOP (oculto) -->
     <audio id="audioPlayer" loop>
-      <source src="assets/audio/takemebacktoLA.webm" type="audio/mpeg" />
+      <source src="assets/audio/takemebacktoLA.webm" type="audio/webm" />
     </audio>
-
-    <!-- Controle flutuante de áudio -->
-    <div class="audio-control" id="audioControl">
-      <button class="audio-btn" id="audioBtn" aria-label="Tocar música">
-        <div class="audio-icon playing" id="audioIcon">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </button>
-      <span class="audio-label" id="audioLabel">YURIVERSE FM</span>
-    </div>
 
   </div><!-- /site-wrapper -->
 
-
-  <!-- =====================================================
-       MODAL DE CAPÍTULO
-  ===================================================== -->
+  <!-- MODAL DE CAPÍTULO -->
   <div class="chapter-modal-overlay" id="chapterModalOverlay" onclick="window.closeChapterModal()">
     <div class="chapter-modal" id="chapterModal" onclick="event.stopPropagation()">
       <button class="chapter-modal-close" onclick="window.closeChapterModal()">
@@ -563,10 +423,7 @@
     </div>
   </div>
 
-
-  <!-- =====================================================
-       MURAL MODAL
-  ===================================================== -->
+  <!-- MURAL MODAL -->
   <div class="mural-overlay" id="muralOverlay">
     <div class="mural-modal">
       <div class="mural-modal-header">
@@ -587,7 +444,7 @@
     </div>
   </div>
 
-  <!-- OVERLAY DO LEITOR DE PÁGINAS -->
+  <!-- LEITOR DE PÁGINAS (OVERLAY) -->
   <div id="pageReaderOverlay" class="page-reader-overlay">
     <div class="reader-container">
       <div class="reader-header">
@@ -601,14 +458,13 @@
         <button id="readerPrevBtn" class="nav-btn">◀ <span>Capítulo anterior</span></button>
         <button id="readerNextBtn" class="nav-btn"><span>Próximo capítulo</span> ▶</button>
       </div>
-      <div id="readerBody" class="reader-body">
-        <!-- conteúdo será injetado -->
-      </div>
+      <div id="readerBody" class="reader-body"></div>
     </div>
   </div>
-  <!-- Scripts -->
-  <script src="js/animacoes.js"></script>
-  <script src="js/script.js"></script>
+
+  <!-- SCRIPTS (todos com defer para ordem segura) -->
+  <script src="js/animacoes.js" defer></script>
+  <script src="js/script.js" defer></script>
   <script src="js/coracao-digital.js" defer></script>
   <script src="js/reader.js" defer></script>
 </body>
