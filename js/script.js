@@ -235,13 +235,13 @@ function triggerHeroReveal() {
    9. CARROSSEL
    ===================================================================== */
 const GALLERY_IMAGES = [
-  { src: 'assets/imagens/galera.jpeg',   alt: 'Galera YURIVERSE' },
-  { src: 'assets/imagens/saopaulo.jpeg', alt: 'São Paulo' },
-  { src: 'assets/imagens/vista.jpeg',    alt: 'Vista incrível' },
-  { src: 'assets/imagens/coisas.jpeg',   alt: 'Coisas que eu amo' },
-  { src: 'assets/imagens/leque.jpeg',    alt: 'Momento leque' },
-  { src: 'assets/imagens/o homi.jpeg',   alt: 'homi' },
-  { src: 'assets/imagens/lesao.jpeg',    alt: 'lesao' }
+  { src: 'assets/imagens/carrossel/galera.jpeg',   alt: 'Galera YURIVERSE' },
+  { src: 'assets/imagens/carrossel/saopaulo.jpeg', alt: 'São Paulo' },
+  { src: 'assets/imagens/carrossel/vista.jpeg',    alt: 'Vista incrível' },
+  { src: 'assets/imagens/carrossel/coisas.jpeg',   alt: 'Coisas que eu amo' },
+  { src: 'assets/imagens/carrossel/leque.jpeg',    alt: 'Momento leque' },
+  { src: 'assets/imagens/carrossel/homi.jpeg',   alt: 'homi' },
+  { src: 'assets/imagens/carrossel/lesao.jpeg',    alt: 'lesao' }
 ];
 
 let carouselSlides = [];
