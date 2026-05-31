@@ -1259,20 +1259,17 @@ button { cursor:pointer; background:none; border:none; font-family:inherit; }
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  opacity: 0;
-  transition: opacity .3s ease;
+  opacity: 1;
 }
-
-.carousel-slide:hover .carousel-overlay { opacity: 1; }
 
 .carousel-tag {
   font-family: var(--font-body);
   font-size: .55rem;
   font-weight: 500;
   letter-spacing: .32em;
-  color: var(--silver-dim);
+  color: var(--silver-mid);
   text-transform: uppercase;
-  background: rgba(0,0,0,0.88);
+  background: rgba(0,0,0,0.75);
   border: 1px solid var(--border-hover);
   padding: 3px 9px;
   border-radius: 1px;
@@ -1281,10 +1278,11 @@ button { cursor:pointer; background:none; border:none; font-family:inherit; }
 .carousel-caption {
   font-family: var(--font-body);
   font-size: .78rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .05em;
-  color: var(--silver-bright);
+  color: #ffffff;
   line-height: 1.3;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
 }
 
 .carousel-btn {

@@ -15,7 +15,7 @@
 
   <!-- Favicon local -->
   <!-- Favicon local -->
-<link rel="icon" type="image/png" href="/assets/imagens/icons/star.png" />
+  <link rel="icon" type="image/png" href="/assets/imagens/icons/star3.png" />
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
   <!-- Fonts -->
   <!-- Open Graph -->
@@ -68,13 +68,13 @@
     </div>
 
     <!-- Subtítulo -->
-    <p class="intro-subtitle">UNIVERSO PESSOAL · RECIFE, PE</p>
+
 
     <!-- Botão principal de entrada -->
     <button class="intro-enter-btn" id="enterBtn">
-      <span class="enter-btn-text">ENTER THE YURIVERSE</span>
+      <span class="enter-btn-text">ENTRE</span>
     </button>
-
+    <p class="intro-subtitle"> NO MEU UNIVERSO PESSOAL </p>
   </div><!-- /intro-screen -->
 
 
@@ -83,9 +83,9 @@
        Invisível até a intro terminar.
   ===================================================== -->
   <div class="site-wrapper" id="siteWrapper">
-<!-- Controles flutuantes de áudio (substitua o bloco existente) -->
-<!-- Player flutuante de áudio -->
-<!--
+    <!-- Controles flutuantes de áudio (substitua o bloco existente) -->
+    <!-- Player flutuante de áudio -->
+    <!--
   =====================================================================
   YURIVERSE — audio-control-snippet.html
   =====================================================================
@@ -99,85 +99,80 @@
   =====================================================================
 -->
 
-<!-- Player flutuante de áudio -->
-<div class="audio-control" id="audioControl">
+    <!-- Player flutuante de áudio -->
+    <div class="audio-control" id="audioControl">
 
-  <!-- Prev -->
-  <button class="audio-btn" id="prevTrackBtn" aria-label="Faixa anterior">◀</button>
+      <!-- Prev -->
+      <button class="audio-btn" id="prevTrackBtn" aria-label="Faixa anterior">◀</button>
 
-  <!-- Play / Pause -->
-  <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar ou pausar">
-    <div class="audio-icon" id="audioIcon">
-      <span></span><span></span><span></span><span></span><span></span>
+      <!-- Play / Pause -->
+      <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Tocar ou pausar">
+        <div class="audio-icon" id="audioIcon">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </button>
+
+      <!-- Next -->
+      <button class="audio-btn" id="nextTrackBtn" aria-label="Próxima faixa">▶</button>
+
+      <div class="audio-divider"></div>
+
+      <!-- Nome da faixa (oculto no mobile via CSS) -->
+      <span class="audio-label" id="trackNameLabel">YURIVERSE FM</span>
+
+      <!-- Playlist toggle -->
+      <button class="audio-btn" id="playlistToggleBtn" aria-label="Abrir playlist">☰</button>
+
+      <div class="audio-divider"></div>
+
+      <!-- Volume -->
+      <div class="audio-volume-wrap">
+        <span class="audio-volume-icon" id="volumeIcon" title="Mudo / Som">🔉</span>
+        <input type="range" class="audio-volume-slider" id="volumeSlider" min="0" max="100" value="50" step="1"
+          aria-label="Volume" />
+      </div>
+
+      <div class="audio-divider"></div>
+
+      <!-- Minimizar -->
+      <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar player">✕</button>
+
+    </div><!-- /audio-control -->
+
+
+    <!-- Bolinha minimizada -->
+    <button class="audio-pill" id="audioPill" aria-label="Expandir player de áudio">
+      <div class="audio-icon playing" id="audioPillIcon">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </button>
+
+    <!-- Playlist flutuante (mantenha apenas UMA instância — remova a duplicata que existe no HTML atual) -->
+    <div class="playlist-panel" id="playlistPanel">
+      <div class="playlist-header">🎵 PLAYLIST</div>
+      <div class="playlist-items" id="playlistItems"></div>
     </div>
-  </button>
 
-  <!-- Next -->
-  <button class="audio-btn" id="nextTrackBtn" aria-label="Próxima faixa">▶</button>
+    <!-- Bolinha minimizada -->
+    <button class="audio-pill" id="audioPill" aria-label="Expandir player">
+      <div class="audio-icon playing" id="audioPillIcon">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </button>
 
-  <div class="audio-divider"></div>
-
-  <!-- Nome da faixa (oculto no mobile via CSS) -->
-  <span class="audio-label" id="trackNameLabel">YURIVERSE FM</span>
-
-  <!-- Playlist toggle -->
-  <button class="audio-btn" id="playlistToggleBtn" aria-label="Abrir playlist">☰</button>
-
-  <div class="audio-divider"></div>
-
-  <!-- Volume -->
-  <div class="audio-volume-wrap">
-    <span class="audio-volume-icon" id="volumeIcon" title="Mudo / Som">🔉</span>
-    <input
-      type="range"
-      class="audio-volume-slider"
-      id="volumeSlider"
-      min="0" max="100" value="50" step="1"
-      aria-label="Volume"
-    />
-  </div>
-
-  <div class="audio-divider"></div>
-
-  <!-- Minimizar -->
-  <button class="audio-btn audio-minimize-btn" id="audioMinimizeBtn" aria-label="Minimizar player">✕</button>
-
-</div><!-- /audio-control -->
-
-
-<!-- Bolinha minimizada -->
-<button class="audio-pill" id="audioPill" aria-label="Expandir player de áudio">
-  <div class="audio-icon playing" id="audioPillIcon">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-</button>
-
-<!-- Playlist flutuante (mantenha apenas UMA instância — remova a duplicata que existe no HTML atual) -->
-<div class="playlist-panel" id="playlistPanel">
-  <div class="playlist-header">🎵 PLAYLIST</div>
-  <div class="playlist-items" id="playlistItems"></div>
-</div>
-
-<!-- Bolinha minimizada -->
-<button class="audio-pill" id="audioPill" aria-label="Expandir player">
-  <div class="audio-icon playing" id="audioPillIcon">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-</button>
-
-<!-- Playlist flutuante -->
-<div class="playlist-panel" id="playlistPanel">
-  <div class="playlist-header">🎵 PLAYLIST</div>
-  <div class="playlist-items" id="playlistItems"></div>
-</div>
+    <!-- Playlist flutuante -->
+    <div class="playlist-panel" id="playlistPanel">
+      <div class="playlist-header">🎵 PLAYLIST</div>
+      <div class="playlist-items" id="playlistItems"></div>
+    </div>
 
 
 
-<!-- Painel flutuante da playlist -->
-<div class="playlist-panel" id="playlistPanel">
-  <div class="playlist-header">🎵 PLAYLIST</div>
-  <div class="playlist-items" id="playlistItems"></div>
-</div>
+    <!-- Painel flutuante da playlist -->
+    <div class="playlist-panel" id="playlistPanel">
+      <div class="playlist-header">🎵 PLAYLIST</div>
+      <div class="playlist-items" id="playlistItems"></div>
+    </div>
     <!-- Barra de progresso de scroll -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -222,7 +217,7 @@
         <div class="hero-content">
           <div class="hero-eyebrow fade-reveal">UNIVERSO PESSOAL</div>
           <h1 class="hero-title fade-reveal">YURIVERSE</h1>
-          <p class="hero-subtitle fade-reveal">Uma jornada entre código, criatividade e emoção</p>
+          <p class="hero-subtitle fade-reveal">Um espaço pra me conhecer de verdade, através do que eu crio com código e criatividade.</p>
           <div class="hero-cta fade-reveal">
             <a href="#sobre" class="btn-primary">
               <span>EXPLORAR</span>
@@ -272,7 +267,8 @@
                 Sou eclético, mas tenho limite.
               </p>
               <p class="about-body">
-                Não sou muito competitivo, nem muito observador. Sou <strong>muito criativo</strong> e movido por curiosidade.
+                Não sou muito competitivo, nem muito observador. Sou <strong>muito criativo</strong> e movido por
+                curiosidade.
                 O que me prende na tecnologia não é tela bonita — é <strong>entender o problema por dentro</strong> e
                 desmontar ele até a última peça.
               </p>
