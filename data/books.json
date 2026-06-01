@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "cover": "assets/imagens/livros/cleancode.jpg",
+    "pdfUrl": "https://drive.google.com/file/d/1vFbtpo3JdocFU-XPDLPLH4WN7j56QiPr/view?usp=sharing"
+  },
+  {
+    "title": "Entendendo Algoritmos",
+    "author": "Aditya Y. Bhargava",
+    "cover": "assets/imagens/livros/entendendoalgoritimos.jpg",
+    "pdfUrl": "https://drive.google.com/file/d/1Ru9K7DrhAtEiX-eKbi8WyrZUOphgvhh5/view?usp=sharing"
+  },
+  {
+    "title": "Amazon AWS: Descomplicando a computação na nuvem",
+    "author": "Jonathan Lamim Antunes",
+    "cover": "assets/imagens/livros/aws.png",
+    "pdfUrl": "https://drive.google.com/file/d/1BPwWlPTQUKwmg8PoOR8OeFZ_qx8OGXxZ/view?usp=sharing"
+  },
+  {
+    "title": "Design Patterns",
+    "author": "Erich Gamma",
+    "cover": "assets/imagens/livros/paroesdeprojetos.jpg",
+    "pdfUrl": "https://drive.google.com/file/d/10fElZDk2SryUF7sS-8dZ9ZCEmE8lx4fk/view?usp=sharing"
+  },
+  {
+    "title": "PMBOK",
+    "author": "Project Management Institute",
+    "cover": "assets/imagens/livros/pmbok.png",
+    "pdfUrl": "https://drive.google.com/file/d/1JmsxBU9y-adgOzSWJd6QEp_5KRyLvbhX/view?usp=sharing"
+  }
+]

@@ -1,0 +1,30 @@
+/* Classes utilitárias comuns (podem ser estendidas por temas específicos) */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Botão primário (estilo base, será sobrescrito pelos temas se necessário) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}

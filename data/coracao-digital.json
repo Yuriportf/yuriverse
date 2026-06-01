@@ -1,0 +1,23 @@
+{
+  "titulo": "Coração Digital",
+  "subtitulo": "Light Novel",
+  "autor": "Yuri Santos de Oliveira",
+  "genero": "Ficção Científica · Romance",
+  "descricao": "Uma história sobre tecnologia, emoção e os limites entre o homem e a máquina.",
+  "capitulos": [
+    {
+      "num": "00",
+      "titulo": "Prólogo: O Começo Simples",
+      "status": "disponivel",
+      "cenas": [
+        { "type": "p", "text": "Kazuki Nakamura entrou na loja com a mochila nas costas..." }
+      ]
+    },
+    {
+      "num": "01",
+      "titulo": "O Pulsar do Código",
+      "status": "disponivel",
+      "cenas": []
+    }
+  ]
+}

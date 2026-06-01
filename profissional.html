@@ -19,7 +19,13 @@
     rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/profissional.css">
+<!-- RESET + VARIÁVEIS + UTILIDADES (compartilhados) -->
+<link rel="stylesheet" href="css/shared/reset.css">
+<link rel="stylesheet" href="css/shared/variables.css">
+<link rel="stylesheet" href="css/shared/utilities.css">
+
+<!-- TEMA PROFISSIONAL -->
+<link rel="stylesheet" href="css/professional/profissional.css">  <!-- antigo profissional.css -->
 </head>
 
 <body>
@@ -32,9 +38,10 @@
     <div class="header-inner">
       <div class="logo" onclick="scrollToTop()">Profissional</div>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+       <!-- Botão hambúrguer (mobile) -->
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 
       <nav class="header-nav" id="header-nav">
         <a href="#sobre-mim" class="nav-link" data-section="sobre-mim">Sobre Mim</a>
@@ -290,17 +297,29 @@
             <!-- ───────── CARROSSEL PROFISSIONAL ───────── -->
 
 
-            <!-- 1. Campus Patry Nordeste -->
+    
+
+            <!-- 3. Gambiarra LLM Club (projeto técnico forte) -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
-                <img src="assets/imagens/carroselprof/letreiro.jpg" alt="Letreiro institucional">
+                <img src="assets/imagens/carroselprof/Gambiarra .jpeg" alt="Gambiarra LLM Club">
                 <div class="carousel-overlay">
-                  <span class="carousel-tag">2024</span>
-                  <p class="carousel-caption">Campus Patry Nordeste </p>
+                  <span class="carousel-tag">2026</span>
+                  <p class="carousel-caption">Gambiarra LLM Club - IA e experimentação</p>
                 </div>
               </div>
             </div>
-            <!-- 2. Rec’n’Play (maior impacto) -->
+                 <!-- 4. Nasa space apps -->
+              <div class="carousel-slide">
+              <div class="carousel-img-wrap">
+                <img src="assets/imagens/carroselprof/CDD.jpg" alt="Gambiarra LLM Club">
+                <div class="carousel-overlay">
+                  <span class="carousel-tag">2025</span>
+                  <p class="carousel-caption">com.Dominio Digital 4.0</p>
+                </div>
+              </div>
+            </div>
+                  <!-- 2. Rec’n’Play (maior impacto) -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
                 <img src="assets/imagens/carroselprof/rec.jpg" alt="Rec n Play">
@@ -311,13 +330,13 @@
               </div>
             </div>
 
-            <!-- 3. Gambiarra LLM Club (projeto técnico forte) -->
+            <!-- 1. Campus Patry Nordeste -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
-                <img src="assets/imagens/carroselprof/Gambiarra .jpeg" alt="Gambiarra LLM Club">
+                <img src="assets/imagens/carroselprof/letreiro.jpg" alt="Letreiro institucional">
                 <div class="carousel-overlay">
-                  <span class="carousel-tag">2026</span>
-                  <p class="carousel-caption">Gambiarra LLM Club - IA e experimentação</p>
+                  <span class="carousel-tag">2024</span>
+                  <p class="carousel-caption">Campus Patry Nordeste </p>
                 </div>
               </div>
             </div>
@@ -396,8 +415,12 @@
           <a href="https://www.linkedin.com/in/yuri-oliveira-aqui/" target="_blank" class="footer-social">LinkedIn</a>
           <a href="mailto:ysoli7777@gmail.com" class="footer-social">Gmail</a>
           <a href="profissional.html" class="footer-social set-skip-intro">Profissional</a>
-          <a href="https://drive.google.com/file/d/1SiSdcwtZ5zFJYy8ri4B7viJL3odk-oBz/view?usp=sharing" target="_blank"
-            class="footer-social">Currículo</a>
+          <a href="https://drive.google.com/file/d/110j-PD_URDGoqi7-6_rmGv_rpK56Mbvc/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="footer-social">
+   Currículo
+</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -521,7 +544,7 @@
   </div>
   </div>
 
-  <script src="js/profissional.js"></script>
+ <script type="module" src="js/professional/main.js"></script>
 </body>
 
 </html>
