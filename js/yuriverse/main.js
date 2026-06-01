@@ -30,7 +30,6 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
       await initModules();
       modulesInitialized = true;
 
-      // Inicia o áudio imediatamente após o clique (aproveitando o evento do usuário)
       if (window.playerAPI && typeof window.playerAPI.startImmediately === 'function') {
         window.playerAPI.startImmediately();
         console.log('🎵 Áudio iniciado automaticamente (startImmediately)');
@@ -55,15 +54,32 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
     window.openLastChapter = openLastChapter;
     window.openMural = () => document.getElementById('muralOverlay')?.classList.add('open');
     window.closeMural = () => document.getElementById('muralOverlay')?.classList.remove('open');
-    window.toggleIntro = () => {
-      const t = document.getElementById('novelIntroText');
-      const b = document.getElementById('toggleIntroText');
-      if (t && b) {
-        const vis = t.style.display !== 'none';
-        t.style.display = vis ? 'none' : 'block';
-        b.textContent = vis ? 'LER INTRODUÇÃO' : 'OCULTAR INTRODUÇÃO';
+
+    // Função toggleNovelIntro definida
+    const toggleNovelIntro = () => {
+      const introTextDiv = document.getElementById('novelIntroText');
+      const toggleBtnSpan = document.getElementById('toggleIntroText');
+      if (introTextDiv && toggleBtnSpan) {
+        const isVisible = introTextDiv.style.display !== 'none';
+        introTextDiv.style.display = isVisible ? 'none' : 'block';
+        toggleBtnSpan.textContent = isVisible ? 'LER INTRODUÇÃO' : 'OCULTAR INTRODUÇÃO';
+        console.log(`📖 Introdução ${isVisible ? 'ocultada' : 'exibida'}`);
+      } else {
+        console.warn('toggleIntro: elementos #novelIntroText ou #toggleIntroText não encontrados');
       }
     };
+    window.toggleIntro = toggleNovelIntro;
+
+    // Adiciona evento de clique ao botão (caso ele já exista no DOM)
+    const toggleBtn = document.getElementById('toggleIntroBtn');
+    if (toggleBtn) {
+      // Remove event listener duplicado, se houver (usando nova referência)
+      toggleBtn.removeEventListener('click', toggleNovelIntro);
+      toggleBtn.addEventListener('click', toggleNovelIntro);
+      console.log('🔘 Botão "LER INTRODUÇÃO" configurado');
+    } else {
+      console.warn('Botão #toggleIntroBtn não encontrado no DOM');
+    }
 
     const observer = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('in-view')), { threshold: 0.1 });
     document.querySelectorAll('.reveal-section').forEach(el => observer.observe(el));
@@ -84,7 +100,6 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
       sessionStorage.removeItem('skipIntro');
       initModules().then(() => {
         modulesInitialized = true;
-        // Inicia áudio também no skip (se desejar – opcional)
         if (window.playerAPI && typeof window.playerAPI.startImmediately === 'function') {
           window.playerAPI.startImmediately();
           console.log('🎵 Áudio iniciado (modo skip)');
