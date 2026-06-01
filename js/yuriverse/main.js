@@ -4,6 +4,7 @@ import { initAudioPlayer } from './audioPlayer.js';
 import { initReader, openChapterReader, openLastChapter } from './novel/reader.js';
 import { renderChapters } from './novel/chaptersUI.js';
 import { initPlaylistCarousel } from './playlistCarousel.js';
+import { initReaderSettings } from './novel/readerSettings.js';
 
 (function() {
   console.log('🚀 main.js carregado');
@@ -45,9 +46,11 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
     try { initCarouselGallery(); } catch(e) { console.warn('Carrossel de fotos:', e); }
     try { await initAudioPlayer(); } catch(e) { console.warn('Player de áudio:', e); }
     try { initPlaylistCarousel(); } catch(e) { console.warn('Carrossel de playlists:', e); }
+    
     try {
-      await initReader();
-      renderChapters();
+      await initReader();           // Carrega os dados da novel
+      renderChapters();            // Renderiza os cards dos capítulos
+      initReaderSettings();        // Inicializa o painel de configurações do leitor
     } catch(e) { console.warn('Leitor / capítulos:', e); }
 
     window.openChapterReader = openChapterReader;
@@ -55,7 +58,7 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
     window.openMural = () => document.getElementById('muralOverlay')?.classList.add('open');
     window.closeMural = () => document.getElementById('muralOverlay')?.classList.remove('open');
 
-    // Função toggleNovelIntro definida
+    // Função toggleNovelIntro definida localmente para evitar conflitos
     const toggleNovelIntro = () => {
       const introTextDiv = document.getElementById('novelIntroText');
       const toggleBtnSpan = document.getElementById('toggleIntroText');
@@ -68,12 +71,14 @@ import { initPlaylistCarousel } from './playlistCarousel.js';
         console.warn('toggleIntro: elementos #novelIntroText ou #toggleIntroText não encontrados');
       }
     };
+
+    // Atribui a função globalmente
     window.toggleIntro = toggleNovelIntro;
 
-    // Adiciona evento de clique ao botão (caso ele já exista no DOM)
+    // Configura o botão "LER INTRODUÇÃO" (garantindo que não haja duplicação)
     const toggleBtn = document.getElementById('toggleIntroBtn');
     if (toggleBtn) {
-      // Remove event listener duplicado, se houver (usando nova referência)
+      // Remove qualquer listener anterior e adiciona o novo
       toggleBtn.removeEventListener('click', toggleNovelIntro);
       toggleBtn.addEventListener('click', toggleNovelIntro);
       console.log('🔘 Botão "LER INTRODUÇÃO" configurado');

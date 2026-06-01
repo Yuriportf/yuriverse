@@ -46,8 +46,6 @@ export async function initReader() {
   if (nextBtn) nextBtn.addEventListener('click', () => navigateChapter(1));
 }
 
-// As demais funções (openChapterReader, openLastChapter, closeReader, navigateChapter, renderCurrentChapter, renderEmptyReader) permanecem iguais
-// Copie exatamente as que você já tem, mas garanta que 'renderEmptyReader' exista
 export function openChapterReader(chapterIndex) {
   if (!overlay) return;
   if (!chapters.length) {
@@ -105,6 +103,11 @@ function renderCurrentChapter() {
   }
   if (prevBtn) prevBtn.classList.toggle('disabled', currentChapterIndex === 0);
   if (nextBtn) nextBtn.classList.toggle('disabled', currentChapterIndex === chapters.length - 1);
+  
+  // 🔥 Aplica os estilos salvos após renderizar o conteúdo
+  if (window.applyReaderStyles && typeof window.applyReaderStyles === 'function') {
+    window.applyReaderStyles();
+  }
 }
 
 function renderEmptyReader() {
@@ -113,4 +116,9 @@ function renderEmptyReader() {
   }
   if (chapNumSpan) chapNumSpan.textContent = 'CAP. --';
   if (chapTitleSpan) chapTitleSpan.textContent = 'Em breve';
+  
+  // 🔥 Também aplica estilos no fallback
+  if (window.applyReaderStyles && typeof window.applyReaderStyles === 'function') {
+    window.applyReaderStyles();
+  }
 }
