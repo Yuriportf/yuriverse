@@ -8,10 +8,10 @@
     content="Currículo virtual de Yuri Oliveira: nordestino, desenvolvedor e entusiasta de tecnologia.">
   <title>YURI | Profissional</title>
 
-  <!-- Favicon local -->
-  <link rel="icon" type="image/png" href="assets/imagens/icons/starp.png" />
-  <!-- remove isso se não tiver o arquivo -->
-  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  <!-- Favicon (corrigido - usa apenas o ícone que existe) -->
+  <link rel="icon" type="image/png" href="assets/imagens/icons/star.png">
+  <link rel="shortcut icon" href="assets/imagens/icons/star.png" type="image/x-icon">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +19,10 @@
     rel="stylesheet">
 
   <!-- CSS -->
-<!-- RESET + VARIÁVEIS + UTILIDADES (compartilhados) -->
-<link rel="stylesheet" href="css/shared/reset.css">
-<link rel="stylesheet" href="css/shared/variables.css">
-<link rel="stylesheet" href="css/shared/utilities.css">
-
-<!-- TEMA PROFISSIONAL -->
-<link rel="stylesheet" href="css/professional/profissional.css">  <!-- antigo profissional.css -->
+  <link rel="stylesheet" href="css/shared/reset.css">
+  <link rel="stylesheet" href="css/shared/variables.css">
+  <link rel="stylesheet" href="css/shared/utilities.css">
+  <link rel="stylesheet" href="css/professional/profissional.css"> <!-- nome corrigido (sem acento) -->
 </head>
 
 <body>
@@ -38,10 +35,10 @@
     <div class="header-inner">
       <div class="logo" onclick="scrollToTop()">Profissional</div>
 
-       <!-- Botão hambúrguer (mobile) -->
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
 
       <nav class="header-nav" id="header-nav">
         <a href="#sobre-mim" class="nav-link" data-section="sobre-mim">Sobre Mim</a>
@@ -116,121 +113,93 @@
             com visão internacional.
           </p>
 
-
           <div class="section-label" style="margin-top:40px;">Minhas Stacks</div>
 
           <div class="stacks-grid">
-
-            <!-- ================= BACKEND ================= -->
+            <!-- BACKEND -->
             <div class="stack-item" title="Java">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
             </div>
-
             <div class="stack-item" title="Python">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
             </div>
-
             <div class="stack-item" title="C++">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
             </div>
-
-            <!-- ================= LINGUAGENS WEB ================= -->
+            <!-- LINGUAGENS WEB -->
             <div class="stack-item" title="JavaScript">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                 alt="JavaScript">
             </div>
-
             <div class="stack-item" title="TypeScript">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                 alt="TypeScript">
             </div>
-
             <div class="stack-item" title="HTML5">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
             </div>
-
             <div class="stack-item" title="CSS3">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
             </div>
-
-            <!-- ================= BANCO DE DADOS ================= -->
+            <!-- BANCO DE DADOS -->
             <div class="stack-item" title="PostgreSQL">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
                 alt="PostgreSQL">
             </div>
-
             <div class="stack-item" title="MySQL">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
             </div>
-
             <div class="stack-item" title="SQLite">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
             </div>
-
             <div class="stack-item" title="Firebase">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
             </div>
-
-            <!-- ================= FRAMEWORKS ================= -->
+            <!-- FRAMEWORKS -->
             <div class="stack-item" title="Flask">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"
                 style="filter: brightness(0) invert(1);">
             </div>
-
             <div class="stack-item" title="Django">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
             </div>
-
             <div class="stack-item" title="Spring Boot">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
                 alt="Spring Boot">
             </div>
-
             <div class="stack-item" title="Vue.js">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
             </div>
-
             <div class="stack-item" title="Next.js">
               <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js">
             </div>
-
-            <!-- ================= IDEs ================= -->
+            <!-- IDEs -->
             <div class="stack-item" title="VS Code">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
             </div>
-
             <div class="stack-item" title="IntelliJ">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
                 alt="IntelliJ">
             </div>
-
-            <!-- ================= EXTRAS ================= -->
+            <!-- EXTRAS -->
             <div class="stack-item" title="Git">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
             </div>
-
             <div class="stack-item" title="Docker">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
             </div>
-
             <div class="stack-item" title="Linux">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
             </div>
-
             <div class="stack-item" title="Arduino">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino">
             </div>
-
             <div class="stack-item" title="AWS">
               <img src="https://skillicons.dev/icons?i=aws" alt="AWS">
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-    </div>
-    </div>
     </div>
   </section>
 
@@ -271,7 +240,6 @@
     </div>
   </section>
 
-
   <!-- ========== COMUNIDADE & EVENTOS ========== -->
   <section id="eventos" class="events-section">
     <div class="events-number">03</div>
@@ -291,15 +259,9 @@
           </svg>
         </button>
 
-        <div class="carousel-track-wrapper" id="carouselTrack">
+        <div class="carousel-track-wrapper">
           <div class="carousel-track">
-
-            <!-- ───────── CARROSSEL PROFISSIONAL ───────── -->
-
-
-    
-
-            <!-- 3. Gambiarra LLM Club (projeto técnico forte) -->
+            <!-- Slide 1 -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
                 <img src="assets/imagens/carroselprof/Gambiarra .jpeg" alt="Gambiarra LLM Club">
@@ -309,17 +271,17 @@
                 </div>
               </div>
             </div>
-                 <!-- 4. Nasa space apps -->
-              <div class="carousel-slide">
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
               <div class="carousel-img-wrap">
-                <img src="assets/imagens/carroselprof/CDD.jpg" alt="Gambiarra LLM Club">
+                <img src="assets/imagens/carroselprof/CDD.jpg" alt="com.Dominio Digital">
                 <div class="carousel-overlay">
                   <span class="carousel-tag">2025</span>
                   <p class="carousel-caption">com.Dominio Digital 4.0</p>
                 </div>
               </div>
             </div>
-                  <!-- 2. Rec’n’Play (maior impacto) -->
+            <!-- Slide 3 -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
                 <img src="assets/imagens/carroselprof/rec.jpg" alt="Rec n Play">
@@ -329,37 +291,26 @@
                 </div>
               </div>
             </div>
-
-            <!-- 1. Campus Patry Nordeste -->
+            <!-- Slide 4 -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
                 <img src="assets/imagens/carroselprof/letreiro.jpg" alt="Letreiro institucional">
                 <div class="carousel-overlay">
                   <span class="carousel-tag">2024</span>
-                  <p class="carousel-caption">Campus Patry Nordeste </p>
+                  <p class="carousel-caption">Campus Patry Nordeste</p>
                 </div>
               </div>
             </div>
-
-            <!-- 4. Nasa space apps -->
+            <!-- Slide 5 -->
             <div class="carousel-slide">
               <div class="carousel-img-wrap">
-                <img src="assets/imagens/carroselprof/Nasa.png" alt="Gambiarra LLM Club">
+                <img src="assets/imagens/carroselprof/Nasa.png" alt="NASA Space Apps">
                 <div class="carousel-overlay">
                   <span class="carousel-tag">2024</span>
-                  <p class="carousel-caption">Nasa space apps</p>
+                  <p class="carousel-caption">NASA Space Apps Challenge</p>
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-            <!-- ───────── FIM DO CARROSSEL ───────── -->
-            <!-- Adicione mais slides seguindo o mesmo padrão -->
-
           </div>
         </div>
 
@@ -372,10 +323,8 @@
 
       <!-- Dots de navegação -->
       <div class="carousel-dots" id="carouselDots"></div>
-
     </div>
   </section>
-
 
   <!-- ========== BIBLIOTECA ========== -->
   <section id="biblioteca" class="library-section">
@@ -414,13 +363,9 @@
           <a href="https://github.com/Yuriportf" target="_blank" class="footer-social">GitHub</a>
           <a href="https://www.linkedin.com/in/yuri-oliveira-aqui/" target="_blank" class="footer-social">LinkedIn</a>
           <a href="mailto:ysoli7777@gmail.com" class="footer-social">Gmail</a>
-          <a href="profissional.html" class="footer-social set-skip-intro">Profissional</a>
-          <a href="https://drive.google.com/file/d/110j-PD_URDGoqi7-6_rmGv_rpK56Mbvc/view?usp=sharing"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="footer-social">
-   Currículo
-</a>
+          <a href="index.html" class="footer-social">YURIVERSE</a>
+          <a href="https://drive.google.com/file/d/110j-PD_URDGoqi7-6_rmGv_rpK56Mbvc/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer" class="footer-social">Currículo</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -482,8 +427,7 @@
     </div>
   </div>
 
-
-  <!-- ========== CARDS DOS LIVROS  ========== -->
+  <!-- ========== BIBLIOTECA MODAL ========== -->
   <div class="modal-overlay" id="libraryModal">
     <div class="modal-content modal-library">
       <button class="modal-close" onclick="closeModal('libraryModal')">&times;</button>
@@ -492,7 +436,6 @@
 
       <div class="book-cards-scroll">
         <div class="book-cards">
-
           <div class="book-card">
             <img src="assets/imagens/livros/cleancode.jpg" alt="Clean Code">
             <h3>Clean Code</h3>
@@ -500,15 +443,13 @@
             <a href="https://drive.google.com/file/d/1vFbtpo3JdocFU-XPDLPLH4WN7j56QiPr/view?usp=sharing" target="_blank"
               class="btn-ver-pdf">Ver livro completo</a>
           </div>
-
           <div class="book-card">
             <img src="assets/imagens/livros/entendendoalgoritimos.jpg" alt="Entendendo Algoritmos">
-            <h3>Entendendo algorítimos</h3>
+            <h3>Entendendo algoritmos</h3>
             <p>Aditya Y. Bhargava</p>
             <a href="https://drive.google.com/file/d/1Ru9K7DrhAtEiX-eKbi8WyrZUOphgvhh5/view?usp=sharing" target="_blank"
               class="btn-ver-pdf">Ver livro completo</a>
           </div>
-
           <div class="book-card">
             <img src="assets/imagens/livros/aws.png" alt="Amazon AWS">
             <h3>Amazon AWS: Descomplicando a computação na nuvem</h3>
@@ -516,7 +457,6 @@
             <a href="https://drive.google.com/file/d/1BPwWlPTQUKwmg8PoOR8OeFZ_qx8OGXxZ/view?usp=sharing" target="_blank"
               class="btn-ver-pdf">Ver livro completo</a>
           </div>
-
           <div class="book-card">
             <img src="assets/imagens/livros/paroesdeprojetos.jpg" alt="Design Patterns">
             <h3>Design Patterns</h3>
@@ -524,27 +464,18 @@
             <a href="https://drive.google.com/file/d/10fElZDk2SryUF7sS-8dZ9ZCEmE8lx4fk/view?usp=sharing" target="_blank"
               class="btn-ver-pdf">Ver livro completo</a>
           </div>
-
           <div class="book-card">
             <img src="assets/imagens/livros/pmbok.png" alt="PMBOK">
-            <h3>Pmbok</h3>
-            <p>&nbsp;</p>
+            <h3>PMBOK</h3>
+            <p>Project Management Institute</p>
             <a href="https://drive.google.com/file/d/1JmsxBU9y-adgOzSWJd6QEp_5KRyLvbhX/view?usp=sharing" target="_blank"
               class="btn-ver-pdf">Ver livro completo</a>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 
-
-  </div>
-  </div>
-  </div>
-
- <script type="module" src="js/professional/main.js"></script>
+  <script type="module" src="js/professional/main.js"></script>
 </body>
-
 </html>

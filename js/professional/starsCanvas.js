@@ -1,4 +1,4 @@
-// starsCanvas.js – Campo estelar com estrelas de 4 pontas e cintilação
+// starsCanvas.js – Otimizado (menos partículas e pausa em background)
 export function initStarsCanvas() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) {
@@ -13,6 +13,15 @@ export function initStarsCanvas() {
   let shootTimer = 0;
   let shootInterval = 2500;
   let animationId = null;
+  let isPageVisible = true;
+
+  // Pausa a animação quando a aba não estiver visível (economiza CPU)
+  document.addEventListener('visibilitychange', () => {
+    isPageVisible = !document.hidden;
+    if (isPageVisible && animationId === null) {
+      animationId = requestAnimationFrame(draw);
+    }
+  });
 
   function resize() {
     width = window.innerWidth;
@@ -23,7 +32,8 @@ export function initStarsCanvas() {
   }
 
   function buildStars() {
-    const count = Math.floor((width * height) / 6000);
+    // REDUZIDO: de (width*height)/6000 para /15000
+    const count = Math.floor((width * height) / 15000);
     bgStars = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -32,7 +42,8 @@ export function initStarsCanvas() {
       phase: Math.random() * Math.PI * 2,
       speed: Math.random() * 0.008 + 0.003,
     }));
-    const SPIKE_COUNT = 28;
+    // REDUZIDO: de 28 para 16 spikes (estrelas de 4 pontas)
+    const SPIKE_COUNT = 16;
     spikes = Array.from({ length: SPIKE_COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -98,35 +109,43 @@ export function initStarsCanvas() {
 
   let lastTimestamp = 0;
   function draw(ts) {
+    if (!isPageVisible) {
+      animationId = null;
+      return;
+    }
     const dt = Math.min(100, ts - lastTimestamp);
     lastTimestamp = ts;
     ctx.clearRect(0, 0, width, height);
     // Estrelas de fundo
-    bgStars.forEach(s => {
+    for (const s of bgStars) {
       s.phase += s.speed;
       const op = s.base + s.base * 0.6 * Math.sin(s.phase);
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(220,220,255,${op})`;
       ctx.fill();
-    });
+    }
     // Estrelas de 4 pontas
-    spikes.forEach(s => {
+    for (const s of spikes) {
       s.phase += s.speed;
       const t = (Math.sin(s.phase) + 1) / 2;
       const op = 0.08 + t * 0.85;
       const sz = s.size * (0.7 + t * 0.3);
       drawSpike(s.x, s.y, sz, op, s.hue, s.sat);
-    });
-    // Tiros
+    }
+    // Shooting stars
     shootTimer += dt;
     if (shootTimer > shootInterval) {
       spawnShoot();
       shootTimer = 0;
       shootInterval = Math.random() * 2500 + 2500;
     }
-    shoots = shoots.filter(s => s.life > 0);
-    shoots.forEach(s => {
+    for (let i = shoots.length-1; i >= 0; i--) {
+      const s = shoots[i];
+      if (s.life <= 0) {
+        shoots.splice(i,1);
+        continue;
+      }
       const tailX = s.x - Math.cos(s.angle) * s.len;
       const tailY = s.y - Math.sin(s.angle) * s.len;
       const grad = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
@@ -147,16 +166,16 @@ export function initStarsCanvas() {
       s.x += Math.cos(s.angle) * s.speed;
       s.y += Math.sin(s.angle) * s.speed;
       s.life -= s.decay;
-    });
+    }
     animationId = requestAnimationFrame(draw);
   }
 
   window.addEventListener('resize', () => {
     resize();
-    cancelAnimationFrame(animationId);
+    if (animationId) cancelAnimationFrame(animationId);
     animationId = requestAnimationFrame(draw);
   });
   resize();
   animationId = requestAnimationFrame(draw);
-  console.log('[starsCanvas] Inicializado');
+  console.log('[starsCanvas] Inicializado (modo otimizado)');
 }

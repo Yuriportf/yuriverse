@@ -1211,7 +1211,7 @@ button { cursor:pointer; background:none; border:none; font-family:inherit; }
   display: flex;
   gap: 16px;
   transition: transform .5s cubic-bezier(0.16,1,0.3,1);
-  will-change: transform;
+  will-change: transform;  /* ← adicionar */
 }
 
 .carousel-slide {
@@ -1432,5 +1432,56 @@ button { cursor:pointer; background:none; border:none; font-family:inherit; }
     animation-duration:.01ms !important;
     transition-duration:.01ms !important;
     scroll-behavior:auto !important;
+  }
+}
+
+/* ========================================================
+   OTIMIZAÇÕES DE PERFORMANCE
+   ======================================================== */
+
+/* Elementos animados devem ter will-change para aceleração GPU */
+#hero-canvas,
+.carousel-track,
+.carousel-slide img,
+.stack-item,
+.edu-card,
+.btn-primary,
+.btn-biblioteca,
+.modal-content,
+.book-card {
+  will-change: transform;
+}
+
+/* Força aceleração de hardware também com translateZ(0) */
+#hero-canvas {
+  transform: translateZ(0);
+}
+
+.carousel-track {
+  will-change: transform;
+}
+
+/* Para animações de hover, use transform com GPU */
+.carousel-slide img {
+  will-change: transform;
+}
+
+/* Reduzir o impacto de scroll com throttling (por JS, mas CSS ajuda) */
+.scroll-progress {
+  will-change: width;
+}
+
+/* Desabilitar animações para quem prefere redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  #hero-canvas,
+  .carousel-track,
+  .carousel-slide img,
+  .stack-item,
+  .edu-card,
+  .btn-primary,
+  .btn-biblioteca {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
   }
 }
