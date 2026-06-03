@@ -5,6 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Inconsolata:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=PT+Serif:wght@400;700&family=Comfortaa:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Space+Mono:wght@400;700');
+
 :root {
   --void:         #050508;
   --void-alt:     #0a0a10;
@@ -216,6 +217,7 @@
 
 /* Botão de configurações (engrenagem) */
 .reader-settings {
+  position: relative;
   margin: 0 4px;
 }
 .reader-settings-btn {
@@ -238,7 +240,174 @@
 }
 
 /* ------------------------------------------------------------------
-   CORPO DO TEXTO (onde o conteúdo do capítulo é renderizado)
+   SELETOR DE IDIOMA (centralizado e com mesmo estilo)
+   ------------------------------------------------------------------ */
+.reader-lang-selector {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+}
+.reader-lang-btn {
+  background: var(--void-edge);
+  border: 1px solid var(--violet-dim);
+  color: var(--ghost);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--mono);
+  transition: all 0.2s;
+}
+.reader-lang-btn:hover {
+  background: var(--void-panel);
+  border-color: var(--violet);
+  color: var(--ghost-bright);
+}
+.reader-lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--void-panel);
+  border: 1px solid var(--stripe-2);
+  border-radius: 8px;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px 0;
+  min-width: 100px;
+  z-index: 300;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+.reader-lang-dropdown li {
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ghost);
+  font-family: var(--sans);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.reader-lang-dropdown li:hover {
+  background: var(--stripe-1);
+  color: var(--ghost-white);
+}
+
+/* ------------------------------------------------------------------
+   PAINEL DE CONFIGURAÇÕES DO LEITOR (centralizado)
+   ------------------------------------------------------------------ */
+.reader-settings-panel {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  background: var(--void-panel);
+  border: 1px solid var(--stripe-2);
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 1001;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  display: none;
+}
+.settings-group {
+  margin-bottom: 14px;
+}
+.settings-group label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ghost-deep);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.settings-group input,
+.settings-group select {
+  width: 100%;
+  padding: 6px 8px;
+  background: var(--void-edge);
+  border: 1px solid var(--stripe-2);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+.apply-settings-btn,
+.reset-settings-btn {
+  width: 100%;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--stripe-2);
+  color: var(--ghost-deep);
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  transition: all 0.2s;
+}
+.apply-settings-btn:hover,
+.reset-settings-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+.settings-group select {
+  appearance: none;
+  background-color: var(--void-edge);
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238a8aa0%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding: 8px 32px 8px 12px;
+  border: 1px solid var(--stripe-2);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.settings-group select:hover {
+  border-color: var(--stripe-3);
+  background-color: var(--void-panel);
+}
+.settings-group select:focus {
+  outline: none;
+  border-color: var(--violet);
+  box-shadow: 0 0 0 1px var(--violet-dim);
+}
+
+/* ------------------------------------------------------------------
+   TOAST (mensagens temporárias)
+   ------------------------------------------------------------------ */
+.reader-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--void-panel);
+  color: var(--ghost);
+  padding: 8px 18px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-size: 13px;
+  border: 1px solid var(--violet-dim);
+  font-family: var(--sans);
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .reader-toast {
+    white-space: normal;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+/* ------------------------------------------------------------------
+   CORPO DO TEXTO (scroll, etc)
    ------------------------------------------------------------------ */
 .reader-body {
   flex: 1;
@@ -280,10 +449,6 @@
   margin-top: 5px;
   color: var(--violet);
 }
-
-/* ------------------------------------------------------------------
-   ELEMENTOS DE TEXTO ESPECÍFICOS
-   ------------------------------------------------------------------ */
 .reader-loc {
   display: inline-flex;
   align-items: center;
@@ -417,7 +582,7 @@
 .reader-code::before { content: "> "; color: var(--violet); }
 
 /* ------------------------------------------------------------------
-   BARRA DE STATUS (não usada, mantida)
+   BARRA DE STATUS (não usada)
    ------------------------------------------------------------------ */
 .reader-statusbar {
   background: var(--void-alt);
@@ -443,17 +608,13 @@
   margin-left: auto;
 }
 
-/* ------------------------------------------------------------------
-   SCROLLBAR PERSONALIZADA
-   ------------------------------------------------------------------ */
+/* SCROLLBAR */
 .reader-body::-webkit-scrollbar { width: 3px; }
 .reader-body::-webkit-scrollbar-track { background: var(--void-alt); }
 .reader-body::-webkit-scrollbar-thumb { background: var(--ghost-void); border-radius: 2px; }
 .reader-body::-webkit-scrollbar-thumb:hover { background: var(--violet); }
 
-/* ------------------------------------------------------------------
-   RESPONSIVIDADE
-   ------------------------------------------------------------------ */
+/* RESPONSIVIDADE */
 @media (max-width: 1199px) {
   .reader-content { max-width: 760px; margin: 0 auto; }
   .reader-body { padding: 1.8rem 1.8rem 3rem; font-size: 0.95rem; }
@@ -471,9 +632,7 @@
   .reader-loc { font-size: 0.55rem; }
 }
 
-/* ------------------------------------------------------------------
-   ACESSIBILIDADE
-   ------------------------------------------------------------------ */
+/* ACESSIBILIDADE */
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; }
 }
@@ -489,62 +648,51 @@
 }
 
 /* ==================================================================
-   PAINEL DE CONFIGURAÇÕES DO LEITOR (flutuante, sem quebrar layout)
+   CONTROLES DE MÚSICA NO LEITOR
    ================================================================== */
-.reader-settings {
-  position: relative;
-}
-.reader-settings-panel {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  background: var(--void-panel);
-  border: 1px solid var(--stripe-2);
-  border-radius: 8px;
-  padding: 16px;
-  z-index: 1001;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  display: none;
-}
-.settings-group {
-  margin-bottom: 14px;
-}
-.settings-group label {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--ghost-deep);
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.settings-group input,
-.settings-group select {
-  width: 100%;
-  padding: 6px 8px;
+/* Controles de música integrados */
+.reader-music-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
   background: var(--void-edge);
+  padding: 0 8px;
+  border-radius: 20px;
   border: 1px solid var(--stripe-2);
-  color: white;
-  border-radius: 4px;
-  font-size: 0.75rem;
 }
-.apply-settings-btn,
-.reset-settings-btn {
-  width: 100%;
-  margin-top: 8px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--stripe-2);
+.reader-music-controls button {
+  background: transparent;
+  border: none;
   color: var(--ghost-deep);
-  padding: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 0.7rem;
+  padding: 4px 6px;
   transition: all 0.2s;
+  border-radius: 4px;
 }
-.apply-settings-btn:hover,
-.reset-settings-btn:hover {
+.reader-music-controls button:hover {
+  color: var(--ghost-white);
   background: rgba(255,255,255,0.1);
-  color: white;
+  transform: scale(1.05);
+}
+.reader-music-controls .music-track-name {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--violet);
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 4px;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .reader-music-controls .music-track-name {
+    display: none;
+  }
+  .reader-music-controls {
+    gap: 0.2rem;
+    padding: 0 4px;
+  }
 }

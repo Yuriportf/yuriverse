@@ -1,4 +1,4 @@
-// main.js – YURIVERSE (com carrossel de fotos, áudio, leitor e playlist carousel)
+// main.js – YURIVERSE (sem tradutor)
 import { initCarouselGallery } from './carouselGallery.js';
 import { initAudioPlayer } from './audioPlayer.js';
 import { initReader, openChapterReader, openLastChapter } from './novel/reader.js';
@@ -33,10 +33,9 @@ import { initReaderSettings } from './novel/readerSettings.js';
 
       if (window.playerAPI && typeof window.playerAPI.startImmediately === 'function') {
         window.playerAPI.startImmediately();
-        console.log('🎵 Áudio iniciado automaticamente (startImmediately)');
+        console.log('🎵 Áudio iniciado automaticamente');
       } else if (window.playerAPI && typeof window.playerAPI.play === 'function') {
         window.playerAPI.play();
-        console.log('🎵 Áudio iniciado automaticamente (fallback play)');
       }
     }, 800);
   }
@@ -46,11 +45,10 @@ import { initReaderSettings } from './novel/readerSettings.js';
     try { initCarouselGallery(); } catch(e) { console.warn('Carrossel de fotos:', e); }
     try { await initAudioPlayer(); } catch(e) { console.warn('Player de áudio:', e); }
     try { initPlaylistCarousel(); } catch(e) { console.warn('Carrossel de playlists:', e); }
-    
     try {
-      await initReader();           // Carrega os dados da novel
-      renderChapters();            // Renderiza os cards dos capítulos
-      initReaderSettings();        // Inicializa o painel de configurações do leitor
+      await initReader();
+      renderChapters();
+      initReaderSettings();
     } catch(e) { console.warn('Leitor / capítulos:', e); }
 
     window.openChapterReader = openChapterReader;
@@ -58,7 +56,6 @@ import { initReaderSettings } from './novel/readerSettings.js';
     window.openMural = () => document.getElementById('muralOverlay')?.classList.add('open');
     window.closeMural = () => document.getElementById('muralOverlay')?.classList.remove('open');
 
-    // Função toggleNovelIntro definida localmente para evitar conflitos
     const toggleNovelIntro = () => {
       const introTextDiv = document.getElementById('novelIntroText');
       const toggleBtnSpan = document.getElementById('toggleIntroText');
@@ -66,24 +63,13 @@ import { initReaderSettings } from './novel/readerSettings.js';
         const isVisible = introTextDiv.style.display !== 'none';
         introTextDiv.style.display = isVisible ? 'none' : 'block';
         toggleBtnSpan.textContent = isVisible ? 'LER INTRODUÇÃO' : 'OCULTAR INTRODUÇÃO';
-        console.log(`📖 Introdução ${isVisible ? 'ocultada' : 'exibida'}`);
-      } else {
-        console.warn('toggleIntro: elementos #novelIntroText ou #toggleIntroText não encontrados');
       }
     };
-
-    // Atribui a função globalmente
     window.toggleIntro = toggleNovelIntro;
-
-    // Configura o botão "LER INTRODUÇÃO" (garantindo que não haja duplicação)
     const toggleBtn = document.getElementById('toggleIntroBtn');
     if (toggleBtn) {
-      // Remove qualquer listener anterior e adiciona o novo
       toggleBtn.removeEventListener('click', toggleNovelIntro);
       toggleBtn.addEventListener('click', toggleNovelIntro);
-      console.log('🔘 Botão "LER INTRODUÇÃO" configurado');
-    } else {
-      console.warn('Botão #toggleIntroBtn não encontrado no DOM');
     }
 
     const observer = new IntersectionObserver(e => e.forEach(i => i.isIntersecting && i.target.classList.add('in-view')), { threshold: 0.1 });

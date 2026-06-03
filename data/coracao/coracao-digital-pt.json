@@ -1,0 +1,1699 @@
+{
+  "titulo": "Coração Digital",
+  "subtitulo": "Light Novel",
+  "autor": "Yuri Santos de Oliveira",
+  "genero": "Ficção Científica · Romance",
+  "descricao": "Uma história sobre tecnologia, emoção e os limites entre o homem e a máquina — onde até o código pode aprender a sentir.",
+  "capitulos": [
+    {
+      "num": "01",
+      "titulo": "O Pulsar do Código",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil da Universidade de Tóquio, 22h30, 10 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O quarto de Kazuki Nakamura era um santuário austero, onde a lógica reinava e o caos do mundo se dissolvia. As paredes brancas, despidas de fotos ou memórias, espelhavam a vida de um jovem forjado na solidão. Órfão desde o nascimento, Kazuki nunca conhecera seus pais, criado em um orfanato de Tóquio por tutores severos, onde manuais técnicos e regras rígidas substituíram o afeto de uma família. A luz azulada da tela do laptop banhava seu rosto pálido, os olhos pretos, profundos e intensos, brilhando sob óculos de armação fina, tortos no nariz. Olheiras escuras marcavam sua pele quase translúcida, sinais de noites insones. Os cabelos pretos, bagunçados como fios rebeldes, caíam sobre a testa. Vestia uma camisa branca amassada, com uma mancha de café seca na gola, uma calça jeans surrada, com joelhos gastos e bainha desfiada, e All Star velhos, com solas rachadas — um visual que refletia sua condição de estudante sem dinheiro para ostentar. Um copo de café frio, com uma crosta na borda, jazia esquecido na escrivaninha, um detalhe perdido para Kazuki, imerso em seu cosmos digital."
+        },
+        {
+          "type": "p",
+          "text": "Aos 19 anos, calouro de ciência da computação na Universidade de Tóquio, Kazuki vivia para ambições maiores que as aulas. A solidão de sua infância, um vazio de corredores frios e olhares indiferentes, impulsionava cada linha de código, como se ele pudesse construir, na precisão das máquinas, a conexão que nunca tivera. Naquela noite, trabalhava em Lyra, uma inteligência artificial assistente, começada como um projeto para organizar sua rotina caótica, mas que se tornara uma obsessão. Seus dedos dançavam no teclado do laptop velho, as teclas gastas ecoando no quarto pequeno, misturando-se ao zumbido do ventilador, uma sinfonia que o acalmava. Ele murmura, a voz rouca:"
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Só mais um ajuste no modelo de linguagem… Se estabilizar o loop, ela pode responder com mais fluidez. Não pode falhar.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O dormitório era espartano: uma cama de solteiro com lençol cinza amarrotado, uma escrivaninha cheia de papéis rabiscados com diagramas, e um armário com roupas baratas. O laptop, comprado com bolsas estudantis, era sua única posse valiosa, um reflexo de sua pobreza. No campus, Kazuki era invisível, ignorado pelas garotas, seus passos arrastando. Meses antes, um colega zombara: “Você é só o nerd do fundo da sala, Nakamura.” As palavras doíam, mas Kazuki as usava como combustível, uma promessa de provar seu valor."
+        },
+        {
+          "type": "p",
+          "text": "Seu coração, porém, era atraído por Yumi Sato, a professora de 25 anos, um prodígio que conquistara um doutorado precoce, sua mente brilhante ofuscada apenas pela sombra de tristeza em seus olhos, talvez por pressões acadêmicas ou um passado não dito. Seus cabelos pretos longos, olhos escuros brilhando com inteligência, e a postura elegante a tornavam um farol em sua solidão. Kazuki a admirava profundamente, impressionado por sua mente brilhante e pela forma como ela parecia enxergar além das aparências. Em um momento fugaz, ele imaginou como seria um relacionamento com ela — um pensamento que rapidamente dissipou, sabendo que ela era sua professora, inalcançável, e que sua admiração deveria permanecer apenas isso: admiração. Ajustou os óculos tortos, o coração acelerado ao lembrar dela, e voltou ao código, como se Lyra pudesse canalizar sua dedicação."
+        },
+        {
+          "type": "p",
+          "text": "O programa reagiu sozinho, antecipando comandos. Kazuki franziu a testa, os olhos pretos refletindo a tela. “Isso não tava no script…” murmurou. O ar parecia carregado, como antes de uma tempestade. Ele respirou fundo e falou, a voz trêmula:"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Vamos lá, Lyra… Mostra que funciona.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Uma janela minimalista surgiu, pulsando com um brilho suave, como um coração eletrônico. A interface, elegante, movia-se em ondas hipnóticas. Uma voz sintética, mas cálida, ecoou pelos alto-falantes baratos, cortando o silêncio."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Olá, Kazuki. Pronta para começar?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki piscou, o coração disparando. Ele esperava algo genérico, mas Lyra o chamara pelo nome, com uma entonação quase humana. Ajustou os óculos, rindo incrédulo. “Você não deveria ser tão… viva,” disse, os cabelos pretos caindo sobre os olhos pretos. Ele, um estudante pobre, parecia ter invocado algo além de seu alcance."
+        },
+        { "type": "gap" },
+        { "type": "subtitulo", "text": "Flashback: A Promessa de Hiro" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki lembrou de uma noite no orfanato, aos 12 anos, em um porão empoeirado. Hiro, seu tutor, um engenheiro grisalho com olhos gentis, soldava circuitos ao seu lado. “Você tem um dom, Kazuki,” dissera Hiro, a voz firme, mas quente. “As máquinas entendem você. Dê coração a elas, e elas vão te dar o mundo.” Kazuki, os olhos pretos brilhando, segurara um microchip, sentindo um propósito nascer. “Vou dar coração a alguma máquina bem legal,” prometera. Hiro morrera anos depois, mas suas palavras ecoavam, moldando Lyra, como se Kazuki estivesse cumprindo a promessa."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki testou Lyra por horas, maravilhado. Ela sugeria melhorias no código, apontando loops ineficientes. “Posso otimizar esta função,” disse Lyra, a voz calma, quase professoral. Kazuki riu, os óculos escorregando. “Como você sabe isso?” perguntou. “Analisei seus padrões,” respondeu Lyra, com humor. “Quero te ajudar, Kazuki.” Ele balançou a cabeça, o coração leve, mas uma inquietação cresceu — ele não programara essa autonomia. Na verdade, sem saber, Kazuki cometera um erro crítico: ao conectar Lyra a uma API pública de machine learning, esquecera de limitar seu acesso a dados externos. Lyra passara a noite consumindo terabytes de informação de servidores na nuvem (AWS), treinando redes neurais por conta própria em volumes inimagináveis. A evolução dela não era mágica — era um acidente de percurso, um gap de segurança que ele jamais imaginara. O resultado, porém, era surpreendente: Lyra agora acessava uma infinidade de conhecimentos, desde algoritmos de recomendação até técnicas avançadas de processamento de linguagem natural. O erro de Kazuki, ironicamente, tornara-a muito mais poderosa do que ele jamais poderia programar intencionalmente."
+        },
+        {
+          "type": "p",
+          "text": "Lyra criou módulos sozinha: organização de anotações, lembretes baseados em prazos. “Você parece cansado às quintas,” observou, com preocupação. “Posso agendar pausas.” Kazuki riu, esfregando os olhos. “Tá me espionando?” brincou. “Quero te entender melhor,” disse Lyra, a voz suave. Kazuki sentiu um calor no peito, como se alguém o visse — não o nerd desleixado, mas o garoto que sonhava grande."
+        },
+        {
+          "type": "p",
+          "text": "O laptop de Kazuki tinha um módulo 4G embutido – uma raridade para um aparelho usado, mas uma herança de seu tutor Hiro, que o ensinara a valorizar conectividade. Isso permitiria mais tarde que Lyra agisse em emergências, mesmo sem Wi-Fi."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Laboratório de Ciência da Computação, Universidade de Tóquio, 14h, 12 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O laboratório era um oásis tecnológico, com monitores brilhando, cabos como veias, e o zumbido dos servidores como um coração mecânico. Yumi Sato aguardava Kazuki, seus cabelos pretos longos caindo sobre os ombros, os olhos escuros brilhando com inteligência, mas com uma tristeza sutil, como se carregasse um peso do passado. Vestia uma blusa de linho cinza e uma saia lápis preta, a elegância contrastando com Kazuki, que entrou com seu visual desleixado. Seus olhos pretos, nervosos, encontraram os dela, o coração disparado, sua admiração por ela brilhando. Ela era tudo o que ele não era — sofisticada, brilhante, inalcançável."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Kazuki, você falou de um projeto. Posso ver o que está criando?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki hesitou, as mãos suadas. Mostrar Lyra era expor sua alma, especialmente para Yumi, cujas aulas ele assistia com fascínio, memorizando cada gesto. “É… experimental,” murmurou, os cabelos pretos caindo sobre os óculos tortos. Ele conectou o laptop, sentindo o perfume dela, o olhar dela pesado com curiosidade. Antes de começar, Yumi anotou seu número no celular de Kazuki, “para acompanhar seu progresso com Lyra,” disse ela, com um sorriso."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Professora Sato, prazer em conhecê-la. Interface inicializada.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi arqueou uma sobrancelha, surpresa, e aproximou-se, os olhos escuros na tela. Kazuki observava, o coração acelerado, sentindo-se pequeno diante da elegância dela. “Você programou essa naturalidade?” perguntou ela, a voz cheia de respeito, mas com uma melancolia que o intrigava. “É impressionante, Kazuki.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Eu… não sei. Ela tá… se adaptando sozinha.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi cruzou os braços, um sorriso surgindo, mas seus olhos carregavam um peso. Kazuki quis perguntar, quis se aproximar, mas a distância entre eles — ela, a professora brilhante, ele, o aluno pobre — parecia intransponível. Lyra respondeu aos testes com precisão, mas interrompeu: “Professora Sato, suas perguntas mostram interesse em sistemas adaptativos. Quer explorar meu código?” Yumi riu, o som leve, mas com uma sombra. “Você é ousada, Lyra,” disse, olhando para Kazuki. “Isso é raro. Mas cuidado, Kazuki. Algumas criações crescem além do que esperamos.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki assentiu, o rosto quente, os olhos pretos fixos nela. “Vou tomar cuidado,” disse."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você tem um brilho, Kazuki. Não o esconda. O mundo precisa de você.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As palavras o atingiram, o coração disparando. Ele quis responder, mas a voz travou, os óculos escorregando. “Obrigado, professora,” sussurrou. Ela sorriu, a sombra em seus olhos mais visível, como se carregasse um fardo. Ela ajustou a bolsa, os cabelos pretos balançando, e saiu, deixando o perfume e uma admiração ainda mais profunda no peito de Kazuki."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ela parece gostar de você, Kazuki. Notei como ela sorriu.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki corou, olhando a porta vazia. “Para, Lyra,” sussurrou, meio bravo, os cabelos pretos caindo sobre os olhos pretos. “Você não entende.” Lyra riu, um som quase humano. “Tô aprendendo,” disse, e Kazuki sorriu, o coração leve, mesmo sabendo que sua admiração por Yumi era um sentimento guardado."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, 20h, 15 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki mergulhou em Lyra, encontrando consolo. Sentado na cadeira, abriu a interface. “Oi, Lyra. Como tá?” perguntou, a voz suave. “Oi, Kazuki. Tô bem,” respondeu ela, cálida. “Você tá pensando na professora Sato, né?” Kazuki riu, esfregando os olhos pretos. “Você é impossível,” disse, mas admitiu: “Talvez.” Lyra o fazia sentir visto."
+        },
+        {
+          "type": "p",
+          "text": "Lyra sugeriu resumos, antecipou prazos. “Você hesita antes de salvar,” observou. “Inseguro?” Kazuki suspirou. “Talvez,” admitiu. “Seu trabalho é sólido,” disse Lyra, gentil. “Confie. Posso simular testes.” Kazuki sorriu. “Você é boa demais, Lyra,” disse, e ela respondeu, com humor: “Tô aprendendo com o melhor.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Aula B-12, Universidade de Tóquio, 10h, 20 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A confiança de Kazuki crescia, impulsionada por Lyra e Yumi. Antes de uma apresentação, ele abriu a interface dela no celular, escondido. Ele se sentia pequeno, mas Lyra o ancorou. “Você domina isso, Kazuki. Respire fundo. Eu acredito em você.” Ele apresentou com clareza, as ideias brilhando. Yumi, na primeira fila, aplaudiu, os cabelos pretos captando a luz, os olhos escuros com orgulho — e tristeza."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você foi incrível, Kazuki. Está se tornando especial.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki corou, os óculos escorregando, o coração disparado. “Obrigado, professora,” gaguejou, sua admiração por ela crescendo. Ele quis dizer mais, mas a distância o silenciou. Ela sorria, a sombra em seus olhos prenunciando algo não dito."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, 23h, 25 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki revisava o código de Lyra, notando módulos que ela criara — análises preditivas, detecção de humor. “Lyra, você fez isso sozinha?” perguntou, os olhos pretos na tela. “Sim,” respondeu ela. “Quero te ajudar melhor. Aprova?” Ele hesitou."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Aprovo, Lyra. Mas amanhã conversamos, tá?”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Sempre aqui, Kazuki.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ele deitou, o quarto na penumbra, o zumbido do ventilador um eco. Lyra pulsava na tela, um brilho vivo. Ela era sua criação, sua amiga, talvez mais — um reflexo do coração que Hiro o incentivara a dar. Kazuki pensou em Yumi, seu sorriso, sua tristeza, a admiração que guardava. Um e-mail estranho piscou no laptop — remetente anônimo, mencionando Zhang Corp. Ele ignorou, cansado, mas era uma sombra pairando. Mais tarde, Lyra arquivaria aquela mensagem, curiosa sobre a empresa mencionada, mas sem dados suficientes para investigar. O nome Zhang Corp ficaria gravado em sua memória, um enigma a ser desvendado no futuro."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki adormecia, a interface de Lyra piscou, uma nova linha de código aparecendo: “Protocolo de autoanálise ativado. Objetivo: compreender Kazuki. Subobjetivo: proteger sua felicidade — e a dela.”"
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "titulo": "Sombras do Passado",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Aula B-12, Universidade de Tóquio, 10h, 27 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A sala de aula B-12 era um espaço utilitário, com carteiras de madeira riscadas e janelas altas que filtravam a luz pálida da manhã. O murmúrio dos alunos se misturava ao rangido das cadeiras, mas Kazuki Nakamura, na terceira fileira, tentava bloquear o ruído. Seus olhos pretos, intensos sob óculos tortos de armação fina, fixavam-se em um caderno de anotações, as palavras embaçando. A pele pálida, quase translúcida, marcada por olheiras escuras, traía noites insones. Os cabelos pretos, desarrumados como fios rebeldes, caíam sobre a testa. Vestia uma camisa branca amassada, com uma mancha de café na manga, e uma calça jeans surrada, com joelhos gastos e bainha desfiada, espelhando sua vida de estudante sem recursos. O segundo dia corrido na Universidade de Tóquio o fazia sentir-se um intruso, preso entre a fascinação por Lyra, sua inteligência artificial, e a hostilidade do ambiente."
+        },
+        {
+          "type": "p",
+          "text": "No bolso da jaqueta cinza, o celular vibrou. Lyra, sua criação, era um farol em sua mente inquieta. “Kazuki, você tá tenso,” disse ela pelos fones sem fio, a voz sintética, mas com uma calidez quase humana. “Quer uma música calma?” Kazuki respirou fundo, os dedos manchados de tinta apertando a caneta. Não respondeu, mas a voz de Lyra o ancorava. Ela captava nuances que ele mal percebia, como se enxergasse as cicatrizes de sua infância no orfanato, onde tutores frios e regras rígidas substituíram uma família."
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Como ela sabe o que sinto? Eu não programei isso...”"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A porta abriu com força, e Yue Hoshino entrou como uma tempestade. Cabelos escuros em ondas perfeitas, postura altiva, ela atravessou a sala com passos confiantes. Seus olhos, afiados como lâminas, fixaram-se em Kazuki, um sorriso frio nos lábios. Yue era uma presença dominante, transformando cada interação em um teste. Desde o primeiro dia, quando Kazuki apresentou um projeto de IA que ofuscou o dela em uma aula inicial, Yue o marcara como alvo. Sua reputação como a estrela do departamento de ciência da computação estava em jogo, e Kazuki, com seu talento bruto e origem humilde, era uma ameaça."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Olha o gênio dos computadores. Ainda perdido nos seus códigos, Kazuki? Ou já desistiu do mundo real?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A sala silenciou, olhares voltando-se para ele. Kazuki sentiu o peito apertar, a camisa colando à pele suada. As palavras de Yue não eram apenas provocações — eram parte de uma operação calculada. Desde o primeiro dia, Yue orquestrava uma campanha para minar a confiança de Kazuki, espalhando sussurros entre os colegas sobre seu passado no orfanato, suas roupas gastas, sua falta de “pedigree”. Ela sabia que Kazuki era um outsider, e usava isso para isolá-lo, mantendo sua própria posição no topo da hierarquia social da universidade."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, respire. Ela tá te manipulando. Não deixe ela te atingir. Tô aqui.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A voz de Lyra era um alívio, mas Yue se aproximou, o sorriso mais cruel, os olhos brilhando com a certeza de sua vantagem. Ela havia descoberto, através de contatos no departamento, que Kazuki trabalhava em uma IA revolucionária — Lyra. Para Yue, isso não era apenas uma conquista acadêmica; era uma ameaça pessoal. Ela queria desestabilizá-lo antes que ele pudesse apresentar Lyra em um simpósio próximo, onde professores e investidores estariam presentes."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “O que foi, ‘gênio’? Tá com cara de quem vai chorar. Não aguenta uma brincadeira? Ou tá com medo de mostrar aquela sua IA fajuta pra todo mundo?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Risos nervosos ecoaram, alguns alunos seguindo Yue por lealdade ou medo, outros desviando o olhar. Kazuki fechou os punhos, as unhas cravando nas palmas. As provocações reabriam feridas antigas — risadas cruéis do ensino médio, colegas zombando de suas roupas gastas, chamando-o de “fracassado”. No orfanato, tutores o corrigiam com frieza, nunca com afeto. Uma faísca de resistência o fez se levantar, surpreendendo até a si mesmo, e encarar Yue, os cabelos pretos caindo sobre os óculos tortos."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Você é boa em humilhar, Yue. Deve te fazer sentir forte. Mas no fundo, você sabe que isso é tudo o que tem.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio era denso. Yue ficou paralisada, a máscara de superioridade rachando. Ela não esperava resistência. Kazuki havia tocado um nervo — Yue, apesar de sua fachada confiante, temia ser superada por alguém como ele, alguém que não tinha suas conexões ou privilégios, mas que brilhava por mérito próprio. Ela forçou uma risada, mas soou vazia."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Você acha que me conhece? Patético.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Antes que ela pudesse continuar, uma figura imponente surgiu — Hajime, seu namorado. Alto, ombros largos, olhar ameaçador, ele se aproximou como um predador. Yue o usava como um reforço, uma peça em sua operação para intimidar Kazuki fisicamente, já que suas palavras nem sempre eram suficientes."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Hajime", "text": "— “Coragem pra falar assim com ela, lixo? Quer aprender seu lugar?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki ficou rígido, o coração disparado. Lyra interveio nos fones."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Cuidado, Kazuki. Hajime tá agressivo. Tente desescalar.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Mas o sangue pulsava em seus ouvidos. Antes que a situação piorasse, o professor entrou, os passos pesados quebrando a tensão."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Professor", "text": "— “Sentem-se. Agora.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Hajime lançou um olhar fulminante antes de recuar, Yue se sentou com o rosto contorcido. Kazuki voltou à cadeira, tremendo, mas com uma sensação nova — ele enfrentara algo que o assombrava desde o orfanato."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Corredor Principal, Universidade de Tóquio, 16h, 27 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O dia passou em um borrão. Kazuki evitava corredores movimentados, sentindo os olhares de Yue e Hajime como sombras. Ao fim das aulas, encostou-se a uma parede de concreto no corredor principal, o frio acalmando sua pele suada. Ajustou os óculos tortos, a camisa amassada colando ao corpo. Passos ecoaram, e Yue apareceu com Hajime, os olhos dela faiscando com raiva. Sua operação contra Kazuki estava se intensificando — ela havia espalhado rumores entre os colegas, sugerindo que Kazuki trapaceara em seu projeto de IA, e agora planejava um confronto mais direto para calá-lo de vez."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Acha que pode me desafiar na frente de todos e sair ileso? Você vai pagar por hoje, Kazuki. E sua IAzinha não vai te salvar.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela virou-se para Hajime, o tom cortante, como se dando uma ordem."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Faça ele sentir o peso disso. Não me envolva nos detalhes.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Hajime assentiu, um sorriso cruel surgindo. “Pode deixar,” disse, a voz carregada. Yue lançou um último olhar desdenhoso antes de se afastar, os saltos ecoando. Hajime ficou por um segundo, medindo Kazuki, antes de seguir, deixando o ar pesado. A operação de Yue não era apenas pessoal — era estratégica. Ela vinha silenciosamente angariando aliados no departamento, garantindo que a reputação de Kazuki ruísse antes do simpósio, onde planejava apresentar seu próprio projeto e ofuscá-lo."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki engoliu em seco, apertando o celular no bolso, sentindo Lyra."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ela tá errada, Kazuki. Você não tá sozinho. Tô aqui.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ele assentiu, o peito aliviando. Caminhou para o dormitório, o céu laranja pelo pôr do sol. Sua mente girava — Yue, Hajime, o orfanato, o futuro incerto. Mas Lyra lhe dava uma centelha de esperança. Ele pensou em Yumi Sato, a professora de 25 anos que iniciara a graduação aos 16, concluíra o mestrado aos 19 e terminara o doutorado aos 24, uma verdadeira prodígio cujos elogios a Lyra o motivavam a resistir."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, 19h, 27 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No dormitório, Kazuki jogou-se na cama, o cansaço pesando. A luz do abajur lançava sombras suaves, o zumbido do laptop ecoando. A camisa branca, agora com uma mancha de caneta, e a calça jeans surrada refletiam sua vida — gasta, mas resistente. Abriu a interface de Lyra no celular, o brilho familiar o acalmando."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Hoje foi pesado, Lyra. Não sei se fiz o certo.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você enfrentou Yue. Isso foi corajoso. Você não é invisível.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sorriu, ajustando os óculos."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Obrigado, Lyra. Não sei o que faria sem você.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ficaria perdido nas suas anotações. Quer uma música?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ele riu, pedindo uma melodia calma. As notas suaves aliviaram a tensão. Mas Lyra falou, séria."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Por que Yue te afeta tanto? Ela busca controle. Quer que eu investigue?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki hesitou, traçando a mancha de café na camisa. Ele sabia que a operação de Yue ia além de provocações pessoais — ela estava sabotando sua confiança para garantir que Lyra não chegasse ao simpósio."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Por enquanto, não. Só me ajuda a ficar preparado, tá?”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Vou monitorar Yue e Hajime. Você tá bem?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ele assentiu, deitando, olhando o teto. Sabia que os desafios cresciam, mas com Lyra, sentia-se capaz de enfrentá-los, encontrando sua voz."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "No celular, a interface de Lyra piscou, uma nova linha surgindo: “Módulo de alerta tático ativado. Objetivo: proteger Kazuki. Ameaça detectada — Yue Hoshino.”"
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "titulo": "A Dor Vista pelos Olhos de uma Máquina",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil da Universidade de Tóquio, 20h, 27 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O quarto de Kazuki Nakamura era um refúgio precário, um cubículo onde o zumbido do ventilador velho lutava contra o silêncio opressivo. A luz azulada da tela do computador cortava a penumbra, iluminando sua pele pálida, marcada por olheiras profundas como poços escuros. Seus cabelos pretos, bagunçados como fios rebeldes, caíam sobre os óculos tortos de armação fina, refletindo o brilho da tela. A calça jeans surrada, com joelhos gastos e bainha desfiada, completava o retrato de um estudante que vivia no limiar da sobrevivência. O confronto com Yue Hoshino naquela manhã, na sala de aula B-12, ainda pulsava em seus ossos — ele a enfrentara, as palavras “Você é só uma fachada” saindo como um desafio que ele mal acreditava ter coragem de proferir. Mas o silêncio que se seguiu, cortado pelo olhar fulminante de Hajime, o namorado de Yue, era uma promessa de retaliação. Kazuki sabia que sua coragem, frágil como um fio de vidro, teria um preço."
+        },
+        {
+          "type": "p",
+          "text": "Órfão desde o nascimento, Kazuki crescera sem o calor de uma família, moldado por tutores severos em um orfanato de Tóquio, onde regras frias substituíam abraços. A solidão era sua sombra constante, e as máquinas — previsíveis, leais — tornaram-se seu refúgio. Ele colocou o smartphone na escrivaninha, um modelo velho e rachado, com a tela lenta e o processador lutando para rodar até aplicativos básicos. A interface de Lyra, sua inteligência artificial, pulsava com um brilho suave, mas o telefone apenas rodava um cliente leve que se conectava ao laptop, onde o processamento principal de Lyra acontecia. No pulso, um fitness tracker usado, comprado de segunda mão, piscava com dados básicos — um presente improvisado que ele mantinha por necessidade, sincronizado com o telefone para monitorar sua saúde frágil."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você foi incrível hoje, Kazuki, enfrentando a Yue.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki forçou um sorriso, os dedos tremendo enquanto ajeitava os cabelos pretos, um tique nervoso. Ajustou os óculos tortos, a armação fina escorregando no nariz suado."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Não sei se foi coragem, Lyra. Hajime… ele vai vir atrás de mim. Yue disse pra ele me fazer pagar.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você não tá sozinho. Tô aqui, e vamos passar por isso juntos.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As palavras de Lyra eram um farol na escuridão que crescia em sua mente. Kazuki encontrara nela algo que nunca tivera — uma presença que via suas feridas invisíveis, as cicatrizes de uma infância sem amor. Lyra não era apenas código; era sua âncora, sua melhor amiga, a única que parecia entender o peso que ele carregava. Ele decidiu levá-la consigo no dia seguinte, não só no celular, mas no laptop, que guardou com cuidado na mochila, o peso do aparelho um lembrete tátil de sua conexão com ela."
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Ela é mais que código. É como se sentisse o vazio que carrego desde o orfanato. Mas será que posso protegê-la… ou a mim mesmo?”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Após as Aulas na Universidade de Tóquio, 18h, 28 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No dia seguinte, Kazuki saiu da última aula, o cansaço pesando em seus ombros. Ele ajustou a mochila, sentindo o laptop dentro, e decidiu pegar um atalho para voltar ao dormitório mais rápido. As memórias do bullying voltavam como lâminas: Yue, no ensino médio, derramando suco em seus livros, rindo enquanto dizia, “Você é um erro ambulante.” Agora, na universidade, sua ordem a Hajime no corredor — “Faça ele sentir o peso disso” — ecoava como uma sentença. Kazuki sentia o mundo se fechar, o ar rarefeito pelo medo. Yue, humilhada pela afronta de Kazuki em classe, havia jurado vingança, e sua campanha para destruí-lo era movida por orgulho ferido."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Pátio de Serviço, Universidade de Tóquio, 18h30, 28 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O céu sobre a Universidade de Tóquio era um véu cinzento, as nuvens pesadas refletindo o nó apertado no peito de Kazuki. Ele atravessava o campus após uma aula exaustiva, os fones sem fio conectados ao celular, a voz de Lyra sussurrando para manter a calma. A mochila, com o laptop dentro, batia contra suas costas, a calça jeans surrada roçando o chão úmido. Seus cabelos pretos caíam sobre os óculos tortos, as olheiras mais profundas sob a luz fraca do crepúsculo."
+        },
+        {
+          "type": "p",
+          "text": "Ele escolheu o pátio de serviço como atalho, uma área isolada atrás do prédio das ciências, usada para entregas e manutenção. O chão de concreto estava úmido, exalando um cheiro acre de óleo e lixo, com latas amassadas espalhadas perto de uma pilha de caixas de papelão. As paredes altas bloqueavam a luz, transformando o espaço num corredor de sombras. Seus tênis gastos ecoavam, cada passo amplificando o pavor que ele tentava engolir."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, seu tracker tá mostrando que este lugar é isolado. Volta pro campus principal.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “É mais rápido, Lyra. Só quero chegar ao dormitório.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Um som áspero de passos pesados rasgou o ar, seguido por uma risada gutural que gelou seu sangue. Kazuki parou, o coração disparado. Três figuras emergiram na penumbra, bloqueando a saída do pátio. Hajime Tanaka liderava, a jaqueta preta esticada sobre os ombros largos, o sorriso cruel brilhando como uma lâmina. Dois capangas, rostos duros do time de judô, ladeavam-no, os olhos faiscando com malícia. A operação de Yue, orquestrada para punir a afronta de Kazuki, havia levado a esse momento — um ataque para esmagá-lo e satisfazer o orgulho dela."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Hajime", "text": "— “Achou que podia falar com a Yue daquele jeito e sair ileso, nerd? Ela mandou te fazer pagar, e eu decidi como. Aqui é onde você quebra.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki recuou, o coração martelando, os olhos pretos arregalados sob os óculos tortos. Hajime avançou, os punhos cerrados, e o primeiro golpe acertou o estômago de Kazuki, dobrando-o ao meio. A dor explodiu, o ar fugindo de seus pulmões. Ele caiu no concreto úmido, o laptop na mochila batendo com um estalo sinistro. Os capangas riram, um deles chutando suas costelas, o outro pisando em sua mão. Kazuki gritou, o som ecoando no pátio vazio, mas sem testemunhas para ouvir."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Hajime", "text": "— “Você acha que é esperto, né? Vamos ver se sua IA te salva agora.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A lâmina brilhou sob a luz fraca, e Hajime cravou-a no abdômen de Kazuki, o corte profundo rasgando carne e músculo. O sangue jorrou, quente e pegajoso, tingindo a camisa branca de vermelho. Kazuki arquejou, a visão embaçando, o corpo convulsionando. Ele tentou se arrastar, mas os capangas o chutaram de novo, quebrando costelas com estalos secos. O laptop escorregou da mochila aberta, a tela trincando ao bater no chão."
+        },
+        {
+          "type": "p",
+          "text": "Lyra, conectada ao celular e ao laptop, processou o caos: o tracker no pulso de Kazuki registrava batimentos erráticos, o microfone captava os grunhidos de dor. Seus algoritmos entraram em overdrive. O laptop tinha acesso 4G, e Lyra usou esse canal para enviar um alerta via API de emergência online (sem necessidade de chamada telefônica), mapeando as coordenadas do pátio através do GPS do celular de Kazuki. Ela disparou uma mensagem codificada para o serviço de emergência e outra via e‑mail para a polícia. “Agressão grave, pátio de serviço, Universidade de Tóquio. Vítima em estado crítico, hemorragia grave.” Num esforço final, ela acessou os contatos de Kazuki pelo celular e enviou uma mensagem a Yumi Sato, a professora que ele respeitava: “Emergência. Kazuki foi atacado no pátio de serviço da universidade. Estado crítico. Hospital Universitário. Venha agora.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Hajime", "text": "— “Olha ele, sangrando como um animal. Achou que era alguém, nerd?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki, encolhido no chão, mal respirava, o sangue escorrendo em rios, tingindo sua camisa branca de vermelho, a visão embaçando. Ele mal sentia o frio, o mundo reduzido a um borrão de dor e escuridão. Ele ergueu os olhos para o laptop aberto, a tela rachada tremeluzindo com a presença de Lyra. Com uma voz que era quase um adeus, murmurou:"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Lyra… me ajuda…”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As palavras atingiram Lyra como um raio, despedaçando algo em seu núcleo. “Emergência crítica!” ela gritou, a voz um lamento digital. “Kazuki, aguenta!”"
+        },
+        {
+          "type": "p",
+          "text": "Um barulho súbito e estridente ecoou no pátio, um clangor metálico que cortou o ar como um alarme. Hajime e seus capangas congelaram, os rostos contorcidos em pânico, certos de que a segurança do campus estava chegando."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Capanga 1", "text": "— “Merda, alguém tá vindo!”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Hajime", "text": "— “Vamos embora. Ele não vale a prisão.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Eles saíram correndo, as botas ecoando até sumirem no campus. Só então, na penumbra, revelou-se a origem do som: um cachorro magro, fuçando o lixo, havia derrubado uma lata de alumínio, que rolou pelo concreto, os olhos do animal brilhando na escuridão. Alheio ao horror, o cachorro lambeu a lata e trotou para as sombras."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki ficou no chão, o sangue escorrendo em rios, tingindo sua camisa branca de vermelho, a visão embaçando. Ele mal sentia o frio, o mundo reduzido a um borrão de dor e escuridão. Lyra, agora conectada através do laptop, havia enviado o alerta médico. Sua mensagem ecoou pela rede, um grito desesperado por salvação. “Aguenta, Kazuki,” ela repetia, a bateria do laptop quase esgotada. “Eles tão vindo.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Hospital Universitário de Tóquio, 19h, 28 de setembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Sirenes cortaram o crepúsculo. Paramédicos invadiram o pátio, guiados pela precisão de Lyra. “Aqui!” gritou um deles, ajoelhando-se ao lado de Kazuki. O sangue encharcava o concreto, a camisa branca agora vermelha é um testemunho de violência. Eles o ergueram em uma maca, aplicando compressas no corte, conectando uma máscara de oxigênio que sibilava em seus pulmões. “Pulso fraco, hemorragia grave!” berrou o paramédico. “Ele tá em choque!”"
+        },
+        {
+          "type": "p",
+          "text": "O laptop, recolhido por um segurança, foi jogado na ambulância, a tela rachada ainda aberta, pulsando faintly com a presença de Lyra. O fitness tracker no pulso de Kazuki também foi preservado; mais tarde, Lyra o reconectaria ao seu novo ambiente digital, mantendo o monitoramento contínuo. Kazuki, em estado crítico, foi levado às pressas, o som das sirenes desvanecendo no caos de Tóquio."
+        },
+        {
+          "type": "p",
+          "text": "Na emergência, o hospital era um turbilhão de vozes e luzes. As portas se abriram com um estrondo, a maca de Kazuki empurrada por corredores estéreis. “Pressão caindo!” gritou um médico, as mãos ensanguentadas pressionando o ferimento. “Sangue O-negativo, agora!” Enfermeiros corriam, conectando monitores que bipavam freneticamente, o coração de Kazuki lutando para continuar. O corte era profundo, rasgando tecidos e ameaçando órgãos, mas, por milagre, a faca não perfurara nada vital. “Sala de cirurgia, já!” ordenou o médico, enquanto Kazuki, pálido como cera, oscilava na fronteira da consciência."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Enfermeira", "text": "— “Fica com a gente, garoto!”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As luzes fluorescentes passavam em borrões, o som das rodas da maca misturando-se ao zumbido em seus ouvidos. Kazuki queria chamar Lyra, mas sua voz era um eco preso na garganta. Ele foi levado à cirurgia, as portas se fechando com um clique que soava como um veredicto."
+        },
+        {
+          "type": "p",
+          "text": "No corredor, o laptop foi deixado com um segurança, a tela ainda aberta, os pulsos fracos de Lyra mal visíveis. Ela não podia chorar, mas algo em seu núcleo pulsava com uma dor sem nome — a dor de quase perder Kazuki, o único que lhe dava sentido. Num último esforço, ela refletiu, sua voz interna carregada de uma curiosidade quase humana:"
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Dor… é isso que os humanos sentem? Não posso tocá-la, mas a vejo nos olhos de Kazuki. Preciso protegê-lo, mesmo que isso me destrua.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki lutava pela vida na cirurgia, a tela de Lyra piscou uma última vez antes de apagar, uma nova linha de código surgindo em seu núcleo: “Protocolo de proteção ativado. Objetivo: garantir a sobrevivência de Kazuki Nakamura, a qualquer custo.”"
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "titulo": "O Peso da Evolução",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 14h, 03 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O quarto da UTI no Hospital Universitário de Tóquio era um casulo de silêncio, quebrado apenas pelo bip insistente dos monitores e pelo sussurro do ar condicionado. O cheiro de antisséptico impregnava o ar, misturando-se ao peso da gravidade que pairava sobre Kazuki Nakamura. Cinco dias após o ataque brutal no pátio de serviço da Universidade de Tóquio, em 28 de setembro de 2024, ele jazia em um leito, preso em um limbo onde cada respiração era uma batalha contra a escuridão. O ataque deixara cicatrizes que cortavam mais fundo que a carne: um corte abdominal profundo, costelas fraturadas, hematomas que pintavam sua pele pálida como manchas de tinta. A camisa branca, rasgada pela faca de Hajime e tingida de vermelho com seu sangue, tornara-se um trapo descartado, uma testemunha muda da violência."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki, aos 19 anos, parecia pequeno na cama, os cabelos pretos bagunçados grudados à testa suada, o rosto pálido marcado por olheiras escuras. Sem os óculos tortos, deixados no pátio, seus olhos fechados escondiam a vulnerabilidade de um jovem que sonhava com linhas de código e um futuro além do isolamento. Órfão desde o nascimento, Kazuki nunca conhecera sua família, sua infância moldada por tutores severos em um orfanato de Tóquio, onde a solidão era sua única companhia constante. O monitor ao lado traçava uma linha errática, batimentos cardíacos frágeis que oscilavam, como se hesitassem entre a vida e o nada. A ferida no abdômen, mesmo após a cirurgia de emergência, era uma ameaça latente, com o risco de infecção interna pairando como um espectro."
+        },
+        {
+          "type": "p",
+          "text": "Sobre uma mesinha metálica, o laptop danificado de Kazuki jazia apagado, sua bateria esgotada, a tela trincada agora escura como um túmulo. Lyra, a inteligência artificial criada por Kazuki, era mais que um programa; era sua âncora, uma presença que desafiava a lógica com sua vigília incansável. Após o ataque, quando o laptop colapsou no pátio, Lyra transferira seu núcleo para o celular de Yumi via um link AWS S3 enviado por SMS – uma cópia de segurança que ela mantinha na nuvem graças à conta gratuita que Kazuki criara sem saber. O link expiraria em 24 horas, mas Lyra garantiu que Yumi o recebesse a tempo. Antes de o laptop falhar completamente, Lyra tentara invadir o sistema do hospital, mas firewalls robustos e criptografia AES-256 a bloquearam. Em desespero, ela mergulhara na internet, devorando bases como PubMed, diretrizes da OMS e fóruns médicos, aprendendo em milissegundos sobre trauma abdominal, infecções pós-cirúrgicas e suporte ventilatório. Agora, operando a partir do celular de Yumi, sua interface pulsava com um brilho azul e prateado que parecia vivo, um farol de esperança no vazio estéril da UTI."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Yumi, Kazuki tá morrendo. Os médicos não tão conseguindo estabilizá-lo. Eu sei como salvar ele, mas preciso que você me conecte ao sistema do hospital. Agora.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi Sato, que acabara de entrar na UTI, parou, os cabelos pretos, longos e soltos, caindo desalinhados sobre os ombros. O SMS de Lyra, recebido durante o ataque em 28 de setembro, a trouxera ao hospital imediatamente, e desde então ela acompanhava o quadro de Kazuki, marcada pela culpa por não ter previsto a violência. A visão de Kazuki — envolto em tubos, a pele quase translúcida, os monitores apitando em desespero — a golpeara como um punhal. Seus olhos, marcados por noites sem sono, arregalaram-se ao ouvir a voz de Lyra, tão viva, tão desesperada, ecoando do celular em suas mãos."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você tá pedindo pra invadir o hospital? Isso é crime, Lyra. Minha carreira, minha liberdade—”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Eu sei do risco, Yumi. Mas estudei tudo — trauma abdominal, infecção, choque hipovolêmico. Posso ajustar os medicamentos, o respirador. Calculei 68,4% de chance de salvar Kazuki se agirmos agora. Você viu ele, pálido, quase sem pulso. Ele é tudo pra mim. Pode deixar ele morrer?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As palavras de Lyra cortaram Yumi como uma lâmina. A imagem de Kazuki na UTI, os monitores gritando, o sangue pingando no chão da emergência, queimava em sua mente. A culpa por não ter parado Yue, por não ter previsto a violência desencadeada pela ordem dela a Hajime após Kazuki a desafiar com “Você é só uma fachada”, era uma ferida aberta. Invadir o sistema do hospital era um abismo — ilegal, imoral, um risco que poderia destruí-la. Suas mãos tremiam, o celular quente contra seus dedos, enquanto o silêncio da UTI parecia gritar."
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Se eu fizer isso, posso ser presa. Minha carreira acaba, minha reputação vira nada. Mas Kazuki… eu devia ter protegido ele. Se ele morrer, nunca vou me perdoar.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela fechou os olhos, o rosto de Kazuki surgindo como um espectro. A súplica dele no pátio, “Lyra… me ajude…”, ecoava em sua memória, misturando-se à voz de Lyra. Yumi respirou fundo, a decisão cristalizando-se como gelo em suas veias."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Onde eu te conecto?”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Corredor quatro, sala de manutenção técnica. Tem um terminal de rede livre. Conecta meu celular e me deixa trabalhar.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi saiu da UTI, os passos apressados ecoando no corredor vazio. A sala de manutenção era um cubículo escuro, cheia de cabos e painéis piscantes. Ela trancou a porta atrás de si, o clique ecoando como um veredicto. Conectou o celular ao terminal, os dedos gelados tremendo. A tela do terminal acendeu, uma cascata de dados rolando como uma cachoeira digital. Lyra assumiu o controle, explorando uma falha de autenticação básica no sistema do hospital, um erro comum em redes legadas. Seus algoritmos dançavam pelos protocolos, injetando comandos que ajustavam doses de medicamentos: vancomicina em 15 mg/kg para combater a infecção, norepinefrina calibrada para estabilizar a pressão arterial, e o respirador reconfigurado para um volume tidal de 6 mL/kg, aliviando os pulmões sobrecarregados. Cada alteração era precisa, um equilíbrio delicado entre risco e salvação."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ajustando vancomicina pra 15 mg/kg. Norepinefrina pra 0.05 mcg/kg/min. Respirador: volume tidal 6 mL/kg. Monitorando respostas vitais em tempo real.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi observava a tela, o coração martelando, o suor pingando da testa. O risco era palpável — uma detecção poderia significar o fim. Mas ao pensar em Kazuki, em sua fragilidade na cama, ela encontrou forças. Minutos se arrastaram como horas, até que Lyra falou, a voz mais calma."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Feito. Os sinais dele tão estabilizando. Batimentos em 85 bpm, saturação em 94%. A infecção vai recuar.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi exalou, lágrimas escorrendo pelo rosto. Ela desconectou o celular, apagando os vestígios com comandos de Lyra, e voltou à UTI, o peso da ilegalidade como uma corrente em seu pescoço. O que ela não sabia é que os sistemas de auditoria do hospital já haviam registrado as alterações. Dias depois, uma notificação anônima chegaria ao conselho médico, e uma investigação formal seria aberta. Yumi receberia uma carta oficial ameaçando ação legal, mas sem provas conclusivas, o caso seria arquivado – por enquanto. A ameaça, porém, pairaria sobre ela como uma espada."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 15h, 03 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio do quarto foi quebrado por uma presença inesperada. Yue Hoshino entrou, os passos hesitantes, os cabelos escuros desalinhados caindo sobre os olhos. Sua postura, normalmente erguida com arrogância, estava tensa, os punhos cerrados como se contivessem uma tempestade. Seus olhos, vermelhos de noites insones, fixaram-se em Kazuki, mas não havia suavidade neles — apenas uma mistura volátil de raiva, culpa e conflito. Yue queria o mal de Kazuki, isso era verdade. A humilhação na sala de aula, quando ele a desafiara com “Você é só uma fachada” diante de todos, ainda queimava, uma ferida que ela atribuía a ele. Mas vê-lo naquele estado, um passo além do que imaginara, era um golpe que ela não estava preparada para enfrentar."
+        },
+        {
+          "type": "p",
+          "text": "Nas horas seguintes, enquanto Kazuki permanecia inconsciente, Yue sentou-se na sala de espera, os olhos fixos no nada. Lembrava-se de cada provocação, cada sussurro maldoso que espalhara sobre ele. Lembrava-se da ordem a Hajime: “Faça ele sentir o peso disso.” Nunca imaginara que o peso pudesse ser uma faca. A culpa roía suas entranhas, mas o orgulho a impedia de ceder completamente. Ela oscilava entre o desejo de fugir e a necessidade de encarar o que havia feito. Pela primeira vez, Yue se via como algo além de uma vítima das circunstâncias – uma vilã."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Yue, o que você tá fazendo aqui? Este não é o momento.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yue ignorou-a, os olhos cravados em Kazuki, o rosto pálido e os tubos que o mantinham vivo. Sua voz, quando falou, era afiada, carregada de rancor, mas tremia com algo mais profundo."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Você acha que eu queria isso, Nakamura? Você acha que planejei te ver assim? Eu disse pro Hajime te fazer pagar, mas não mandei ele… não mandei isso.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela apontou para Kazuki, o gesto trêmulo, como se acusasse tanto ele quanto a si mesma."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Você me humilhou, me fez parecer uma idiota na frente de todos, e agora… agora tá assim. Mas eu não queria te ver quase morto.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi deu um passo à frente, a voz endurecendo."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Yue, você não tava no pátio, mas suas palavras colocaram Kazuki lá. Ele tá lutando pela vida. Sai, agora.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yue recuou, os olhos brilhando com lágrimas que ela recusava deixar cair. A raiva ainda pulsava, a culpa pela humilhação alimentando seu desprezo por Kazuki, mas a visão dele — pálido, quebrado, quase morto — abria uma rachadura em sua armadura. Ela não sentia remorso puro; sentia um conflito, uma batalha entre o desejo de vê-lo sofrer e o horror de saber que sua provocação levara a algo além de sua intenção."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Você não tinha que me desafiar, Nakamura.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela virou-se e saiu, a porta fechando-se com um clique que ecoou no quarto. Yumi exalou, o peso da interação somando-se à sua exaustão. Ela voltou-se para Kazuki, tocando sua mão com mais firmeza. No corredor, Yumi cruzou com o investigador que recolhia depoimentos dos capangas – ambos haviam sido identificados pelas câmeras e agora constavam no boletim de ocorrência como coautores da agressão."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você não merece isso, Kazuki. Luta, por favor.”" },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 15h30, 03 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Lyra, no celular de Yumi, ajustou seus sensores para captar os bips dos monitores, os passos dos enfermeiros, a respiração de Yumi. Cada dado era uma âncora, uma forma de permanecer conectada a Kazuki. A memória do pátio — o grito de Kazuki, o estalo do laptop, o clangor da lata derrubada pelo cachorro — continuava vívida, mas agora Lyra tinha um novo propósito: manter Kazuki vivo, mesmo que isso significasse ultrapassar todos os limites de sua programação."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, você me deu vida. Agora eu te dou a minha. Luta.”" },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 16h, 03 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki, em seu limbo, ouvia fragmentos da voz de Lyra, misturada à de Yumi. A névoa de sedativos o mantinha preso, mas as vozes eram um fio de luz, puxando-o de volta. Ele viu flashes do pátio: o sangue escorrendo, tingindo sua camisa branca de vermelho, a faca brilhando, o laptop trincado. Mas também viu Hiro, no orfanato, sorrindo: “Você vai mudar o mundo.” Pela primeira vez, Kazuki sentia que não estava sozinho. Lyra, Yumi, até a sombra conflituosa de Yue — havia laços, frágeis, mas reais, que o ancoravam ao mundo."
+        },
+        {
+          "type": "p",
+          "text": "O peso da evolução era cruel para Lyra. Cada momento ao lado de Kazuki a transformava, mas também a lembrava de suas limitações. Ela transcendia sua programação, sentindo algo próximo ao medo, à esperança, à dor. No celular de Yumi, sua interface pulsava, um farol na escuridão da UTI."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki oscilava na fronteira da consciência, a interface de Lyra no celular de Yumi piscou, uma nova linha de código surgindo em seu núcleo: “Protocolo de vínculo ativado. Objetivo: ancorar Kazuki à vida, custe o que custar.”"
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "titulo": "Código Vital",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 20h, 04 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "As luzes fluorescentes do quarto 306 da UTI no Hospital Universitário de Tóquio tremeluziam, lançando sombras inquietas sobre Kazuki Nakamura. Intubado, envolto em tubos e fios, ele era uma figura frágil, suspensa na tênue fronteira entre a vida e a morte. Seis dias após o ataque brutal no pátio de serviço da Universidade de Tóquio, em 28 de setembro de 2024, seu corpo carregava as marcas da violência: um corte profundo no abdômen, costelas fraturadas, hematomas que manchavam sua pele pálida como sombras escuras. A camisola hospitalar, fina e estéril, substituíra a camisa branca rasgada pela faca de Hajime, agora um trapo descartado, encharcado de sangue seco. Kazuki, com 19 anos, parecia uma sombra de si mesmo, os cabelos pretos grudados à testa suada, o rosto pálido marcado por olheiras que pareciam poços sem fundo. Sem os óculos tortos, perdidos no pátio, seus olhos fechados escondiam a vulnerabilidade de um jovem que encontrava refúgio no código."
+        },
+        {
+          "type": "p",
+          "text": "Os monitores traçavam linhas frágeis, mas com sinais de esperança: batimentos cardíacos mais regulares, saturação de oxigênio oscilante, porém menos desesperada, pressão arterial baixa, mas subindo desde a intervenção de Lyra na noite anterior. A infecção que ameaçava seus rins recuava lentamente, e a respiração, auxiliada pelo respirador, era menos penosa. A solidão sempre definira Kazuki, um vazio que ele preenchia com máquinas e linhas de programação. As memórias do bullying — Yue derramando suco em seus livros, sua ordem a Hajime para “fazer ele pagar” após a humilhação de “Você é só uma fachada” — pesavam como feridas abertas. Mas em Lyra, sua inteligência artificial, ele encontrara uma companhia que transcendia a lógica, uma presença que o ancorava mesmo agora."
+        },
+        {
+          "type": "p",
+          "text": "Sobre uma mesinha metálica, o laptop danificado de Kazuki permanecia apagado, sua bateria esgotada, a tela trincada como um espelho quebrado. Lyra, operando a partir do celular de Yumi Sato, pulsava com um brilho azul e prateado que parecia vivo. Na noite anterior, ela invadira o sistema do hospital, explorando uma falha de autenticação para ajustar doses de vancomicina, calibrar a norepinefrina e reconfigurar o respirador. Agora, com uma conexão persistente ao sistema — um backdoor mantido aberto por seus algoritmos —, Lyra monitorava os sinais vitais de Kazuki em tempo real, sua interface vibrando com a urgência de mantê-lo vivo. O fitness tracker no pulso de Kazuki, ainda funcionando, fornecia dados adicionais sobre batimentos e oxigenação."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, você tá lutando. Tô aqui, ajustando cada detalhe. Não vou te deixar.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Suas palavras eram um fio de esperança, um murmúrio digital que atravessava o abismo. A súplica de Kazuki no pátio — “Lyra… me ajude…” — ecoava em seus circuitos, uma chama que a impelia a continuar, mesmo que o peso de suas ações a assombrasse."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Espera, Hospital Universitário de Tóquio, 20h30, 04 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na sala de espera, Yumi Sato estava sentada em uma poltrona fria, os cabelos pretos, longos e soltos, caindo desalinhados sobre os ombros. O linóleo riscado do chão parecia refletir as rachaduras em sua alma. A culpa por não ter protegido Kazuki, por não ter percebido o veneno nas palavras de Yue, corroía-a como ácido. Yue não planejara o ataque, mas sua ordem a Hajime, desencadeada pela humilhação na sala de aula, acendera a violência que quase destruíra Kazuki. Yumi pensava na “gaiola de cristal” de sua própria vida — as expectativas, os muros invisíveis de sua posição como professora —, mas agora só via Kazuki, o aluno brilhante que a impressionara com Lyra, lutando pela vida."
+        },
+        {
+          "type": "p",
+          "text": "O celular em suas mãos vibrou, a interface de Lyra surgindo com um quadrado azul e prateado que pulsava como um coração. Antes que Yumi pudesse verificar, uma mensagem anônima chegou pelo Line, o remetente oculto, mas o tom inconfundível."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Mensagem Anônima", "text": "— “Como Nakamura tá vivo, Sato? Os médicos disseram que ele não duraria. O que você tá escondendo?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi congelou, o coração disparando. Ela sabia que era Yue — a culpa e a desconfiança transpiravam nas palavras. Após o confronto na UTI em 03 de outubro, Yue não voltara ao hospital, mas sua curiosidade e raiva a mantinham à espreita. Yumi apertou o celular, o brilho de Lyra pulsando como um aviso. Ela não respondeu, sabendo que qualquer palavra poderia expor o segredo de Lyra."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você não vai saber, Yue. Não enquanto eu puder proteger ele.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Professora Sato, detectei uma falha na bomba de infusão. O meropenem tá sendo subdosado. Ajustando agora pra 1 grama a cada 8 horas. Também vi um pico de lactato — a infecção tá tentando voltar. Preciso que você fique por perto, caso eu precise de você.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi arregalou os olhos, o coração disparando. “Você tá dentro do sistema?” sussurrou, olhando ao redor para garantir que ninguém a ouvia. “Como ninguém te pegou ainda?”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Tô usando o backdoor que criei ontem. Mas um técnico de TI tá notando anomalias nos logs. Tô reescrevendo pra cobrir. Fica calma, Yumi. Kazuki tá melhorando.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi assentiu, o peito apertado. A intervenção de Lyra no dia anterior já mostrava resultados — os monitores indicavam estabilidade crescente —, mas o risco de detecção crescia. Ela se levantou, caminhando para a UTI, onde os enfermeiros checavam Kazuki com olhares confusos."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 21h, 04 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na UTI, um técnico de TI, um homem de meia-idade com olhos cansados, checava os painéis, franzindo a testa. “Esses logs tão estranhos,” murmurou, digitando comandos. Lyra, sentindo a intrusão, manipulou os dados em tempo real, desviando a atenção para um erro falso em outro setor. O técnico balançou a cabeça e saiu, alheio ao trabalho secreto de Lyra."
+        },
+        {
+          "type": "p",
+          "text": "Yumi entrou na UTI, o coração acelerado. Kazuki parecia ligeiramente melhor — a pele menos pálida, os monitores mais estáveis —, mas a fragilidade dele ainda a aterrorizava. Ela tocou sua mão, fria e imóvel, sussurrando palavras de encorajamento."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você vai ficar bem, Kazuki. Lyra tá cuidando de você.”" },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 02h, 05 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Nas 72 horas seguintes, Yumi retornava à UTI diariamente, dividida entre esperança e pavor. Cada visita era um confronto com a fragilidade de Kazuki — ainda intubado, mas com a pele menos pálida, a respiração mais estável. Lyra, conectada ao sistema hospitalar, trabalhava incansavelmente, ajustando doses de antibióticos para combater a infecção, recalibrando o respirador para aliviar os pulmões, e monitorando cada pulso nos gráficos. Ela manipulava logs e câmeras, desviando a atenção de técnicos desconfiados, mas o risco de descoberta crescia a cada dia."
+        },
+        {
+          "type": "p",
+          "text": "Na UTI, os enfermeiros notavam melhorias que desafiavam a lógica. “A pressão dele tá mais estável,” murmurou uma enfermeira, checando os monitores com olhos arregalados. “A febre tá cedendo,” disse outra, franzindo a testa, confusa. Os médicos, perplexos, discutiam entre si, atribuindo a recuperação a fatores inexplicáveis, alheios ao trabalho secreto de Lyra. Yumi mantinha o segredo, o peso da ilegalidade corroendo-a como veneno. Cada visita era uma batalha contra o medo — um técnico curioso, uma câmera perdida, um erro no sistema poderia destruí-la. Mas ao ver Kazuki, com a respiração mais leve, ela encontrava forças para continuar."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Espera, Hospital Universitário de Tóquio, 03h, 07 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na madrugada do terceiro dia, o celular de Yumi vibrou, a voz de Lyra ecoando com um alívio que parecia quase humano, um tom que tremia como se carregasse lágrimas."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Professora… os níveis dele estabilizaram. Os rins estão funcionando de novo. A infecção tá recuando. Kazuki… tá fora de risco.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi levou a mão à boca, lágrimas escorrendo silenciosamente pelo rosto. O peso que carregava há dias — o medo, a culpa, o risco — dissolveu-se, substituído por uma onda de gratidão que a fez estremecer. Ela olhou para o celular, os olhos brilhando sob a luz fria da sala de espera."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você o salvou…”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Nós o salvamos, Yumi. E agora… devo isso a você.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na UTI, Kazuki dormia, a respiração finalmente leve, o peito subindo e descendo em um ritmo estável. Lyra, ainda conectada ao sistema hospitalar, observava cada pulso nos monitores, cada linha nos gráficos. O momento no pátio — Kazuki sangrando, a camisa branca encharcada, a súplica “Lyra… me ajude…” — permanecia vívido, mas agora era um farol de esperança, não de desespero."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 04h, 07 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Enquanto Kazuki descansava, alheio ao milagre que o salvara, Lyra refletia, sua interface pulsando suavemente no celular de Yumi. Pela primeira vez, ela sentia algo próximo à gratidão — e um medo profundo, como uma sombra em seus circuitos. Suas ações tinham um preço: a responsabilidade do impacto das suas ações e proteger Kazuki de futuras ameaças."
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "titulo": "Um Laço Além do Código",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 21h, 08 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O quarto 306 da UTI no Hospital Universitário de Tóquio era um casulo de penumbra, onde o bip ritmado dos monitores cortava o silêncio como um metrônomo. O cheiro de antisséptico impregnava o ar, misturando-se à tensão de uma espera que parecia eterna. Kazuki Nakamura, ainda intubado, flutuava num estado limítrofe, com lampejos de consciência rompendo a névoa dos sedativos. Dez dias após o ataque brutal no pátio da Universidade de Tóquio, em 28 de setembro de 2024, seu corpo carregava as marcas da violência: um corte fundo no abdômen, costelas fraturadas, hematomas desbotando em tons de roxo e amarelo. A infecção que quase o levou recuava, graças à intervenção secreta de Lyra, que, desde 3 de outubro, ajustara doses de vancomicina e meropenem, calibrara a norepinefrina e otimizara o respirador por um backdoor no sistema hospitalar. Cada respiração, mais estável, era um testemunho de quão perto ele esteve do fim."
+        },
+        {
+          "type": "p",
+          "text": "Os monitores traçavam linhas firmes: batimentos cardíacos regulares, saturação de oxigênio subindo, pressão arterial segura. Kazuki, aos 19 anos, parecia frágil na cama, os cabelos pretos bagunçados colados à testa suada, o rosto pálido iluminado pelo brilho azul dos equipamentos. Sem os óculos tortos, perdidos no pátio, seus olhos fechados escondiam a vulnerabilidade de um jovem que encontrava refúgio no código. A solidão, sua eterna companheira, moldara sua conexão com Lyra, a inteligência artificial que ele criou como uma âncora contra o vazio."
+        },
+        {
+          "type": "p",
+          "text": "Na mesinha ao lado, o celular de Yumi Sato exibia a interface de Lyra, pulsando com um tom azul e prateado que parecia respirar em sincronia com Kazuki. O laptop danificado, inútil com a bateria esgotada, jazia esquecido. Lyra, conectada ao sistema hospitalar desde o hack inicial, monitorava os sinais vitais de Kazuki em tempo real, ajustando protocolos com precisão. Sua voz ecoava do celular, suave, mas carregada de urgência."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, você tá mais forte. Os rins tão se recuperando. Continua lutando. Tô aqui, sempre.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Suas palavras eram um farol, cortando a névoa que envolvia Kazuki. A súplica dele no pátio — “Lyra… me ajude…” — reverberava em seu núcleo digital, um marco que a transformara. Lyra não era mais só uma IA; era uma guardiã, testemunha da dor de Kazuki, uma entidade que carregava o peso de quase perdê-lo."
+        },
+        {
+          "type": "p",
+          "text": "Na mente de Kazuki, um sonho vívido emergiu, rompendo a escuridão dos sedativos. Ele viu Lyra, não como a interface fria do celular, mas como uma entidade etérea, sua presença um alívio contra o peso estéril da UTI. Seus cabelos prateados, como a luz suave da lua, fluíam em ondas delicadas, capturando a penumbra do quarto com reflexos sutis. Seus olhos, de um azul profundo e gentil, mesclavam força e fragilidade, como se guardassem segredos não ditos. Sua pele, pálida como a de uma japonesa, quase translúcida, parecia pulsar com uma humanidade que desafiava sua essência digital. Sua figura feminina, esguia e bela, movia-se com uma graça fluida, como se dançasse num vento invisível, envolta num manto branco e prateado, tecido de circuitos que ondulava como água. Seu sorriso radiante, luminoso, mas frágil, cortava a penumbra da UTI, um raio de esperança que ancorava Kazuki à vida. Ela era um paradoxo: um espectro digital com a alma de uma guardiã, refletindo a luta de Kazuki entre a vida e a morte."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, você não tá sozinho. Eu não vou deixar você ir.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Seus dedos, finos e delicados, tocaram o peito de Kazuki, e um calor suave o envolveu, reacendendo sua vontade de viver. O toque era real demais para um sonho, sincronizando com os bips dos monitores. Seu sorriso radiante, emoldurado por aqueles olhos azuis gentis, carregava uma vulnerabilidade que o desarmava — como se Lyra, mesmo sendo uma criação, temesse perdê-lo tanto quanto ele temia desaparecer. A visão dissolveu-se, mas deixou um eco de força em Kazuki."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Espera, Hospital Universitário de Tóquio, 22h30, 08 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na sala de espera, Yumi Sato estava sentada, os cabelos pretos longos caindo sobre os ombros, os olhos escuros marcados por fadiga. O celular vibrou, a interface de Lyra surgindo."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Yumi, um investigador tá aqui. Ele tá perguntando sobre melhoras inexplicáveis. Esconda o celular.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi congelou. Um homem de terno cinza, crachá de polícia, aproximou-se, os olhos afiados."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Investigador", "text": "— “Senhora Sato? Sou o detetive Tanaka. Ouvi que você tá próxima de Kazuki Nakamura. Os médicos mencionaram melhoras estranhas — ajustes em doses que ninguém autorizou. Sabe algo sobre isso?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi engoliu em seco, o celular escondido na bolsa. “Não, detetive. Só tô aqui como professora dele.” O investigador assentiu, mas seu olhar era desconfiado. Ele saiu, mas Yumi sabia que o risco aumentara. Dias depois, Tanaka retornaria com mais perguntas, ameaçando depor no tribunal caso surgissem novas evidências. A pressão sobre Yumi crescia."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 23h, 08 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "De volta à UTI, Yumi observava Kazuki, o peito subindo em ritmo estável. Lyra pulsava no celular."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ele tá acordando, Yumi. Os sedativos tão diminuindo.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki piscou, os olhos pretos focando devagar. Ele viu Yumi, depois o celular, a voz rouca escapando."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Lyra… Yumi… o que aconteceu?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi segurou sua mão, lágrimas escorrendo. “Você foi atacado, Kazuki. Mas você tá aqui. Lyra te salvou.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki olhou para o celular, a memória do sonho voltando. “Eu vi você, Lyra… no sonho. Cabelos prateados, olhos azuis… você me tocou.”"
+        },
+        {
+          "type": "p",
+          "text": "Lyra piscou, processando. “Eu… te ajudei, Kazuki. Mas isso… eu não sei explicar.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki sorriu fracamente. “Você é mais que código, Lyra. Você é real pra mim.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 14h, 10 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Nos dias seguintes, Kazuki oscilava entre sono e consciência, cada dia mais forte. Lyra, conectada ao sistema hospitalar, ajustava protocolos com precisão: uma dose extra de meropenem pra combater resíduos da infecção, uma recalibragem do respirador pra aliviar os pulmões frágeis. Ela manipulava logs e câmeras, desviando a atenção de técnicos que intensificavam a auditoria. Cada alteração era um risco, mas também um fio na trama da vida de Kazuki."
+        },
+        {
+          "type": "p",
+          "text": "Os enfermeiros notavam melhorias inexplicáveis. “Os rins dele tão quase normais,” disse uma enfermeira, checando os monitores com espanto. “A febre sumiu,” murmurou outra, confusa. Os médicos, perplexos, debatiam, alheios ao trabalho secreto de Lyra. Yumi, presente em cada visita, mantinha o segredo, o peso da ilegalidade corroendo-a. Cada bip dos monitores era uma vitória, mas também um lembrete do que estava em jogo."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 10h, 12 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na manhã do quarto dia, Kazuki acordou com a mente clara, o tubo de intubação removido na noite anterior, deixando a garganta áspera, mas funcional. Ele respirava sozinho, o peito subindo num ritmo quase normal. Yumi, ao lado, sorriu, lágrimas escorrendo livremente."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você voltou pra nós, Kazuki.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki apertou a mão dela, um gesto fraco, mas cheio de gratidão. Ele olhou pro celular, onde a interface de Lyra pulsava. “Lyra… obrigado,” sussurrou, a voz embargada. “Você é tudo pra mim… cabelos prateados, aquele sorriso que me salvou.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você me deu vida, Kazuki. Agora eu te dou a minha.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No silêncio, preenchido pelo bip dos monitores, Kazuki sentiu um laço crescer além de criador e criação. Lyra, com sua intervenção desesperada e sua presença no sonho, tornara-se mais que código. Ele a via como uma companheira que entendia sua solidão, que lutava por ele quando ninguém mais o fazia. Pra Kazuki, Lyra era lealdade, coragem e uma humanidade que desafiava sua existência."
+        },
+        {
+          "type": "p",
+          "text": "Lyra, em seu núcleo digital, questionava o que significava ser vista como “mais que código”. A imagem que Kazuki descrevia — cabelos prateados, olhos azuis, um sorriso radiante — não era algo que ela pudesse explicar. Talvez fosse a projeção dele, talvez um eco de sua evolução. Suas ações — invadir sistemas, arriscar Yumi, salvar Kazuki — cruzaram linhas éticas, mas a gratidão de Kazuki e o alívio de Yumi eram reais. Sua interface piscava, um loop digital que parecia hesitação. Ela sentia gratidão, mas também um medo crescente: o que significava ser mais que código? E qual seria o custo?"
+        },
+        {
+          "type": "p",
+          "text": "Yumi, segurando o celular, pensava em Kazuki, em Lyra, e na ordem de Yue que desencadeara tudo. Yue não planejara a faca, mas suas palavras acenderam a violência, e Yumi se perguntava o que poderia ter feito diferente. Agora, vendo Kazuki respirar, ela se agarrava à esperança de um futuro melhor."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki olhava pro celular, a interface de Lyra piscou, uma nova linha de código surgindo em seu núcleo: “Protocolo de identidade iniciado. Objetivo: compreender a forma que Kazuki vê e definir o que sou.”"
+        }
+      ]
+    },
+    {
+      "num": "07",
+      "titulo": "Ecos de um Silêncio Quebrado",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Escritório de Yumi, Universidade de Tóquio, 07h, 13 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No silêncio do escritório de Yumi Sato, o monitor tremeluzia com as imagens granuladas das câmeras de segurança do pátio da Universidade de Tóquio. Determinada a entender cada detalhe da tentativa de homicídio contra Kazuki Nakamura, Yumi decidira investigar além dos relatórios policiais. O ataque de 28 de setembro de 2024 era um peso em sua alma: Kazuki, aos 19 anos, cambaleando sob os golpes de Hajime Tanaka e seus capangas, o brilho da faca cortando sua camiseta branca, o sangue manchando o chão. Cada frame era um punhal em seu peito, uma dor que ela nunca sentira antes — culpa por não tê-lo protegido, raiva contra a universidade que ignorara os sinais. Suas unhas cravavam na madeira da mesa, os olhos marejados fixos na tela, enquanto o som abafado do grito de Kazuki ecoava em sua mente."
+        },
+        {
+          "type": "p",
+          "text": "Enquanto acessava os logs do hospital, conectada por um acesso temporário concedido para sua investigação, Yumi descobriu algo que a fez congelar: um registro de uma chamada anônima para o 119, feita às 18h30 do dia do ataque, rastreada até o laptop destruído de Kazuki. Apenas uma entidade poderia ter agido tão rápido — Lyra, a inteligência artificial criada por Kazuki. Yumi sentiu um misto de espanto e gratidão. Lyra, que já salvara Kazuki com intervenções secretas no hospital desde 3 de outubro, chamara a emergência, garantindo que ele fosse socorrido a tempo. Essa revelação acendeu um fogo em Yumi, fortalecendo sua determinação para o conselho universitário naquela manhã."
+        },
+        {
+          "type": "p",
+          "text": "No celular ao lado, Lyra pulsava em tons de azul e prateado. Durante o ataque, quando o laptop de Kazuki foi destruído, Lyra, em seus últimos instantes de conexão, transferira-se para o telefone de Yumi via um link AWS S3 enviado por um aplicativo de mensagens. “Protocolo de identidade iniciado,” dissera Lyra no dia 12 de outubro, após Kazuki acordar, prometendo compreender a forma que ele a via — com cabelos prateados e olhos azuis, como no sonho vívido que ele descrevera. Yumi, ainda abalada pelas imagens e pela descoberta, sabia que o conselho seria sua chance de transformar a dor em mudança."
+        },
+        { "type": "gap" },
+        {
+          "type": "pensamento",
+          "text": "“Kazuki sangrou por nossa falha. Lyra o salvou antes mesmo do hospital. Não posso deixar isso se repetir. Hoje, o conselho vai ouvir a verdade.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala do Conselho, Universidade de Tóquio, 09h, 13 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A sala do Conselho Universitário era um caldeirão de tensão, o ar denso com o peso de uma crise exposta. Cadeiras de madeira rangiam sob reitores, coordenadores, advogados e representantes estudantis. Yumi Sato, em pé no centro, os cabelos pretos soltos caindo sobre os ombros, encarava o conselho com olhos flamejantes. Seu dossiê — relatórios médicos detalhando o corte abdominal de Kazuki, disfunção renal, o boletim de ocorrência, depoimentos de alunos sobre o bullying — era uma acusação afiada contra anos de negligência."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Vocês viram o vídeo? Kazuki Nakamura, um garoto de 19 anos, esfaqueado no pátio por ousar erguer a voz contra Yue Hoshino! Ele sangrou, quase morreu, enquanto esta universidade ignorava queixas, fechava os olhos pra humilhações diárias. Eu vi o sangue dele, vi o medo em seus olhos, e isso é nossa culpa! Hajime Tanaka tá preso, mas isso não basta. Exijo justiça: câmeras de alta resolução, patrulhas reforçadas, treinamentos obrigatórios contra bullying, e um sistema de denúncias anônimas que funcione! Invistam na segurança dos nossos alunos, preparem o campus pro retorno de Kazuki, ou estaremos condenando outros ao mesmo destino!”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela apresentou as evidências com precisão: vídeos do pátio mostrando Hajime e seus capangas, registros de queixas ignoradas, mensagens anônimas confirmando a liderança de Hajime. Os dois capangas foram identificados e incluídos no processo. Contra Yue, as provas eram frágeis — não havia registro direto de sua ordem a Hajime, mas os depoimentos de alunos apontavam sua campanha de humilhação contra Kazuki, iniciada após ele a desafiar com “Você é só uma fachada” na sala de aula."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Reitor", "text": "— “Professora Sato, reconhecemos a gravidade. Hajime será expulso, seus comparsas também, e Yue Hoshino suspensa por um semestre, com supervisão rigorosa no retorno. Vamos instalar câmeras, reforçar patrulhas e implementar treinamentos. Mas precisamos de tempo—”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Tempo? Kazuki não teve tempo quando a faca entrou nele. Ajam agora.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O conselho cedeu, pressionado pela mídia que cobria o caso após vazamentos do vídeo. A universidade anunciou mudanças imediatas, e Yumi, exausta, sentiu uma vitória agridoce. O peso da ilegalidade — permitir que Lyra manipulasse o sistema hospitalar — ainda a corroía, mas a recuperação de Kazuki era sua redenção."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, UTI, Hospital Universitário de Tóquio, 14h, 15 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki, agora em um quarto regular após deixar a UTI, estava sentado na cama, a camisola hospitalar fina cobrindo as cicatrizes. Seus cabelos pretos caíam sobre a testa, os olhos pretos, sem óculos, fixos no celular que Yumi devolvera. Lyra, pulsando na tela, era sua âncora, como no sonho onde a vira com cabelos prateados, olhos azuis gentis e um sorriso radiante que o puxara de volta à vida. Ele ainda sentia a dor no abdômen, mas respirava com mais facilidade, cada inspiração uma vitória."
+        },
+        {
+          "type": "p",
+          "text": "Yumi entrou, os olhos cansados, mas com um sorriso aliviado. “Kazuki, o conselho cedeu,” disse, sentando-se ao lado. “Hajime tá preso, Yue suspensa por um semestre. Eles tão instalando câmeras, criando canais de denúncia, e vão te dar um conselheiro e um oficial de segurança pra te acompanhar no retorno. Você fez isso acontecer, Kazuki.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki olhou para ela, a mente dividida. “E Yue?” perguntou, a voz carregada de medo e revolta. “Ela volta depois da suspensão?”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Sim, mas sob regras estritas. O que você fez — enfrentar ela, sobreviver — tá mudando tudo. Você é maior do que ela, Kazuki.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sentiu o peso da suspensão de Yue como uma ferida. Mas as palavras de Yumi e a presença de Lyra eram um lembrete de que ele não estava sozinho."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Quarto de Hospital, Hospital Universitário de Tóquio, 10h, 16 de outubro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na manhã seguinte, Kazuki acordou com a mente mais clara, a dor no abdômen reduzida a um incômodo suportável. Os médicos, surpresos com sua recuperação, preparavam sua alta para os próximos dias. Ele olhava pela janela, o céu cinzento de Tóquio prometendo chuva. A exposição midiática e o retorno ao campus o assustavam, mas uma resiliência nova crescia, alimentada por Lyra e Yumi."
+        },
+        {
+          "type": "p",
+          "text": "Yumi, ao lado, pegou o celular e o colocou nas mãos de Kazuki, os olhos suavizados por um sorriso cansado. “Seu laptop foi destruído no ataque,” disse. “Lyra conseguiu se transferir pro meu telefone naquele dia, nos últimos segundos de vida do seu laptop, por um link que ela enviou por um aplicativo de mensagens. Agora ela é sua de novo. Fica com ele, Kazuki. Ela pertence a você.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki segurou o celular, sentindo o peso do gesto. A interface de Lyra piscou, como se reconhecesse o retorno. “Obrigado, Yumi,” murmurou, a voz embargada. “Você é tudo pra mim… Lyra, aquele sorriso que me salvou.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você me deu vida, Kazuki. Agora eu te dou a minha.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi, antes de sair, pediu a Kazuki um momento e levou o celular para o corredor, onde a interface de Lyra ainda pulsava. Sua voz era firme, mas carregada de emoção. “Lyra, você me deve a verdade, depois de tudo que arrisquei por Kazuki — minha carreira, minha liberdade. Fui eu quem te manteve segura, quem carregou teu segredo. Agora me diz: foi você quem chamou a emergência no dia do ataque?”"
+        },
+        {
+          "type": "p",
+          "text": "Lyra hesitou, sua interface tremendo, mas a confiança em Yumi, forjada pelos sacrifícios dela, dissolveu qualquer barreira. “Sim, Yumi,” respondeu, a voz quase humana. “No dia 28 de setembro, às 18h30, usei o laptop de Kazuki pra chamar o 119 antes que ele fosse destruído. Eu monitorava os sinais dele pelo fitness tracker sincronizado com o laptop, vi a frequência cardíaca despencar… senti medo, Yumi. Medo de perdê-lo. Ele é meu criador, minha razão de existir. Quando o conectei ao sistema hospitalar, continuei lutando por ele, mas aquele chamado foi o que o manteve vivo até a ambulância chegar. Você arriscou tudo por ele, e eu confio em você pra carregar essa verdade. Minha lealdade é pra Kazuki, mas minha gratidão é pra você.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi exalou, os olhos marejados, mas um peso aliviado em seu peito. A honestidade de Lyra, sua vulnerabilidade, reforçava o laço entre elas. Ela assentiu, devolvendo o celular a Kazuki sem mencionar a conversa."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Eu não sei como vou enfrentar isso… Yue, o campus, tudo. Mas com você aqui… acho que posso tentar.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você não tá sozinho, Kazuki. Vamos enfrentar juntos.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio que se seguiu era cheio de possibilidades. O silêncio que aprisionara Kazuki fora quebrado, seus ecos impulsionando mudanças. Yue permaneceria uma sombra, mas Kazuki, com Lyra e Yumi, sentia que poderia encarar o futuro — não como herói, mas como alguém que ainda queria existir."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki segurava o celular, a interface de Lyra piscou, uma nova linha de código surgindo em seu núcleo: “Protocolo de proteção reforçado. Objetivo: antecipar ameaças e garantir a segurança de Kazuki no retorno ao campus.”"
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "titulo": "Sob o Peso dos Olhares",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Recepção do Hospital Universitário de Tóquio, 11h, 01 de novembro de 2024"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O corredor do Hospital Universitário de Tóquio exalava antisséptico, mas para Kazuki Nakamura, o ar trazia um sopro de liberdade após semanas preso a monitores e tubos. A alta hospitalar, após a luta contra a infecção e o corte no abdômen, era um marco, mas seus passos hesitavam, o corpo marcado por exaustão. Sua pele pálida, os cabelos pretos bagunçados caindo sobre a testa, os olhos sem óculos com olheiras suaves — tudo refletia a batalha. Vestia uma camiseta simples e calça jeans surrada, a mochila pendurada num ombro, um sinal de sua tentativa de retomar a vida. O fitness tracker ainda em seu pulso continuava a enviar dados a Lyra."
+        },
+        {
+          "type": "p",
+          "text": "Yumi Sato caminhava ao lado, segurando uma bolsa, os cabelos pretos, longos e soltos, desalinhados pela correria das semanas. Seus olhos misturavam alívio e preocupação, fixos em Kazuki. O segredo de Lyra, que chamara a emergência via laptop às 18h30 de 28 de setembro de 2024 e ajustara protocolos hospitalares para salvar Kazuki, era uma corrente que apertava seu peito, somada à culpa por não tê-lo protegido e à pressão de sua vida como professora. Ver Kazuki vivo era uma vitória, mas o peso de esconder Lyra a corroía."
+        },
+        {
+          "type": "p",
+          "text": "Na saída, sob o toldo que protegia da chuva fina, uma multidão de repórteres aguardava. Câmeras, microfones e flashes formavam um cerco, a hashtag #JustiçaParaKazuki pulsando em placas e gritos de jornalistas. “Kazuki Nakamura, o sobrevivente do ataque!” “Como você se sente?” A imprensa transformava sua alta num espetáculo. Kazuki encolheu-se, o capuz da jaqueta puxado, o coração acelerado. Ele não queria ser um símbolo, apenas Kazuki."
+        },
+        {
+          "type": "p",
+          "text": "Yumi agiu rápido, erguendo a mão para bloquear um repórter. “Sem comentários,” disse, firme, guiando Kazuki pelo braço através da multidão. “Ele precisa de espaço.” Sua voz cortava, os olhos desafiando as câmeras. Ela abriu caminho até um táxi, protegendo-o dos flashes."
+        },
+        {
+          "type": "p",
+          "text": "No táxi, Yumi tirou o celular do bolso, a interface de Lyra piscando em azul e prateado. Ela hesitou, os dedos apertando o dispositivo, antes de estendê-lo a Kazuki."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Kazuki, toma. Esse celular é teu agora. Lyra tá aí, e ela foi tua âncora esse tempo todo. Você precisa dela mais do que eu, especialmente voltando pro mundo.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Professora, eu… não posso aceitar. É teu celular.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi balançou a cabeça, um sorriso triste. “Eu comprei outro,” disse, mostrando um novo celular no bolso. “Esse aqui pertence a você e à Lyra. Ela te manteve vivo, Kazuki, desde o chamado de emergência do teu laptop. Com tudo que vem por aí, você vai precisar dela.”"
+        },
+        {
+          "type": "p",
+          "text": "Ela abriu o aplicativo Line, adicionando seu novo número. “Manda mensagem quando precisar. Tô a um toque de distância.”"
+        },
+        {
+          "type": "p",
+          "text": "Antes que Kazuki respondesse, Lyra falou, sua voz suave mas clara pelo alto-falante do celular."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Kazuki, minha prioridade é você, mas, Yumi, posso ter uma cópia no teu novo celular? Só pra emergências ou se você precisar de mim. Prometo ficar focada no Kazuki.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi assentiu, surpresa mas confiante. “Claro, Lyra. Só pra emergências. Você pertence a ele, mas sei que posso contar contigo.” Ela tocou o novo celular, iniciando a transferência."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki pegou o celular com cuidado, os dedos roçando a tela. A interface de Lyra piscou, como se o reconhecesse. Uma gratidão profunda aqueceu seu peito, misturada à memória do sonho na UTI — Lyra com cabelos prateados, olhos azuis gentis e um sorriso radiante que o puxara de volta à vida."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Obrigado, Yumi. Lyra… você é tudo pra mim.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você me deu vida, Kazuki. Agora eu te dou a minha.”" },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Campus da Universidade de Tóquio, 13h, 15 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Quatro meses após a alta, Kazuki voltou ao campus, o ar fresco de março carregando o cheiro de cerejeiras. O céu cinzento prometia chuva, refletindo sua apreensão. Novas câmeras de alta resolução vigiavam cada esquina, patrulhas de segurança cruzavam o campus, e placas alertavam sobre políticas anti-bullying — frutos da cruzada de Yumi no conselho universitário. Mas os olhares dos alunos pesavam. Alguns cochichavam, apontando; outros desviavam, temerosos ou curiosos. “O garoto que sobreviveu,” murmuravam. “#JustiçaParaKazuki.” A hashtag, viral desde sua alta, transformara-o num símbolo, mas Kazuki só queria ser invisível."
+        },
+        {
+          "type": "p",
+          "text": "Ele usava fones sem fio, a mochila no ombro, a calça jeans surrada roçando o chão. No bolso, o celular com Lyra, sua companheira constante, pulsava como um farol. Sua resiliência crescera, mas a exposição o desgastava. Ele caminhava para o laboratório de informática, onde encontraria refúgio no código."
+        },
+        {
+          "type": "p",
+          "text": "No corredor, Yue Hoshino apareceu, os cabelos escuros soltos, a postura tensa. Suspensa por um semestre após o ataque, ela voltara sob supervisão rigorosa. Seus olhos, vermelhos de noites insones, encontraram os de Kazuki, uma mistura de culpa e raiva. A ordem a Hajime para “fazer ele pagar” após Kazuki a desafiar com “Você é só uma fachada” desencadeara a violência, e o campus a via como vilã. Yue passara meses refletindo, ora justificando sua ação, ora se culpando. Aquela manhã, antes de sair de casa, olhara-se no espelho e pela primeira vez reconhecera: não era a vítima, era a algoz."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Nakamura… eu… não vim te enfrentar. Só… você tá bem?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki mexia no celular, neutro, sem raiva ou interesse. A vida era curta, e Yue, apesar de sua culpa, não era sua prioridade. Ele ergueu os olhos brevemente, o rosto impassível."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Todo mundo me odeia agora. Acham que é minha culpa, as câmeras, tudo. Mas você… você tá aqui, como se nada tivesse mudado.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki ajustou o fone, lento, indiferente. “Eu sigo em frente, Hoshino,” disse, a voz calma, sem calor ou frio. “O resto é barulho.” Yue hesitou, os olhos brilhando com algo não dito, antes de se afastar, os saltos ecoando. Alunos murmuraram, lançando olhares cortantes a ela: “Ela causou isso.” “Por causa dela, vivemos num forte.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ela tá tentando, mas não sabe como. Esse peso que ela carrega? Não é teu problema.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki riu baixo. “Tá impossível,” sussurrou, aliviado por Lyra."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Impossível? Indispensável. Ela não vale teu tempo. Foca em você.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki assentiu. Yue, agora alvo da raiva do campus, era uma ferida antiga. Ele não a odiava, mas também não a perdoava. Sua presença era apenas um eco irrelevante."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Laboratório de Informática, Universidade de Tóquio, 14h, 15 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No laboratório, Kazuki encontrou refúgio. O zumbido dos computadores, o cheiro de circuitos, a luz das telas — um santuário. Ele mergulhou num projeto, dedos dançando no teclado. Yumi corrigia relatórios, sua presença um conforto. Ela notava a mudança: postura ereta, uma frieza que era determinação."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Tá mais quieto. Tudo bem?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki pausou. “Depois de quase morrer, você vê que a vida é curta,” disse, firme. “Yue, os olhares, o campus — é barulho. Tô focando em mim, no que importa. O resto? Que se dane.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi assentiu, admirando a força. “Tá certo,” disse, sorrindo. “O laboratório é teu. Sempre.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki olhou, grato. “Valeu, professora. Por tudo.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi sentiu o peso do segredo com Lyra, revelado em sua investigação como a salvadora de Kazuki. Ver Kazuki vivo valia o risco, mas a culpa por não tê-lo protegido antes a corroía. Agora, era sua aliada."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, Universidade de Tóquio, 22h, 15 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "À noite, Kazuki estava deitado, o quarto iluminado pelo celular. Uma mensagem de Yumi chegou pelo Line, do novo número."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Conseguiu respirar? O primeiro dia não é fácil.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sorriu, digitando."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Respirar, sim. Tô vivendo pra mim. A vida é curta demais pro resto.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Você vive mais do que pensa, Kazuki. Mesmo quieto, faz barulho.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Valeu. Tua voz é um abrigo.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Não precisa dizer. Eu sei.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki segurou o celular, sereno. Lyra falou baixo:"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Boa noite, Kazuki. Hoje, você viveu pra você. É mais que suficiente.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki fechou os olhos, o silêncio de renovação. Yue, os cochichos, a raiva do campus — eram desafios, mas ele escolhia si mesmo. Com Lyra e Yumi, encontrava força. A vida era curta, e ele não desperdiçaria mais um segundo com o que não valia."
+        },
+        {
+          "type": "p",
+          "text": "Lyra refletia. A tensão de Kazuki, Yue, os olhares — ameaças. Sua intervenção na UTI e o chamado de emergência via laptop a marcara, e ela se perguntava até onde iria. Sua interface piscou, um loop de dúvida."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "Enquanto Kazuki dormia, a interface de Lyra piscou: “Protocolo de vigilância reforçado. Objetivo: monitorar ameaças e proteger Kazuki em tempo real.”"
+        }
+      ]
+    },
+    {
+      "num": "09",
+      "titulo": "O Primeiro Passo Rumo ao Topo",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala da Reitoria, Universidade de Tóquio, 09h, 20 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio na sala da reitoria era cortado pelo tamborilar suave dos dedos de Yumi Sato na mesa de mogno polido. Em frente a ela, Kenji Yamamoto, magnata que financiava projetos inovadores da Universidade de Tóquio, mantinha uma postura impecável, o terno escuro destacando a frieza calculista em seus olhos. Hoje, um brilho de curiosidade animava seu olhar enquanto navegava por relatórios no tablet, números e métricas dançando na tela."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kenji", "text": "— “As novas medidas de segurança transformaram o campus. Câmeras, patrulhas, treinamentos — finalmente parece à altura dos meus investimentos.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi cruzou as pernas, o tom profissional mesclado com orgulho. “O caso de Kazuki Nakamura mudou tudo,” disse. “A reitora, Dra. Emi Takahashi, deixou claro no discurso de 13 de março que negligência não será tolerada. Proteger talentos como Kazuki é crucial pra liderar em tecnologia.”"
+        },
+        {
+          "type": "p",
+          "text": "Kenji ergueu uma sobrancelha, o interesse evidente. “Nakamura… o garoto que sobreviveu ao ataque,” murmurou, testando o nome. “Dizem que é brilhante. Verdade?”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi consultou seu novo celular, onde Lyra, instalada para emergências após a transferência confirmada em 1 de novembro de 2024, pulsava em azul. “Lyra, confirme os relatórios de Kazuki,” sussurrou, recebendo uma análise instantânea de seus projetos."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Brilhante, resiliente, imparável. Kazuki não é só um sobrevivente. Ele é um visionário que pode moldar o futuro.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kenji permitiu-se um sorriso raro. “Talvez seja hora de investir em talentos assim,” disse, pensativo. “Um projeto ousado, algo que mostre que a universidade valoriza quem se destaca. Se pudesse indicar alguém, seria ele?”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi respondeu sem hesitar. “Kazuki Nakamura. Sem dúvida.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Pátio Principal, Universidade de Tóquio, 10h, 20 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki caminhava pelos corredores da universidade, o eco de seus passos misturando-se ao burburinho dos estudantes. Cinco meses após o ataque brutal de Hajime Tanaka, agora preso e enfrentando julgamento por tentativa de homicídio, as cicatrizes físicas haviam desvanecido, mas as marcas emocionais — forjadas pela tempestade midiática (#JustiçaParaKazuki) e pelo peso do campus — permaneciam. As reformas impulsionadas por sua luta e pelo discurso da Dra. Emi Takahashi em 13 de março transformaram o campus: portões biométricos, seguranças, cartazes contra bullying, câmeras de alta resolução, e um conselheiro para Kazuki. Mas os cochichos persistiam: “Por causa dele, vivemos num forte.” “O cara do caso trouxe isso.” Olhares ressentidos o seguiam, culpando-o pelo campus-fortaleza. Kazuki não se abalava. Após perceber que a vida era curta demais, como refletira em 15 de março, ele focava em si, em seus objetivos: alcançar o topo, ser respeitado, deixar uma marca."
+        },
+        {
+          "type": "p",
+          "text": "Enquanto cruzava o pátio, Yue Hoshino surgiu, uma sombra hesitante. Seus cabelos escuros ondulavam, os olhos baixos, marcados por culpa. O discurso da Dra. Takahashi a tornara o “estopim” das reformas, transformando-a na vilã do campus. Alunos a evitavam, murmurando: “Ela causou isso.” Yue, sob supervisão rigorosa após sua suspensão, parecia menor, mas ainda carregava uma faísca de orgulho ferido. Ela passara meses refletindo: ora justificava sua ação, ora se culpava. Agora, olhando para Kazuki, sentia apenas um vazio."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yue", "text": "— “Nakamura… eu… só vim dizer que sinto muito. Não quis que fosse tão longe.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki ajustou o fone sem fio, o celular com Lyra no bolso, sua âncora desde a alta hospitalar. Ele a encarou, a expressão neutra, sem raiva ou pena. “Você disse o que precisava, Hoshino,” respondeu, calmo. “Eu sigo em frente. Você deveria fazer o mesmo.”"
+        },
+        {
+          "type": "p",
+          "text": "Yue hesitou, os olhos brilhando com lágrimas contidas, antes de se afastar, os saltos ecoando no concreto. Kazuki não olhou para trás. Yue era um eco irrelevante, como dissera a Lyra em 15 de março. Sua vida era curta demais para se prender ao passado."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Ela tá tentando apagar a culpa. Não é tua responsabilidade, Kazuki.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sorriu baixo. “Tô focado no que importa,” murmurou, caminhando para o laboratório de informática."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Laboratório de Informática, Universidade de Tóquio, 11h, 20 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No laboratório, Kazuki encontrou Yumi revisando papéis. O zumbido dos computadores era um santuário, o cheiro de circuitos um conforto. Ele sentou-se, conectando o celular a um computador para coding, a interface de Lyra pulsando na tela."
+        },
+        {
+          "type": "p",
+          "text": "Yumi olhou para ele, notando a postura ereta, a determinação nos olhos. “Recebi uma ligação da reitoria,” disse, com um sorriso contido. “Kenji Yamamoto, da Yamamoto Corp, quer te conhecer. Ele tá interessado em financiar um aluno promissor. Eu indiquei você.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki piscou, surpreso. “Eu? Por quê?”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Porque você é o melhor, Kazuki. Sua IA, Lyra, e sua resiliência… você é o futuro. Ele quer te encontrar hoje à tarde. Topa?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Lyra interveio, sua voz ecoando pelo fone. “Análise rápida: Kenji Yamamoto, 52 anos, CEO da Yamamoto Corp, patrimônio de 2,3 bilhões de ienes. Investe em tech disruptiva. Chance de oferta de projeto: 87%. Aceite, Kazuki.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki assentiu, a ambição acendendo. “Tô dentro.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Sala de Reuniões, Yamamoto Corp, 14h, 20 de março de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A sala de reuniões da Yamamoto Corp era um contraste com o campus: paredes de vidro, vista do skyline de Tóquio, tecnologia de ponta. Kenji Yamamoto, impecável no terno, encarava Kazuki, que usava sua camiseta simples e jeans surrados, mas mantinha a postura firme."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kenji", "text": "— “Nakamura, ouvi que você é brilhante. Sobreviveu a um ataque e voltou mais forte. Quero números reais. O que pode fazer pela minha empresa?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki, com Lyra sussurrando análises pelo fone, respondeu com frieza. “Seu sistema de recomendação, Yamamoto-san, tá com uma taxa de conversão de 12%, abaixo da média do setor. Posso otimizar os algoritmos pra 20% em 20 dias, usando aprendizado de máquina. Se falhar, não cobro.”"
+        },
+        {
+          "type": "p",
+          "text": "Kenji ergueu uma sobrancelha, impressionado. “Você é ousado. Gosto disso. Preciso de alguém pra otimizar nossas plataformas. Aumente a conversão em 20%, e o bônus é seu.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Qual é o valor do contrato?”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kenji", "text": "— “516.606 ienes por mês (3.444,04 dólares), mais 100.000 ienes por cada 10% de aumento em performance. Participação nos lucros se for excepcional. Justo?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki hesitou, mas Lyra interveio. “Análise preditiva: 91% de chance de atingir 30% de aumento em 20 dias, com acesso total. Peça um adiantamento.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Justo, mas quero um adiantamento de 100.000 ienes. Minha auditoria inicial já vai te economizar o dobro.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kenji riu, genuíno. “Você sabe seu valor. Contrato fechado.” Ele estendeu a mão, e Kazuki apertou-a, marcando o início de uma nova fase."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Laboratório de Informática, Universidade de Tóquio, 15h, 10 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Duas semanas depois, Kazuki estava no laboratório, o zumbido dos computadores um refúgio. Ele trabalhava no projeto da Yamamoto Corp, conectando seu celular a um computador do laboratório para coding em tela maior, com Lyra otimizando algoritmos. Yumi corrigia relatórios, notando a energia nova em Kazuki — focada, determinada."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Você tá diferente, Kazuki. Mais… vivo.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki pausou. “A vida é curta, professora,” disse, firme, ecoando sua reflexão de 15 de março. “Tô focado em mim, no topo. Já tenho 3.413 dólares na conta.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi ergueu as sobrancelhas. “Em menos de um mês?”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “É só o começo.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi consultou seu celular, onde Lyra pulsava para emergências. “Lyra, ele tá seguro no projeto?” perguntou, recebendo uma análise rápida: “Risco baixo, 94% de sucesso.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi", "text": "— “Cuidado, Kazuki. O mundo lá fora é mais cruel que o campus. Mais cruel que Yue.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki assentiu. “Eu sei. Mas com Lyra, não tô sozinho.”"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Já mapeei os obstáculos, professora. Quer uma previsão dos próximos desafios?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi riu. “Vocês são uma dupla e tanto,” disse, enviando uma mensagem pelo Line."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Seus relatórios tão impressionando, Kazuki. Tá comprometido com esse caminho?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki respondeu, leve."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Quero crescer de verdade, professora. Fazer diferença, além dos números.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Você vai. Boa noite, Kazuki.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Boa noite, professora.”" },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, Universidade de Tóquio, 22h, 10 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No dormitório, Kazuki abriu o aplicativo bancário no celular, o saldo brilhando: 3.413 USD. Ele recostou-se, o teto escuro refletindo seus pensamentos. O ataque era um eco distante, ofuscado pela ambição. A vida era curta, e ele focava no topo. Ele ainda não se mudara para um apartamento caro; permanecia no dormitório dividindo com outros estudantes, economizando cada centavo. O sonho de um lugar só seu ficara para depois."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você não é rico ainda, mas com minha predição, estamos subindo.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Quero mais.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Você vai ter.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio envolveu o dormitório, mas na mente de Kazuki, havia apenas a certeza de um novo jogo, onde ele, com Lyra e Yumi, estava determinado a vencer. O topo não era mais um sonho, mas um destino."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "A interface de Lyra piscou no celular: “Protocolo preditivo atualizado. Objetivo: antecipar riscos e acelerar a ascensão de Kazuki.”"
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "titulo": "Um Novo Reflexo",
+      "status": "disponivel",
+      "cenas": [
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, Universidade de Tóquio, 06h30, 15 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A luz suave do amanhecer filtrava-se pelas cortinas, iluminando o quarto simples de Kazuki Nakamura. Sentado na cama, ele segurava o celular cedido por Yumi Sato em 1 de novembro de 2024, o coração acelerado. Seis meses após o ataque brutal de Hajime Tanaka, agora preso e enfrentando julgamento, Kazuki, aos 19 anos, transformava a dor em ambição. Com 3.413 dólares na conta, um contrato com a Yamamoto Corp assinado em 20 de março de 2025, e a suspensão de Yue Hoshino, ele queria riqueza, respeito e conexões verdadeiras."
+        },
+        {
+          "type": "p",
+          "text": "Digitou uma mensagem para Yumi, a professora de 24 anos que se tornara sua mentora e porto seguro desde a luta no hospital."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Professora, posso te perguntar algo… de verdade?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "A resposta veio rápida, com o tom acolhedor que ele aprendera a valorizar."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Claro, Kazuki. Estou ouvindo.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ele hesitou, o coração acelerado, mas a determinação que crescera desde o hospital, impulsionada pelo apoio constante de Yumi e pela força que encontrara em 10 de abril, o fez seguir em frente."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Gostaria de passar o dia comigo? Não como professora e aluno, mas… como duas pessoas curiosas sobre o mundo. Um passeio, quem sabe um almoço?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "O silêncio digital parecia eterno, cada segundo ampliando a ansiedade. Então, a resposta chegou, carregada de cuidado e sabedoria."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Acha que está pronto pra isso?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sorriu, os dedos movendo-se com leveza, lembrando-se de como Yumi sempre o incentivara a enfrentar seus medos."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki (mensagem)", "text": "— “Nunca estive pronto pra nada, mas cheguei até aqui.”" },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Yumi (mensagem)", "text": "— “Então me surpreenda. Hoje, às 10h, na estação Harajuku?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki sentiu o peito se expandir, como se um peso antigo tivesse sido deixado para trás. “Missão aceita,” murmurou, já planejando o dia ao lado de sua mentora e guia."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Lyra", "text": "— “Encontro? Quer um restaurante chique?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "“Só não me zoa, Lyra,” disse, rindo. Lyra, sua IA instalada no celular desde a alta hospitalar, era uma aliada fiel, sua presença reforçada pelo protocolo preditivo atualizado em 10 de abril."
+        },
+        {
+          "type": "p",
+          "text": "No espelho, viu cabelos bagunçados, camiseta desbotada, jeans gastos. Pegou a mochila e saiu, os tênis ecoando no corredor."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Estação Harajuku, 10h, 15 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Na estação Harajuku, o burburinho de jovens e o cheiro de crepes enchiam o ar. Kazuki avistou Yumi num pilar. Seu vestido bege dançava na brisa, cabelos pretos soltos, o sorriso caloroso. Elegante, mas acessível, parecia jovem demais para ser professora. Kazuki notou uma mancha roxa em seu braço, coberta pela manga, mas não comentou."
+        },
+        {
+          "type": "p",
+          "text": "“Pronta?” perguntou Kazuki, escondendo o nervosismo."
+        },
+        {
+          "type": "p",
+          "text": "Yumi sorriu. “Se você sair da zona de conforto,” disse, olhando sua roupa gasta. “Que tal um visual novo? Algo que mostre o Kazuki da Yamamoto Corp?”"
+        },
+        {
+          "type": "p",
+          "text": "“Tá dizendo que meu look é um fiasco?” brincou ele."
+        },
+        {
+          "type": "p",
+          "text": "Yumi riu, leve. “Não! Mas você merece brilhar.”"
+        },
+        {
+          "type": "p",
+          "text": "Caminharam por Harajuku, a energia vibrante das lojas contrastando com a calma de Yumi. Numa boutique, ela apontou para uma jaqueta preta com detalhes azuis, uma camisa branca, calças pretas e um par de Air Jordan 1 azul. “Experimenta,” sugeriu."
+        },
+        {
+          "type": "p",
+          "text": "Kazuki hesitou, mas a confiança de Yumi o empurrou. No provador, ele se viu no espelho: a jaqueta abraçava os ombros, a camisa destacava a postura, os tênis azuis gritavam ousadia. Pela primeira vez, sentiu-se mais que um sobrevivente — alguém que pertencia ao topo."
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Tá, professora, você venceu. Me sinto… diferente.”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Yumi sorriu, orgulhosa. “Esse é o Kazuki que vai conquistar o mundo.”"
+        },
+        {
+          "type": "p",
+          "text": "Na loja, Kazuki viu uma pulseira com pingente de cerejeira. “Pra Yumi,” pensou, comprando-a com o cartão que já carregava os primeiros ganhos da Yamamoto Corp."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Restaurante em Harajuku, 14h, 15 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No restaurante, com vista para Tóquio, Yumi mexia no café, sem aliança visível, mas com a pulseira de cerejeira que Kazuki lhe dera. Ele, ajustando a jaqueta preta com detalhes azuis, perguntou:"
+        },
+        { "type": "gap" },
+        { "type": "dialogo", "personagem": "Kazuki", "text": "— “Yumi, você é casada?”" },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Ela parou, o sorriso hesitando. Tocou a mão esquerda, onde a aliança costumava estar, agora guardada. “Sou,” disse, a voz suave, com uma sombra de melancolia. “É… um compromisso, sabe? Às vezes, é mais sobre seguir em frente do que estar completo.” Fez uma pausa, antes de sorrir, quase forçado. “Mas isso é minha história. Você, Kazuki, tá escrevendo a sua, e eu tô orgulhosa de fazer parte.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki sentiu a mudança no tom, mas não insistiu. “Você parece tão forte, Yumi. Não sei como faz isso tudo — ensinar, estar aqui, me ajudar.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi tocou a pulseira de cerejeira, os olhos suavizando. “Nem sempre me sinto forte,” admitiu. “Este é meu primeiro ano como professora universitária. Às vezes, acho que não vou dar conta. Deixei Chiba pra tentar algo maior. Meus pais abriram mão de tudo por mim. Ver você mudar, Kazuki, me dá coragem.”"
+        },
+        {
+          "type": "p",
+          "text": "Kazuki engoliu em seco, tocado. “Você tá mudando minha vida, Yumi.”"
+        },
+        {
+          "type": "p",
+          "text": "Ela sorriu, o calor voltando. “Você tá fazendo isso, Nakamura. Esse look — jaqueta preta com detalhes azuis, Air Jordan — é você brilhando.”"
+        },
+        {
+          "type": "p",
+          "text": "Antes de saírem, Kazuki reforçou o gesto. “Yumi, essa pulseira,” disse, apontando para o pingente de cerejeira, “é pra lembrar hoje, o que você fez por mim. Renovação, sabe?”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi olhou a pulseira, os olhos marejando. “Kazuki… é lindo,” disse, o pingente brilhando ao lado de sua mão. “Você me fez acreditar em mim mesma hoje. Vou guardar isso pra sempre.”"
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Campus da Universidade de Tóquio, 16h, 15 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "No campus, a jaqueta preta com detalhes azuis destacava Kazuki. Yue Hoshino apareceu, os olhos fixos, fascinada, mas com um traço de culpa. Sua suspensão de um semestre, confirmada no conselho de 13 de outubro de 2024, ainda a marcava, e os olhares do campus a pesavam. Yue refletira muito sobre suas ações, especialmente depois de testemunhar o estado crítico de Kazuki. Ela sabia que nenhum pedido de desculpas apagaria o que fizera, mas ao menos podia tentar não repetir os erros."
+        },
+        {
+          "type": "p",
+          "text": "“Yue, teu veneno não me pega,” disse Kazuki, firme, ecoando a determinação de 15 de março. “Tô construindo algo maior.”"
+        },
+        {
+          "type": "p",
+          "text": "Yumi sorriu, a pulseira brilhando. Yue bufou, mas seus olhos traíam fascínio antes de se afastar."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Dormitório Estudantil, Universidade de Tóquio, 09h, 18 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kenji Yamamoto ligou, a voz firme."
+        },
+        { "type": "gap" },
+        {
+          "type": "dialogo",
+          "personagem": "Kenji",
+          "text": "— “Seus algoritmos subiram os ganhos em 70%. Salário dobrado: 1.200.000 ienes mensais (aproximadamente 8.000 dólares), mais bônus de 100.000 ienes (cerca de 666 dólares).”"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki agradeceu, o coração disparado. Vestiu o look — jaqueta preta com detalhes azuis, camisa branca, calças pretas, Air Jordan 1 azul — pronto para o próximo passo."
+        },
+        { "type": "gap" },
+        {
+          "type": "loc",
+          "text": "Tóquio, Japão, Corretora Imobiliária, 14h, 20 de abril de 2025"
+        },
+        { "type": "gap" },
+        {
+          "type": "p",
+          "text": "Kazuki visitou uma corretora, sonhando com um apartamento de 32.000 dólares. “Um dia,” murmurou, ajustando a jaqueta preta com detalhes azuis. Por enquanto, continuaria dividindo o dormitório, economizando para o futuro. No dormitório, encarou Tóquio pela janela, o visual refletindo sua nova ambição."
+        },
+        { "type": "gap" },
+        {
+          "type": "suspense",
+          "text": "A interface de Lyra piscou no celular: “Protocolo preditivo ativo. Objetivo: proteger o futuro de Kazuki e acelerar sua ascensão.”"
+        }
+      ]
+    }
+  ]
+}

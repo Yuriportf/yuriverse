@@ -197,28 +197,31 @@ export function initAudioPlayer() {
       loadTrack(randomIndex, false);
       syncVolumeIcon(lastVolume);
 
-      // API global: agora temos uma função específica para iniciar imediatamente no clique
-      window.playerAPI = {
-        play:  () => { if (audio.paused) fadeIn(); },
-        pause: () => { if (!audio.paused) fadeOut(); },
-        // Função direta para iniciar a reprodução sem fade (usada no clique da intro)
-        startImmediately: () => {
-          if (audio.paused) {
-            audio.play().then(() => {
-              setPlayingState(true);
-              // Pequeno fade para não soar abrupto
-              audio.volume = 0;
-              let vol = 0;
-              const step = lastVolume / 5;
-              const timer = setInterval(() => {
-                vol = Math.min(vol + step, lastVolume);
-                audio.volume = vol;
-                if (vol >= lastVolume) clearInterval(timer);
-              }, 30);
-            }).catch(e => console.warn('[audioPlayer] startImmediately falhou:', e));
-          }
-        }
-      };
+   // Expõe API completa para outros módulos
+window.playerAPI = {
+  play: () => { if (audio.paused) fadeIn(); },
+  pause: () => { if (!audio.paused) fadeOut(); },
+  startImmediately: () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        setPlayingState(true);
+        audio.volume = 0;
+        let vol = 0;
+        const step = lastVolume / 5;
+        const timer = setInterval(() => {
+          vol = Math.min(vol + step, lastVolume);
+          audio.volume = vol;
+          if (vol >= lastVolume) clearInterval(timer);
+        }, 30);
+      }).catch(e => console.warn('[audioPlayer] startImmediately falhou:', e));
+    }
+  },
+  togglePlayPause: () => togglePlayPause(),
+  next: () => loadTrack(currentTrack + 1, true),
+  prev: () => loadTrack(currentTrack - 1, true),
+  getCurrentTrack: () => ({ title: TRACKS[currentTrack].title, index: currentTrack }),
+  isPlaying: () => isPlaying
+};
       console.log('[audioPlayer] Inicializado. Faixa aleatória:', TRACKS[randomIndex].title);
       resolve();
     }

@@ -1,11 +1,11 @@
-// readerSettings.js – salva e aplica preferências visuais do leitor (com prévia ao vivo)
+// readerSettings.js – painel de configurações com prévia ao vivo e select de cores
 export function initReaderSettings() {
   const settingsBtn = document.getElementById('readerSettingsBtn');
   const settingsPanel = document.getElementById('readerSettingsPanel');
   if (!settingsBtn || !settingsPanel) return;
 
   const bgSelect = document.getElementById('readerBgTheme');
-  const textColorPicker = document.getElementById('readerTextColor');
+  const textColorSelect = document.getElementById('readerTextColor');
   const fontSelect = document.getElementById('readerFontFamily');
   const applyBtn = document.getElementById('applyReaderSettings');
   const resetBtn = document.getElementById('resetReaderSettings');
@@ -22,20 +22,16 @@ export function initReaderSettings() {
     fontFamily: "'Noto Sans JP', 'Inter', sans-serif"
   };
 
-  // Função que aplica estilos diretamente (sem tocar no localStorage)
   function previewStyles(bgColor, textColor, fontFamily) {
     const readerBody = document.getElementById('readerBody');
     if (!readerBody) return;
 
-    // Aplica no container principal
     readerBody.style.backgroundColor = bgColor;
     readerBody.style.color = textColor;
     readerBody.style.fontFamily = fontFamily;
 
-    // Força a cor em todos os elementos filhos (exceto links e elementos especiais)
     const allElements = readerBody.querySelectorAll('*');
     allElements.forEach(el => {
-      // Preserva cores de elementos que devem manter destaque
       const preserve = el.classList && (
         el.classList.contains('personagem') ||
         el.classList.contains('violet') ||
@@ -45,11 +41,9 @@ export function initReaderSettings() {
         el.classList.contains('reader-code') ||
         el.classList.contains('reader-loc')
       );
-      if (!preserve) {
-        el.style.color = textColor;
-      }
-      // Força fundo transparente na maioria dos elementos
-      if (!el.classList.contains('reader-dialogo') && 
+      if (!preserve) el.style.color = textColor;
+
+      if (!el.classList.contains('reader-dialogo') &&
           !el.classList.contains('reader-pensamento') &&
           !el.classList.contains('reader-suspense') &&
           !el.classList.contains('reader-loc')) {
@@ -57,14 +51,12 @@ export function initReaderSettings() {
       }
     });
 
-    // Ajusta fundo dos blocos especiais (para não ficarem transparentes)
-    const dialogos = readerBody.querySelectorAll('.reader-dialogo, .reader-pensamento, .reader-suspense, .reader-loc');
-    dialogos.forEach(el => {
-      el.style.backgroundColor = `rgba(0,0,0,0.3)`;
+    const specialBlocks = readerBody.querySelectorAll('.reader-dialogo, .reader-pensamento, .reader-suspense, .reader-loc');
+    specialBlocks.forEach(el => {
+      el.style.backgroundColor = 'rgba(0,0,0,0.3)';
     });
   }
 
-  // Função que aplica estilos salvos no localStorage (para carga inicial e reset)
   function applySavedStyles() {
     const bgColor = localStorage.getItem(STORAGE_KEYS.bgColor) || defaults.bgColor;
     const textColor = localStorage.getItem(STORAGE_KEYS.textColor) || defaults.textColor;
@@ -72,10 +64,9 @@ export function initReaderSettings() {
     previewStyles(bgColor, textColor, fontFamily);
   }
 
-  // Salva as preferências atuais dos controles no localStorage e aplica
   function saveAndApply() {
     const bgColor = bgSelect.value;
-    const textColor = textColorPicker.value;
+    const textColor = textColorSelect.value;
     const fontFamily = fontSelect.value;
     localStorage.setItem(STORAGE_KEYS.bgColor, bgColor);
     localStorage.setItem(STORAGE_KEYS.textColor, textColor);
@@ -84,47 +75,45 @@ export function initReaderSettings() {
     settingsPanel.style.display = 'none';
   }
 
-  // Carrega valores salvos nos controles
   function loadSettingsToControls() {
     const savedBg = localStorage.getItem(STORAGE_KEYS.bgColor);
     const savedText = localStorage.getItem(STORAGE_KEYS.textColor);
     const savedFont = localStorage.getItem(STORAGE_KEYS.fontFamily);
     if (bgSelect) bgSelect.value = savedBg || defaults.bgColor;
-    if (textColorPicker) textColorPicker.value = savedText || defaults.textColor;
+    if (textColorSelect) textColorSelect.value = savedText || defaults.textColor;
     if (fontSelect) fontSelect.value = savedFont || defaults.fontFamily;
   }
 
-  // Restaura padrão e salva
   function resetSettings() {
     localStorage.removeItem(STORAGE_KEYS.bgColor);
     localStorage.removeItem(STORAGE_KEYS.textColor);
     localStorage.removeItem(STORAGE_KEYS.fontFamily);
     loadSettingsToControls();
-    // Aplica os valores padrão (que agora estão nos controles)
-    saveAndApply(); // reutiliza saveAndApply para aplicar e fechar o painel
+    saveAndApply();
   }
 
-  // Evento de prévia ao vivo: ao alterar qualquer controle, aplica imediatamente (sem salvar)
   function bindPreviewEvents() {
     const previewUpdate = () => {
       const bgColor = bgSelect.value;
-      const textColor = textColorPicker.value;
+      const textColor = textColorSelect.value;
       const fontFamily = fontSelect.value;
       previewStyles(bgColor, textColor, fontFamily);
     };
     bgSelect?.addEventListener('change', previewUpdate);
-    textColorPicker?.addEventListener('input', previewUpdate); // input para preview contínua
+    textColorSelect?.addEventListener('change', previewUpdate);
     fontSelect?.addEventListener('change', previewUpdate);
   }
 
   applyBtn?.addEventListener('click', saveAndApply);
   resetBtn?.addEventListener('click', resetSettings);
 
+  // Exclusão mútua: ao abrir configurações, fecha o dropdown de idioma
   settingsBtn.addEventListener('click', (e) => {
     e.stopPropagation();
+    const langDropdown = document.querySelector('.reader-lang-dropdown');
+    if (langDropdown) langDropdown.style.display = 'none';
     const isVisible = settingsPanel.style.display === 'block';
     if (!isVisible) {
-      // Ao abrir o painel, carrega os valores salvos nos controles e aplica o estilo salvo
       loadSettingsToControls();
       applySavedStyles();
       settingsPanel.style.display = 'block';
@@ -139,8 +128,8 @@ export function initReaderSettings() {
     }
   });
 
-  // Inicializa: aplica estilos salvos, expõe função global e configura prévia ao vivo
   applySavedStyles();
   bindPreviewEvents();
+
   window.applyReaderStyles = applySavedStyles;
 }

@@ -1,3 +1,4 @@
+// mural.js
 import { $ } from '../../shared/dom.js';
 import { openChapterReader } from './reader.js';
 

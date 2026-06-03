@@ -2489,3 +2489,55 @@ button, a, .carousel-dot, .footer-social, .mural-card, .chapter-card {
   align-items: center;
   justify-content: center;
 }
+/* Garante que textos longos não quebrem o layout */
+.language-selector {
+  position: relative;
+  margin-left: 20px;
+}
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--black-card);
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+  z-index: 1000;
+}
+.language-selector:hover .lang-dropdown {
+  display: block;
+}
+.lang-dropdown li {
+  padding: 6px 20px;
+  cursor: pointer;
+  color: white;
+  white-space: nowrap;
+}
+.lang-dropdown li:hover {
+  background: var(--red);
+}
+
+/* Ajustes para textos traduzidos longos */
+.hero-title, .section-heading, .chapter-title, .reader-body p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+@media (max-width: 768px) {
+  .lang-btn {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  .lang-dropdown li {
+    white-space: normal;
+  }
+}
